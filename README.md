@@ -5,3 +5,9 @@ A Mock Cryptocurrency trading app developed with [Jetpack Compose](https://devel
 
 ## Features
 ### Live Crypto Prices
+
+Live cryptocurrency prices with account balance matching portfolio
+
+<table cellspacing="0" cellpadding="0">
+ <tr>
+    <td><img src="screenshots/home_screen.png" alt="Live Cr
