@@ -19,3 +19,7 @@ Live cryptocurrency prices with account balance matching portfolio
 Buy and sell cryptocurrency with created fiat wallet or Crypto Craze Visa Card balance
 
 <table cellspacing="0" cellpadding="0">
+ <tr>
+    <td><img src="screenshots/buy_sell_bottom.png" alt="Buy/Sell" width="200"/></td>
+    <td><img src="screenshots/buy_sell_list.png" alt="Buy/Sell" width="200"/></td>
+   </tr> 
