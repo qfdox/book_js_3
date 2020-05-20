@@ -27,4 +27,14 @@ Buy and sell cryptocurrency with created fiat wallet or Crypto Craze Visa Card b
 <table cellspacing="0" cellpadding="0">
  <tr>
     <td><img src="screenshots/buy_sell_screen.png" alt="Buy/Sell" width="200"/></td>
-    <td><img src="screenshots/purcha
+    <td><img src="screenshots/purchase_successful.png" alt="Buy/Sell" width="200"/></td>
+   </tr> 
+</table>
+
+### Wallet
+
+Fiat Wallet/Crypto Craze Visa Card payment creation options
+
+<table cellspacing="0" cellpadding="0">
+ <tr>
+  
