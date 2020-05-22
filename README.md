@@ -42,4 +42,9 @@ Fiat Wallet/Crypto Craze Visa Card payment creation options
 </table>
 <table cellspacing="0" cellpadding="0">
  <tr>
-    <td><img src="screenshots/
+    <td><img src="screenshots/create_visa_card.png" alt="Wallet" width="200"/></td>
+    <td><img src="screenshots/create_fiat_wallet_card.png" alt="Wallet" width="200"/></td>
+   </tr> 
+</table>
+
+### Portfolio
