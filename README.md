@@ -48,3 +48,11 @@ Fiat Wallet/Crypto Craze Visa Card payment creation options
 </table>
 
 ### Portfolio
+
+See your currently owned cryptocurrency with your portfolio
+
+<table>
+ <tr>
+    <td> <img src="screenshots/portfolio_screen.png" alt="Wallet" width="200"/></td>
+   </tr> 
+</table
