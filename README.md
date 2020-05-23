@@ -55,4 +55,17 @@ See your currently owned cryptocurrency with your portfolio
  <tr>
     <td> <img src="screenshots/portfolio_screen.png" alt="Wallet" width="200"/></td>
    </tr> 
-</table
+</table>
+
+### Transaction History 
+
+<table>
+ <tr>
+    <td> <img src="screenshots/transaction_history_screen.png" alt="Wallet" width="200"/></td>
+   </tr> 
+</table>
+
+## Architecture
+
+Clean Architecture
+* P
