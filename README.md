@@ -68,4 +68,15 @@ See your currently owned cryptocurrency with your portfolio
 ## Architecture
 
 Clean Architecture
-* P
+* Presentation
+* Domain
+* Data
+
+Use Cases
+
+Dependency Injection
+
+### Libraries/tools used
+
+* [Hilt](https://developer.android.com/training/dependency-injection/hilt-android)
+* [Room]
