@@ -82,4 +82,7 @@ Dependency Injection
 * [Room](https://developer.android.com/training/data-storage/room)
 * [Retrofit](https://square.github.io/retrofit/)
 * [Paging](https://developer.android.com/topic/libraries/architecture/paging/v3-overview)
-*
+* [Coil](https://github.com/coil-kt/coil)
+* [Lottie](https://github.com/airbnb/lottie-android)
+* [Gson](https://github.com/google/gson)
+* [Alorma Compose Settings](https://github.co
