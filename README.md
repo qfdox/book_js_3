@@ -79,4 +79,7 @@ Dependency Injection
 ### Libraries/tools used
 
 * [Hilt](https://developer.android.com/training/dependency-injection/hilt-android)
-* [Room]
+* [Room](https://developer.android.com/training/data-storage/room)
+* [Retrofit](https://square.github.io/retrofit/)
+* [Paging](https://developer.android.com/topic/libraries/architecture/paging/v3-overview)
+*
