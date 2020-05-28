@@ -85,4 +85,13 @@ Dependency Injection
 * [Coil](https://github.com/coil-kt/coil)
 * [Lottie](https://github.com/airbnb/lottie-android)
 * [Gson](https://github.com/google/gson)
-* [Alorma Compose Settings](https://github.co
+* [Alorma Compose Settings](https://github.com/alorma/Compose-Settings)
+* [Truth](https://truth.dev/)
+
+## License
+```
+MIT License
+
+Copyright (c) 2021 BrandonRNeath
+
+Permission is hereby granted, free of charge, to any pe
