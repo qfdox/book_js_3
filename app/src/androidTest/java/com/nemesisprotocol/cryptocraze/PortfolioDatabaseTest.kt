@@ -88,3 +88,28 @@ class PortfolioDatabaseTest {
         isCryptoInvested = portfolioDao.checkCryptoIsInvested("ETH")
         Truth.assertThat(isCryptoInvested).isEqualTo(false)
     }
+
+    @ExperimentalCoroutinesApi
+    @Test
+    fun test_getCryptoInvestmentBySymbol() = runBlockingTest {
+        val cryptoInvestment1 = CryptoInvestment("BTC", "Bitcoin", 6.0)
+        val cryptoInvestment2 = CryptoInvestment("ETH", "Ethereum ", 12.0)
+        portfolioDao.addCryptoInvestment(cryptoInvestment1)
+        portfolioDao.addCryptoInvestment(cryptoInvestment2)
+        val portfolio = portfolioDao.getPortfolio()
+        Truth.assertThat(portfolio.size).isEqualTo(2)
+        val fetchedCryptoInvestmentBySymbol = portfolioDao.getCryptoInvestmentBySymbol("BTC")
+        Truth.assertThat(fetchedCryptoInvestmentBySymbol).isEqualTo(cryptoInvestment1)
+    }
+
+    @ExperimentalCoroutinesApi
+    @Test
+    fun test_wipePortfolio() = runBlockingTest {
+        for (i in 1..100) portfolioDao.addCryptoInvestment(CryptoInvestment("cryptoSymbol$i", "cryptoName$i", i.toDouble()))
+        var portfolio = portfolioDao.getPortfolio()
+        Truth.assertThat(portfolio.size).isEqualTo(100)
+        portfolioDao.wipePortfolio()
+        portfolio = portfolioDao.getPortfolio()
+        Truth.assertThat(portfolio.size).isEqualTo(0)
+    }
+}
