@@ -19,4 +19,13 @@ fun <T> LiveData<T>.getOrAwaitValue(
         override fun onChanged(o: T?) {
             data = o
             latch.countDown()
-            this@getOrAwaitValue.removeObserver(th
+            this@getOrAwaitValue.removeObserver(this)
+        }
+    }
+    this.observeForever(observer)
+
+    try {
+        afterObserve.invoke()
+
+        if (!latch.await(time, timeUnit)) {
+            throw TimeoutException("LiveData value was never set
