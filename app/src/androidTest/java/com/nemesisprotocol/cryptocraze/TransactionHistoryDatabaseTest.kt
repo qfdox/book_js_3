@@ -15,4 +15,12 @@ import org.junit.After
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
-import j
+import java.util.*
+import javax.inject.Inject
+import javax.inject.Named
+
+@HiltAndroidTest
+@SmallTest
+class TransactionHistoryDatabaseTest {
+    @get:Rule
+    var hiltRule =
