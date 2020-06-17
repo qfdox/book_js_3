@@ -23,4 +23,11 @@ import javax.inject.Named
 @SmallTest
 class TransactionHistoryDatabaseTest {
     @get:Rule
-    var hiltRule =
+    var hiltRule = HiltAndroidRule(this)
+
+    @get:Rule
+    var instantTaskExecutorRule = InstantTaskExecutorRule()
+
+    @Inject
+    @Named("test_transaction_history_db")
+    lateinit var database: TransactionHistoryDatabase
