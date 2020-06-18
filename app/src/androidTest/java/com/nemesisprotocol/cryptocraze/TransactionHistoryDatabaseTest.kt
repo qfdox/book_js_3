@@ -31,3 +31,9 @@ class TransactionHistoryDatabaseTest {
     @Inject
     @Named("test_transaction_history_db")
     lateinit var database: TransactionHistoryDatabase
+    private lateinit var transactionHistoryDao: TransactionHistoryDao
+
+    @Before
+    fun setup() {
+        hiltRule.inject()
+        transactionHistoryDao = database.transa
