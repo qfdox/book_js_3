@@ -36,4 +36,14 @@ class TransactionHistoryDatabaseTest {
     @Before
     fun setup() {
         hiltRule.inject()
-        transactionHistoryDao = database.transa
+        transactionHistoryDao = database.transactionHistoryDao()
+    }
+
+    @After
+    fun tearDown() {
+        database.close()
+    }
+
+    @ExperimentalCoroutinesApi
+    @Test
+    fun test_addTransaction
