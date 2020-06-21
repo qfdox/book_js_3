@@ -49,4 +49,7 @@ class TransactionHistoryDatabaseTest {
     fun test_addTransactionRecord() = runBlockingTest {
         val uuid = UUID.randomUUID().toString()
         val transactionRecord =
-            TransactionRecord(uuid, "BTC", 2.0, "5", Date(), TransactionTy
+            TransactionRecord(uuid, "BTC", 2.0, "5", Date(), TransactionType.BUY)
+        transactionHistoryDao.addTransactionRecord(transactionRecord)
+        val transactionHistory = transactionHistoryDao.getTransactionRecords()
+        Tr
