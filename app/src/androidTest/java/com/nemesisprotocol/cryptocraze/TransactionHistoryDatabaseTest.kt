@@ -46,4 +46,7 @@ class TransactionHistoryDatabaseTest {
 
     @ExperimentalCoroutinesApi
     @Test
-    fun test_addTransaction
+    fun test_addTransactionRecord() = runBlockingTest {
+        val uuid = UUID.randomUUID().toString()
+        val transactionRecord =
+            TransactionRecord(uuid, "BTC", 2.0, "5", Date(), TransactionTy
