@@ -52,4 +52,10 @@ class TransactionHistoryDatabaseTest {
             TransactionRecord(uuid, "BTC", 2.0, "5", Date(), TransactionType.BUY)
         transactionHistoryDao.addTransactionRecord(transactionRecord)
         val transactionHistory = transactionHistoryDao.getTransactionRecords()
-        Tr
+        Truth.assertThat(transactionHistory).contains(transactionRecord)
+    }
+
+    @ExperimentalCoroutinesApi
+    @Test
+    fun test_deleteTransactionRecord() = runBlockingTest {
+        val uuid = UUID.randomUUID().t
