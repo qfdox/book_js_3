@@ -58,4 +58,7 @@ class TransactionHistoryDatabaseTest {
     @ExperimentalCoroutinesApi
     @Test
     fun test_deleteTransactionRecord() = runBlockingTest {
-        val uuid = UUID.randomUUID().t
+        val uuid = UUID.randomUUID().toString()
+        val transactionRecord =
+            TransactionRecord(uuid, "BTC", 2.0, "5", Date(), TransactionType.BUY)
+        transactionHistoryDao.addTransactionRecord(trans
