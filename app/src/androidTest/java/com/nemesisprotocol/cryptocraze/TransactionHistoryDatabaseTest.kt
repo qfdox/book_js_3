@@ -61,4 +61,6 @@ class TransactionHistoryDatabaseTest {
         val uuid = UUID.randomUUID().toString()
         val transactionRecord =
             TransactionRecord(uuid, "BTC", 2.0, "5", Date(), TransactionType.BUY)
-        transactionHistoryDao.addTransactionRecord(trans
+        transactionHistoryDao.addTransactionRecord(transactionRecord)
+        var transactionHistory = transactionHistoryDao.getTransactionRecords()
+        Truth.assertThat(transactionHistory).contains(transactionRecord)
