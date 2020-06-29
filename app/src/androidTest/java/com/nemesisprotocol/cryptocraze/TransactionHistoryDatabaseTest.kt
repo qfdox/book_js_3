@@ -64,3 +64,6 @@ class TransactionHistoryDatabaseTest {
         transactionHistoryDao.addTransactionRecord(transactionRecord)
         var transactionHistory = transactionHistoryDao.getTransactionRecords()
         Truth.assertThat(transactionHistory).contains(transactionRecord)
+        Truth.assertThat(transactionHistory.size).isEqualTo(1)
+        transactionHistoryDao.deleteTransactionRecord(transactionRecord)
+        transactionHistory = transactionHistoryDao.getTransact
