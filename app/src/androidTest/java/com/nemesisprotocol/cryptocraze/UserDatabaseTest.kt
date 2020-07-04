@@ -13,3 +13,16 @@ import kotlinx.coroutines.test.runBlockingTest
 import org.junit.After
 import org.junit.Before
 import org.junit.Rule
+import org.junit.Test
+import javax.inject.Inject
+import javax.inject.Named
+
+@HiltAndroidTest
+@SmallTest
+class UserDatabaseTest {
+
+    @get:Rule
+    var hiltRule = HiltAndroidRule(this)
+
+    @get:Rule
+    var instantTask
