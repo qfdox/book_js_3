@@ -44,3 +44,10 @@ class UserDatabaseTest {
     }
 
     @ExperimentalCoroutinesApi
+    @Test
+    fun test_addUser() = runBlockingTest {
+        val user = User(
+            username = "user1",
+            password = "password123",
+        )
+        userD
