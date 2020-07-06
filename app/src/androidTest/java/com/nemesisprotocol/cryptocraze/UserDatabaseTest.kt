@@ -33,3 +33,14 @@ class UserDatabaseTest {
     private lateinit var userDao: UserDao
 
     @Before
+    fun setup() {
+        hiltRule.inject()
+        userDao = database.userDao()
+    }
+
+    @After
+    fun tearDown() {
+        database.close()
+    }
+
+    @ExperimentalCoroutinesApi
