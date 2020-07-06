@@ -25,4 +25,11 @@ class UserDatabaseTest {
     var hiltRule = HiltAndroidRule(this)
 
     @get:Rule
-    var instantTask
+    var instantTaskExecutorRule = InstantTaskExecutorRule()
+
+    @Inject
+    @Named("test_user_db")
+    lateinit var database: UserDatabase
+    private lateinit var userDao: UserDao
+
+    @Before
