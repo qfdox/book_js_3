@@ -50,4 +50,11 @@ class UserDatabaseTest {
             username = "user1",
             password = "password123",
         )
-        userD
+        userDao.addUser(user)
+        val allUsers = userDao.getUsers().getOrAwaitValue()
+        assertThat(allUsers).contains(user)
+    }
+
+    @ExperimentalCoroutinesApi
+    @Test
+    fu
