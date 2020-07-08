@@ -62,4 +62,11 @@ class UserDatabaseTest {
             username = "user1",
             password = "password123",
         )
-        userDao.addUs
+        userDao.addUser(user)
+        val fetchedUser = userDao.getUserByUsername("user1")
+        assertThat(fetchedUser.username).isEqualTo("user1")
+    }
+
+    @ExperimentalCoroutinesApi
+    @Test
+    fun
