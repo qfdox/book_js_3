@@ -57,4 +57,9 @@ class UserDatabaseTest {
 
     @ExperimentalCoroutinesApi
     @Test
-    fu
+    fun test_getUserByUsername() = runBlockingTest {
+        val user = User(
+            username = "user1",
+            password = "password123",
+        )
+        userDao.addUs
