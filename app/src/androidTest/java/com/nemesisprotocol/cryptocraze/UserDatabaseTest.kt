@@ -78,4 +78,12 @@ class UserDatabaseTest {
         val userExists1 = userDao.checkUserExists("user1")
         assertThat(userExists1).isEqualTo(true)
         val userExists2 = userDao.checkUserExists("user2")
-        assertThat(userExists2).isEqualTo(fa
+        assertThat(userExists2).isEqualTo(false)
+    }
+
+    @ExperimentalCoroutinesApi
+    @Test
+    fun test_isValidLoginCredentials() = runBlockingTest {
+        val user1 = User(
+            username = "user1",
+            password 
