@@ -75,4 +75,7 @@ class UserDatabaseTest {
             password = "password123",
         )
         userDao.addUser(user1)
-        val us
+        val userExists1 = userDao.checkUserExists("user1")
+        assertThat(userExists1).isEqualTo(true)
+        val userExists2 = userDao.checkUserExists("user2")
+        assertThat(userExists2).isEqualTo(fa
