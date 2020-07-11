@@ -86,4 +86,9 @@ class UserDatabaseTest {
     fun test_isValidLoginCredentials() = runBlockingTest {
         val user1 = User(
             username = "user1",
-            password 
+            password = "password123",
+        )
+        userDao.addUser(user1)
+        val userExists1 = userDao.checkUserExists("user1")
+        assertThat(userExists1).isEqualTo(true)
+        val isVali
