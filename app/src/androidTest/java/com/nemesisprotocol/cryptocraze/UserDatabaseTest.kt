@@ -95,4 +95,10 @@ class UserDatabaseTest {
         val isValidLoginCredentials2 = userDao.isValidLoginCredentials("user1", "123")
         val isValidLoginCredentials3 = userDao.isValidLoginCredentials("user2", "password123")
         assertThat(isValidLoginCredentials1).isEqualTo(true)
-        assertThat(isValidLoginCredentials2).isEqualT
+        assertThat(isValidLoginCredentials2).isEqualTo(false)
+        assertThat(isValidLoginCredentials3).isEqualTo(false)
+    }
+
+    @ExperimentalCoroutinesApi
+    @Test
+    fun test_deleteUser() = runBlockingTes
