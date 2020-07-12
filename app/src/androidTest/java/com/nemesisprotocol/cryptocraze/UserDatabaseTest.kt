@@ -93,4 +93,6 @@ class UserDatabaseTest {
         assertThat(userExists1).isEqualTo(true)
         val isValidLoginCredentials1 = userDao.isValidLoginCredentials("user1", "password123")
         val isValidLoginCredentials2 = userDao.isValidLoginCredentials("user1", "123")
-        val isValidLoginCre
+        val isValidLoginCredentials3 = userDao.isValidLoginCredentials("user2", "password123")
+        assertThat(isValidLoginCredentials1).isEqualTo(true)
+        assertThat(isValidLoginCredentials2).isEqualT
