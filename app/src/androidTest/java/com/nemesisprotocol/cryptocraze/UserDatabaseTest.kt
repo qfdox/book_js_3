@@ -107,4 +107,8 @@ class UserDatabaseTest {
             password = "password123",
         )
         userDao.addUser(user)
-        var allUsers = userDao.getUsers().getOr
+        var allUsers = userDao.getUsers().getOrAwaitValue()
+        assertThat(allUsers).contains(user)
+        assertThat(allUsers.size).isEqualTo(1)
+        userDao.deleteUser(user)
+        allUsers = userDao.getUsers().getO
