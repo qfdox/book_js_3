@@ -101,4 +101,10 @@ class UserDatabaseTest {
 
     @ExperimentalCoroutinesApi
     @Test
-    fun test_deleteUser() = runBlockingTes
+    fun test_deleteUser() = runBlockingTest {
+        val user = User(
+            username = "user1",
+            password = "password123",
+        )
+        userDao.addUser(user)
+        var allUsers = userDao.getUsers().getOr
