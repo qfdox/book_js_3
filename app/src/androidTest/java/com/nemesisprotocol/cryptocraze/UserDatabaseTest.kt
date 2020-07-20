@@ -111,4 +111,11 @@ class UserDatabaseTest {
         assertThat(allUsers).contains(user)
         assertThat(allUsers.size).isEqualTo(1)
         userDao.deleteUser(user)
-        allUsers = userDao.getUsers().getO
+        allUsers = userDao.getUsers().getOrAwaitValue()
+        assertThat(allUsers.size).isEqualTo(0)
+    }
+
+    @ExperimentalCoroutinesApi
+    @Test
+    fun test_wipeUsers() = runBlockingTest {
+        for (
