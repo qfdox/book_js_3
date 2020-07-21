@@ -118,4 +118,8 @@ class UserDatabaseTest {
     @ExperimentalCoroutinesApi
     @Test
     fun test_wipeUsers() = runBlockingTest {
-        for (
+        for (i in 1..50) userDao.addUser(User("user$i", "password$i"))
+        var allUsers = userDao.getUsers().getOrAwaitValue()
+        assertThat(allUsers.size).isEqualTo(50)
+        userDao.wipeUsers()
+        all
