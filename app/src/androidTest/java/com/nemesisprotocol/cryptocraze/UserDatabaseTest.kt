@@ -122,4 +122,7 @@ class UserDatabaseTest {
         var allUsers = userDao.getUsers().getOrAwaitValue()
         assertThat(allUsers.size).isEqualTo(50)
         userDao.wipeUsers()
-        all
+        allUsers = userDao.getUsers().getOrAwaitValue()
+        assertThat(allUsers.size).isEqualTo(0)
+    }
+}
