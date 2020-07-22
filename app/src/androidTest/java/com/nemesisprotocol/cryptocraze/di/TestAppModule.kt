@@ -6,4 +6,8 @@ import com.nemesisprotocol.cryptocraze.data.database.cryptofavdata.CryptoFavData
 import com.nemesisprotocol.cryptocraze.data.database.paymentinfo.PaymentInfoDatabase
 import com.nemesisprotocol.cryptocraze.data.database.portfolio.PortfolioDatabase
 import com.nemesisprotocol.cryptocraze.data.database.transactionhistory.TransactionHistoryDatabase
-import com.nemesispro
+import com.nemesisprotocol.cryptocraze.data.database.user.UserDatabase
+import dagger.Module
+import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationC
