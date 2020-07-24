@@ -23,4 +23,10 @@ object TestAppModule {
     fun provideTestUserDb(@ApplicationContext context: Context) =
         Room.inMemoryDatabaseBuilder(
             context, UserDatabase::class.java
-        ).allowMainThr
+        ).allowMainThreadQueries()
+            .build()
+
+    @Provides
+    @Named("test_crypto_fav_data_db")
+    fun provideTestCryptoDataDatabase(@ApplicationContext context: Context) =
+      
