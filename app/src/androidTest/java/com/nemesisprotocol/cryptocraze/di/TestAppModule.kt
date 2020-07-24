@@ -19,4 +19,8 @@ import javax.inject.Named
 object TestAppModule {
 
     @Provides
-    @Named("te
+    @Named("test_user_db")
+    fun provideTestUserDb(@ApplicationContext context: Context) =
+        Room.inMemoryDatabaseBuilder(
+            context, UserDatabase::class.java
+        ).allowMainThr
