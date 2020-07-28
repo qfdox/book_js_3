@@ -29,4 +29,11 @@ object TestAppModule {
     @Provides
     @Named("test_crypto_fav_data_db")
     fun provideTestCryptoDataDatabase(@ApplicationContext context: Context) =
-      
+        Room.inMemoryDatabaseBuilder(
+            context, CryptoFavDataDatabase::class.java
+        ).allowMainThreadQueries()
+            .build()
+
+    @Provides
+    @Named("test_payment_info_db")
+    fun provi
