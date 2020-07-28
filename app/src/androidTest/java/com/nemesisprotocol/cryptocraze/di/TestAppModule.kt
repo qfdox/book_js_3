@@ -39,4 +39,9 @@ object TestAppModule {
     fun provideTestPaymentInfoDatabase(@ApplicationContext context: Context) =
         Room.inMemoryDatabaseBuilder(
             context, PaymentInfoDatabase::class.java
-        ).allowMainThreadQu
+        ).allowMainThreadQueries()
+            .build()
+
+    @Provides
+    @Named("test_transaction_history_db")
+    fun provideTestTransactionHistoryDatabase(@ApplicationContext context: Context)
