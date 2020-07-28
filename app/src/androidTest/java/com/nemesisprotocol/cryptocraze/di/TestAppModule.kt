@@ -36,4 +36,7 @@ object TestAppModule {
 
     @Provides
     @Named("test_payment_info_db")
-    fun provi
+    fun provideTestPaymentInfoDatabase(@ApplicationContext context: Context) =
+        Room.inMemoryDatabaseBuilder(
+            context, PaymentInfoDatabase::class.java
+        ).allowMainThreadQu
