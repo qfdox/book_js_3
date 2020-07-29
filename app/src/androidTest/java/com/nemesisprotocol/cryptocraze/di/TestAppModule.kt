@@ -51,4 +51,7 @@ object TestAppModule {
             .build()
 
     @Provides
-    @N
+    @Named("test_portfolio_db")
+    fun provideTestPortfolioDatabase(@ApplicationContext context: Context) =
+        Room.inMemoryDatabaseBuilder(
+            context, PortfolioDatabase::class.java
