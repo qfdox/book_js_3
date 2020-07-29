@@ -44,4 +44,11 @@ object TestAppModule {
 
     @Provides
     @Named("test_transaction_history_db")
-    fun provideTestTransactionHistoryDatabase(@ApplicationContext context: Context)
+    fun provideTestTransactionHistoryDatabase(@ApplicationContext context: Context) =
+        Room.inMemoryDatabaseBuilder(
+            context, TransactionHistoryDatabase::class.java
+        ).allowMainThreadQueries()
+            .build()
+
+    @Provides
+    @N
