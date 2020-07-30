@@ -55,3 +55,6 @@ object TestAppModule {
     fun provideTestPortfolioDatabase(@ApplicationContext context: Context) =
         Room.inMemoryDatabaseBuilder(
             context, PortfolioDatabase::class.java
+        ).allowMainThreadQueries()
+            .build()
+}
