@@ -214,3 +214,182 @@ class MainActivity : ComponentActivity() {
                                                                 .padding(top = 32.dp),
                                                             horizontalAlignment = Alignment.CenterHorizontally,
                                                             verticalArrangement = Arrangement.Center
+                                                        ) {
+                                                            CircularProgressIndicator()
+                                                            Text(text = "Loading Crypto Data...")
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        if (bottomSheetContent.value == BottomSheetContent.SELL) {
+
+                            Box(
+                                Modifier
+                                    .fillMaxWidth()
+                                    .height(400.dp)
+                            ) {
+                                Icon(
+                                    modifier = Modifier
+                                        .padding(top = 8.dp, start = 8.dp)
+                                        .size(32.dp)
+                                        .clickable {
+                                            bottomSheetContent.value =
+                                                BottomSheetContent.BUY_SELL
+                                        },
+                                    imageVector = Icons.Default.ArrowBack,
+                                    contentDescription = "ArrowBack",
+                                    tint = if (isSystemInDarkTheme()) Color.White else Color.Black
+                                )
+                                Column(
+                                    modifier = Modifier
+                                        .fillMaxWidth()
+                                        .fillMaxHeight(),
+                                    horizontalAlignment = Alignment.CenterHorizontally,
+                                    verticalArrangement = Arrangement.Center
+                                ) {
+
+                                    Text(
+                                        modifier = Modifier.padding(16.dp),
+                                        text = "Sell Cryptocurrency",
+                                        fontSize = 24.sp,
+                                        textAlign = TextAlign.Center
+                                    )
+
+                                    LazyColumn(state = listScrollState) {
+                                        itemsIndexed(pagingCryptoDataItems) { _, crypto ->
+                                            crypto?.let {
+                                                var cryptoIsInvested by remember { mutableStateOf(false) }
+                                                LaunchedEffect(Unit) {
+                                                    cryptoIsInvested = portfolioViewModel.checkCryptoIsInvested(crypto.symbol.uppercase())
+                                                }
+                                                Card(
+                                                    backgroundColor = if (cryptoIsInvested) MaterialTheme.colors.surface.copy(
+                                                        alpha = 0.5f
+                                                    ) else MaterialTheme.colors.surface.copy(
+                                                        alpha = 1.0f
+                                                    ),
+                                                    modifier = Modifier
+                                                        .fillMaxWidth()
+                                                        .fillMaxHeight()
+                                                        .height(64.dp)
+                                                        .padding(
+                                                            start = 8.dp,
+                                                            end = 8.dp,
+                                                            top = 16.dp
+                                                        )
+                                                        .clickable(cryptoIsInvested) {
+                                                            coroutineScope.launch {
+                                                                bottomSheetScaffoldState.bottomSheetState.collapse()
+                                                                navController.navigate(
+                                                                    Screen.CryptoTransaction.route + "/${
+                                                                    Gson().toJson(
+                                                                        it.mapPriceInfo()
+                                                                    )
+                                                                    }/${TransactionType.SELL.name}"
+                                                                )
+                                                            }
+                                                        }
+                                                ) {
+                                                    Column(
+                                                        modifier = Modifier.fillMaxSize(),
+                                                        verticalArrangement = Arrangement.Center,
+                                                    ) {
+                                                        Text(
+                                                            modifier = Modifier.padding(start = 8.dp),
+                                                            color = if (cryptoIsInvested) Color.Unspecified else Color.Gray,
+                                                            text = "(${it.symbol.uppercase()}) ${it.name}",
+                                                            fontSize = 18.sp
+                                                        )
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        pagingCryptoDataItems.apply {
+                                            when {
+                                                loadState.refresh is LoadState.Loading -> item {
+                                                    Column(
+                                                        modifier = Modifier
+                                                            .fillMaxWidth()
+                                                            .fillMaxHeight()
+                                                            .padding(top = 32.dp),
+                                                        horizontalAlignment = Alignment.CenterHorizontally,
+                                                        verticalArrangement = Arrangement.Center
+                                                    ) {
+                                                        CircularProgressIndicator()
+                                                        Text(text = "Loading Crypto Data...")
+                                                    }
+                                                }
+                                                loadState.append is LoadState.Loading -> {
+                                                    item {
+                                                        Column(
+                                                            modifier = Modifier
+                                                                .fillMaxWidth()
+                                                                .fillMaxHeight()
+                                                                .padding(top = 32.dp),
+                                                            horizontalAlignment = Alignment.CenterHorizontally,
+                                                            verticalArrangement = Arrangement.Center
+                                                        ) {
+                                                            CircularProgressIndicator()
+                                                            Text(text = "Loading Crypto Data...")
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }, sheetPeekHeight = 0.dp
+                ) {
+                    Scaffold(
+                        topBar = {
+                            if (userLoggedIn.value) {
+                                TopAppBar(
+                                    title = {
+                                    },
+                                    actions = {
+                                        if (currentRoute.value == Screen.Wallet.route) {
+                                            IconButton(onClick = {
+                                                navController.navigate(Screen.TransactionHistory.route)
+                                            }) {
+                                                Icon(
+                                                    painter = painterResource(id = R.drawable.transaction_history_24),
+                                                    ""
+                                                )
+                                            }
+                                        }
+                                        IconButton(onClick = {
+                                            navController.navigate(Screen.Settings.route)
+                                        }) {
+                                            Icon(Icons.Rounded.Settings, "")
+                                        }
+                                    }
+                                )
+                            }
+                        },
+                        bottomBar = {
+                            if (userLoggedIn.value) {
+                                BottomNavigationBar(navController, bottomSheetScaffoldState)
+                            }
+                        }
+                    ) {
+                        Box(modifier = Modifier.padding(it)) {
+                            Navigation(
+                                navController,
+                                userLoggedIn,
+                                homeViewModel,
+                                currentRoute
+                            )
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
