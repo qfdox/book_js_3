@@ -7,4 +7,6 @@ sealed class Screen(val route: String, val icon: Int?, val title: String) {
     object Home : Screen("home_screen", R.drawable.ic_home_24, "Home")
     object Settings : Screen("settings_screen", null, "Settings")
     object Wallet : Screen("wallet_screen", R.drawable.ic_wallet_24, "Wallet")
-    object AddPaymentCard : Screen("add
+    object AddPaymentCard : Screen("add_payment_screen", null, "Payment Card")
+    object AddCryptoCrazeVisaCard : Screen("add_crypto_craze_visa_screen", null, "Crypto Craze Visa Card")
+    object Info : Screen("info_screen",
