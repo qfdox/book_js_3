@@ -16,4 +16,6 @@ sealed class Screen(val route: String, val icon: Int?, val title: String) {
     object PaymentCardAdded : Screen("payment_card_added", null, "Payment Card Added")
     object CryptoTransaction : Screen("crypto_transaction", null, "Crypto Transaction")
     object CryptoTransactionConfirmation : Screen("crypto_transaction_confirmation", null, "Crypto Transaction Confirmation")
-    object CryptoTransactionFailed : Screen("crypto_transaction_failed", null, "Crypto Transaction Fai
+    object CryptoTransactionFailed : Screen("crypto_transaction_failed", null, "Crypto Transaction Failed")
+    object Portfolio : Screen("portfolio_screen", R.drawable.portfolio_icon, "Portfolio")
+    object TransactionHistory : Screen("transaction_history_screen", null, "Transaction
