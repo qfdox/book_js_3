@@ -32,4 +32,7 @@ class CryptoDataApiMapper {
         name = cryptoApiResponse.name,
         symbol = cryptoApiResponse.symbol,
         price = cryptoApiResponse.current_price,
-        image 
+        image = cryptoApiResponse.image,
+        dailyChange = cryptoApiResponse.price_change_24h,
+        dailyChangePercentage = cryptoApiResponse.price_change_percentage_24h,
+        high = cryptoApi
