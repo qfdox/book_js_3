@@ -28,4 +28,8 @@ import com.nemesisprotocol.cryptocraze.data.cryptodata.remote.dto.CryptoDataApiR
 import com.nemesisprotocol.cryptocraze.domain.cryptodata.CryptoData
 
 class CryptoDataApiMapper {
-    fun map(cryptoApiResponse: CryptoDataApiResponse) = Cr
+    fun map(cryptoApiResponse: CryptoDataApiResponse) = CryptoData(
+        name = cryptoApiResponse.name,
+        symbol = cryptoApiResponse.symbol,
+        price = cryptoApiResponse.current_price,
+        image 
