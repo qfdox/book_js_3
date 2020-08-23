@@ -24,4 +24,8 @@
 
 package com.nemesisprotocol.cryptocraze.data.cryptodata.remote
 
-import com.nemesisprotocol.cryptocraze.data.cry
+import com.nemesisprotocol.cryptocraze.data.cryptodata.remote.dto.CryptoDataApiResponse
+import com.nemesisprotocol.cryptocraze.domain.cryptodata.CryptoData
+
+class CryptoDataApiMapper {
+    fun map(cryptoApiResponse: CryptoDataApiResponse) = Cr
