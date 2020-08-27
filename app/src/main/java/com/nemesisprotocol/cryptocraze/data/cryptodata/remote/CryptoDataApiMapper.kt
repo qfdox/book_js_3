@@ -35,4 +35,8 @@ class CryptoDataApiMapper {
         image = cryptoApiResponse.image,
         dailyChange = cryptoApiResponse.price_change_24h,
         dailyChangePercentage = cryptoApiResponse.price_change_percentage_24h,
-        high = cryptoApi
+        high = cryptoApiResponse.high_24h,
+        low = cryptoApiResponse.low_24h,
+        volume = cryptoApiResponse.total_volume,
+        supply = cryptoApiResponse.total_supply,
+        marketCap = cryptoApiRe
