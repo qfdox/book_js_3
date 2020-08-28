@@ -1,3 +1,4 @@
+
 /*
 * MIT License
 *
@@ -22,24 +23,22 @@
 * SOFTWARE.
  */
 
-package com.nemesisprotocol.cryptocraze.data.cryptodata.remote
+package com.nemesisprotocol.cryptocraze.data.cryptodata.remote.dto
 
-import com.nemesisprotocol.cryptocraze.data.cryptodata.remote.dto.CryptoDataApiResponse
-import com.nemesisprotocol.cryptocraze.domain.cryptodata.CryptoData
+data class CryptoDataApiResponse(
+    val id: String,
+    val symbol: String,
+    val name: String,
+    val image: String,
+    val current_price: Double,
+    val market_cap: Long,
+    val total_volume: Double,
+    val high_24h: Double,
+    val low_24h: Double,
+    val price_change_24h: Double,
+    val price_change_percentage_24h: Double,
+    val total_supply: Double,
+    val sparkline_in_7d: SparkLineData? = null
+)
 
-class CryptoDataApiMapper {
-    fun map(cryptoApiResponse: CryptoDataApiResponse) = CryptoData(
-        name = cryptoApiResponse.name,
-        symbol = cryptoApiResponse.symbol,
-        price = cryptoApiResponse.current_price,
-        image = cryptoApiResponse.image,
-        dailyChange = cryptoApiResponse.price_change_24h,
-        dailyChangePercentage = cryptoApiResponse.price_change_percentage_24h,
-        high = cryptoApiResponse.high_24h,
-        low = cryptoApiResponse.low_24h,
-        volume = cryptoApiResponse.total_volume,
-        supply = cryptoApiResponse.total_supply,
-        marketCap = cryptoApiResponse.market_cap,
-        chartData = cryptoApiResponse.sparkline_in_7d?.price ?: emptyList()
-    )
-}
+data class SparkLineData(val price: List<Float>)
