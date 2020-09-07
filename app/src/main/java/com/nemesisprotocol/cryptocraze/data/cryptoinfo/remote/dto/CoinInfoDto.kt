@@ -10,4 +10,10 @@ data class CoinInfoDto(
     @SerializedName("first_data_at")
     val firstDataAt: String,
     @SerializedName("hardware_wallet")
-    
+    val hardwareWallet: Boolean,
+    @SerializedName("hash_algorithm")
+    val hashAlgorithm: String,
+    val id: String,
+    @SerializedName("is_active")
+    val isActive: Boolean,
+   
