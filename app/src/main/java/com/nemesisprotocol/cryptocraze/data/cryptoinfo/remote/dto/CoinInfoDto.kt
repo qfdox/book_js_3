@@ -16,4 +16,10 @@ data class CoinInfoDto(
     val id: String,
     @SerializedName("is_active")
     val isActive: Boolean,
-   
+    @SerializedName("is_new")
+    val isNew: Boolean,
+    @SerializedName("last_data_at")
+    val lastDataAt: String,
+    val links: Links,
+    @SerializedName("links_extended")
+    val linksExtended: List<Lin
