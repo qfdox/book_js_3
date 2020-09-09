@@ -22,4 +22,10 @@ data class CoinInfoDto(
     val lastDataAt: String,
     val links: Links,
     @SerializedName("links_extended")
-    val linksExtended: List<Lin
+    val linksExtended: List<LinksExtended>,
+    val message: String,
+    val name: String,
+    @SerializedName("open_source")
+    val openSource: Boolean,
+    @SerializedName("org_structure")
+    val orgS
