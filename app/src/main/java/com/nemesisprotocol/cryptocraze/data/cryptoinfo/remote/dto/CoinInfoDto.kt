@@ -35,3 +35,12 @@ data class CoinInfoDto(
     @SerializedName("started_at")
     val startedAt: String,
     val symbol: String,
+    val tags: List<Tag>,
+    val team: List<TeamMember>,
+    val type: String,
+    val whitepaper: Whitepaper
+)
+
+fun CoinInfoDto.toCoinDetail(): CoinDetail {
+    return CoinDetail(
+ 
