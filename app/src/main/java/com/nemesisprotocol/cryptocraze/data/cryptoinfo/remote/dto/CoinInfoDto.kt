@@ -43,4 +43,10 @@ data class CoinInfoDto(
 
 fun CoinInfoDto.toCoinDetail(): CoinDetail {
     return CoinDetail(
- 
+        coinId = id,
+        name = name,
+        description = description,
+        symbol = symbol,
+        rank = rank,
+        isActive = isActive,
+        tags = tags.map { i
