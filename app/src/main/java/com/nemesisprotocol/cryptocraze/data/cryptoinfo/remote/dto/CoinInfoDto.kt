@@ -49,4 +49,7 @@ fun CoinInfoDto.toCoinDetail(): CoinDetail {
         symbol = symbol,
         rank = rank,
         isActive = isActive,
-        tags = tags.map { i
+        tags = tags.map { it.name },
+        team = team
+    )
+}
