@@ -7,4 +7,6 @@ data class Tag(
     val coinCounter: Int,
     @SerializedName("ico_counter")
     val icoCounter: Int,
-    val id: St
+    val id: String,
+    val name: String
+)
