@@ -1,1 +1,6 @@
-package com.nemesisprotocol.cryptocraze.data.
+package com.nemesisprotocol.cryptocraze.data.database.converters
+
+import androidx.room.TypeConverter
+import com.nemesisprotocol.cryptocraze.presentation.walletscreen.CryptoCrazeVisaColour
+
+class CryptoCrazeVisaCo
