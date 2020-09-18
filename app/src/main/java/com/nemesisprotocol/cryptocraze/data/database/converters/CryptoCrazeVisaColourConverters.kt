@@ -9,4 +9,6 @@ class CryptoCrazeVisaColourConverters {
     fun toCryptoCrazeVisaColour(value: String) = enumValueOf<CryptoCrazeVisaColour>(value)
 
     @TypeConverter
-    fun fromCryptoCrazeVisaColour(cryp
+    fun fromCryptoCrazeVisaColour(cryptoCrazeVisaColour: CryptoCrazeVisaColour) =
+        cryptoCrazeVisaColour.name
+}
