@@ -20,3 +20,10 @@ class ListTypeConverters {
                 }
             }
             return list
+        }
+
+        @TypeConverter
+        @JvmStatic
+        fun writingStringFromFloatList(list: List<Float>): String {
+            var genreIds = ""
+            if (genreIds.isEm
