@@ -7,4 +7,9 @@ class ListTypeConverters {
         @TypeConverter
         @JvmStatic
         fun gettingFloatListFromString(floatList: String?): List<Float> {
-            val lis
+            val list = arrayListOf<Float>()
+
+            val array =
+                floatList?.split(",".toRegex())?.dropLastWhile { it.isEmpty() }?.toTypedArray()
+            if (array.isNullOrEmpty()) {
+          
