@@ -12,4 +12,11 @@ class ListTypeConverters {
             val array =
                 floatList?.split(",".toRegex())?.dropLastWhile { it.isEmpty() }?.toTypedArray()
             if (array.isNullOrEmpty()) {
-          
+                return emptyList()
+            }
+            for (s in array) {
+                if (s.isNotEmpty()) {
+                    list.add(s.toFloat())
+                }
+            }
+            return list
