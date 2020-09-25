@@ -26,4 +26,10 @@ class ListTypeConverters {
         @JvmStatic
         fun writingStringFromFloatList(list: List<Float>): String {
             var genreIds = ""
-            if (genreIds.isEm
+            if (genreIds.isEmpty()) {
+                return genreIds
+            } else {
+                for (i in list) {
+                    genreIds += ",$i"
+                }
+            }
