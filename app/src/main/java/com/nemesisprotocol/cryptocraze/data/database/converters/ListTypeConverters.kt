@@ -33,3 +33,7 @@ class ListTypeConverters {
                     genreIds += ",$i"
                 }
             }
+            return genreIds
+        }
+    }
+}
