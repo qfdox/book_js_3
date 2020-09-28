@@ -1,4 +1,9 @@
 package com.nemesisprotocol.cryptocraze.data.database.converters
 
 import androidx.room.TypeConverter
-impo
+import com.nemesisprotocol.cryptocraze.presentation.cryptotransactionscreen.TransactionType
+
+class TransactionTypeConverters {
+
+    @TypeConverter
+    fun toTransactionType(value: String) = enu
