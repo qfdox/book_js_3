@@ -6,4 +6,9 @@ import com.nemesisprotocol.cryptocraze.presentation.cryptotransactionscreen.Tran
 class TransactionTypeConverters {
 
     @TypeConverter
-    fun toTransactionType(value: String) = enu
+    fun toTransactionType(value: String) = enumValueOf<TransactionType>(value)
+
+    @TypeConverter
+    fun fromTransactionType(transactionType: TransactionType) =
+        transactionType.name
+}
