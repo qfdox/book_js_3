@@ -13,4 +13,11 @@ import com.nemesisprotocol.cryptocraze.domain.cryptodata.CryptoData
 @TypeConverters()
 interface CryptoFavDataDao {
 
-  
+    @Transaction
+    @Query("SELECT * FROM crypto_favorites")
+    fun getFavCryptos(): LiveData<List<CryptoData>>
+
+    @Insert
+    fun addFav(favCrypto: CryptoData)
+
+    
