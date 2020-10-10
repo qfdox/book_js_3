@@ -20,4 +20,10 @@ interface CryptoFavDataDao {
     @Insert
     fun addFav(favCrypto: CryptoData)
 
-    
+    @Delete
+    fun removeFav(crypto: CryptoData)
+
+    @Query("SELECT EXISTS(SELECT * FROM crypto_favorites WHERE name = :cryptoName)")
+    fun checkFavCryptoExists(cryptoName: String): Boolean
+
+    @Query("DELETE FROM cr
