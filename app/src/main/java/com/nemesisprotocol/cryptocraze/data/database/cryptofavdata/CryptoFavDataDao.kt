@@ -26,4 +26,6 @@ interface CryptoFavDataDao {
     @Query("SELECT EXISTS(SELECT * FROM crypto_favorites WHERE name = :cryptoName)")
     fun checkFavCryptoExists(cryptoName: String): Boolean
 
-    @Query("DELETE FROM cr
+    @Query("DELETE FROM crypto_favorites")
+    fun wipeFavorites()
+}
