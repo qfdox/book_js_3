@@ -29,4 +29,5 @@ interface PortfolioDao {
     fun deleteCryptoInvestment(cryptoInvestment: CryptoInvestment)
 
     @Query("DELETE FROM crypto_investments")
-    fun wi
+    fun wipePortfolio()
+}
