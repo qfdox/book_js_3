@@ -22,3 +22,11 @@ interface PortfolioDao {
     @Insert
     fun addCryptoInvestment(cryptoInvestment: CryptoInvestment)
 
+    @Update
+    fun updateCryptoInvestment(cryptoInvestment: CryptoInvestment)
+
+    @Delete
+    fun deleteCryptoInvestment(cryptoInvestment: CryptoInvestment)
+
+    @Query("DELETE FROM crypto_investments")
+    fun wi
