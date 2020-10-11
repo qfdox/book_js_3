@@ -13,4 +13,7 @@ interface PortfolioDao {
     @Query("SELECT * FROM crypto_investments")
     fun getPortfolio(): List<CryptoInvestment>
 
-    @Query("SELECT EXISTS(
+    @Query("SELECT EXISTS(SELECT * FROM crypto_investments WHERE cryptoSymbol = :cryptoSymbol)")
+    fun checkCryptoIsInvested(cryptoSymbol: String): Boolean
+
+    @Query("SELECT * FROM crypto_invest
