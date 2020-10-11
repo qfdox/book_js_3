@@ -6,4 +6,5 @@ import com.nemesisprotocol.cryptocraze.domain.portfolio.CryptoInvestment
 
 @Database(entities = [CryptoInvestment::class], version = 2, exportSchema = false)
 abstract class PortfolioDatabase : RoomDatabase() {
-    abstract fun portfolioDao():
+    abstract fun portfolioDao(): PortfolioDao
+}
