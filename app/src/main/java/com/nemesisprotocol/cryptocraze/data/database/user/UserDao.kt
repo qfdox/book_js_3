@@ -11,4 +11,9 @@ import com.nemesisprotocol.cryptocraze.domain.user.User
 interface UserDao {
 
     @Query("SELECT * FROM user")
-    fun g
+    fun getUsers(): LiveData<List<User>>
+
+    @Query("SELECT * from user where username = :username")
+    fun getUserByUsername(username: String): User
+
+    @Query("SELECT EXISTS(SELECT * FROM user WHERE 
