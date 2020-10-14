@@ -20,4 +20,14 @@ interface UserDao {
     fun checkUserExists(username: String): Boolean
 
     @Query("SELECT EXISTS(SELECT * FROM user WHERE username = :username AND password = :password)")
-    fun isValidLogin
+    fun isValidLoginCredentials(username: String, password: String): Boolean
+
+    @Insert
+    fun addUser(user: User)
+
+    @Delete
+    fun deleteUser(user: User)
+
+    @Query("DELETE FROM user")
+    fun wipeUsers()
+}
