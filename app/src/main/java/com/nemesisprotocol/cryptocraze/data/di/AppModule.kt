@@ -42,3 +42,64 @@ object AppModule {
     @Singleton
     fun provideCryptoDataApi(): CryptoDataApi {
         return Retrofit.Builder()
+            .baseUrl(Constants.COIN_GECKO_BASE_URL)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+            .create(CryptoDataApi::class.java)
+    }
+
+    @Provides
+    fun provideCryptoDataMapper(): CryptoDataApiMapper = CryptoDataApiMapper()
+
+    @Provides
+    @Singleton
+    fun provideCryptoDataRepo(cryptoDataRepoImpl: CryptoDataRepoImpl): CryptoDataRepo =
+        cryptoDataRepoImpl
+
+    @Provides
+    @Singleton
+    fun provideCryptoFavDataRepo(cryptoFavDataRepoImpl: CryptoFavDataRepoImpl): CryptoFavDataRepo =
+        cryptoFavDataRepoImpl
+
+    @Provides
+    @Singleton
+    fun providePaprikaApi(): CoinPaprikaApi {
+        return Retrofit.Builder()
+            .baseUrl(Constants.COIN_PAPRIKA_BASE_URL)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+            .create(CoinPaprikaApi::class.java)
+    }
+
+    @Provides
+    @Singleton
+    fun provideCoinRepo(coinRepoImpl: CoinRepoImpl): CoinRepo = coinRepoImpl
+
+    @Provides
+    @Singleton
+    fun providePaymentInfoRepo(paymentInfoRepoImpl: PaymentInfoRepoImpl): PaymentInfoRepo =
+        paymentInfoRepoImpl
+
+    @Provides
+    @Singleton
+    fun provideTransactionHistoryRepo(transactionHistoryRepoImpl: TransactionHistoryRepoImpl):
+        TransactionHistoryRepo = transactionHistoryRepoImpl
+
+    @Provides
+    @Singleton
+    fun providePortfolioRepo(portfolioRepoImpl: PortfolioRepoImpl):
+        PortfolioRepo = portfolioRepoImpl
+
+    @Singleton
+    @Provides
+    fun provideDispatchers(): DispatcherProvider = object : DispatcherProvider {
+        override val main: CoroutineDispatcher
+            get() = Dispatchers.Main
+        override val io: CoroutineDispatcher
+            get() = Dispatchers.IO
+        override val default: CoroutineDispatcher
+            get() = Dispatchers.Default
+        override val unconfined: CoroutineDispatcher
+            get() = Dispatchers.Unconfined
+    }
+}
