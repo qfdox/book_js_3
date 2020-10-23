@@ -4,4 +4,6 @@ import android.content.Context
 import androidx.room.Room
 import com.nemesisprotocol.cryptocraze.data.database.cryptofavdata.CryptoFavDataDao
 import com.nemesisprotocol.cryptocraze.data.database.cryptofavdata.CryptoFavDataDatabase
-import com.nemesis
+import com.nemesisprotocol.cryptocraze.data.database.paymentinfo.PaymentInfoDao
+import com.nemesisprotocol.cryptocraze.data.database.paymentinfo.PaymentInfoDatabase
+import com.nemesi
