@@ -8,4 +8,6 @@ import com.nemesisprotocol.cryptocraze.data.database.paymentinfo.PaymentInfoDao
 import com.nemesisprotocol.cryptocraze.data.database.paymentinfo.PaymentInfoDatabase
 import com.nemesisprotocol.cryptocraze.data.database.portfolio.PortfolioDao
 import com.nemesisprotocol.cryptocraze.data.database.portfolio.PortfolioDatabase
-import com.nemesisprotocol.cryptocraze.data.database.transactio
+import com.nemesisprotocol.cryptocraze.data.database.transactionhistory.TransactionHistoryDao
+import com.nemesisprotocol.cryptocraze.data.database.transactionhistory.TransactionHistoryDatabase
+import com.nemesisprotocol.cryptocraze.data.databa
