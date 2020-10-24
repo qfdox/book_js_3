@@ -10,4 +10,9 @@ import com.nemesisprotocol.cryptocraze.data.database.portfolio.PortfolioDao
 import com.nemesisprotocol.cryptocraze.data.database.portfolio.PortfolioDatabase
 import com.nemesisprotocol.cryptocraze.data.database.transactionhistory.TransactionHistoryDao
 import com.nemesisprotocol.cryptocraze.data.database.transactionhistory.TransactionHistoryDatabase
-import com.nemesisprotocol.cryptocraze.data.databa
+import com.nemesisprotocol.cryptocraze.data.database.user.UserDao
+import com.nemesisprotocol.cryptocraze.data.database.user.UserDatabase
+import dagger.Module
+import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.Applicati
