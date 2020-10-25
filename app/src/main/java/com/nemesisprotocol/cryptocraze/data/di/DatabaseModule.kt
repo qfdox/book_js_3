@@ -23,4 +23,7 @@ import javax.inject.Singleton
 @Module
 class DatabaseModule {
 
-    @
+    @Provides
+    @Singleton
+    fun provideUserDatabase(@ApplicationContext context: Context): UserDatabase {
+        return Room.databaseBuilder(context, UserDataba
