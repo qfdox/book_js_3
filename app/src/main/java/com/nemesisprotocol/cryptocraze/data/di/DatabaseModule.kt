@@ -26,4 +26,12 @@ class DatabaseModule {
     @Provides
     @Singleton
     fun provideUserDatabase(@ApplicationContext context: Context): UserDatabase {
-        return Room.databaseBuilder(context, UserDataba
+        return Room.databaseBuilder(context, UserDatabase::class.java, "user_db").build()
+    }
+
+    @Provides
+    fun provideUserDao(userDatabase: UserDatabase): UserDao = userDatabase.userDao()
+
+    @Provides
+    @Singleton
+    fun provideCryp
