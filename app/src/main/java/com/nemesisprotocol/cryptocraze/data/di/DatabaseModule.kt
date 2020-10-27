@@ -44,4 +44,9 @@ class DatabaseModule {
 
     @Provides
     fun provideCryptoDataDao(cryptoFavDataDatabase: CryptoFavDataDatabase): CryptoFavDataDao =
-        cryptoFavDataDa
+        cryptoFavDataDatabase.cryptoFavDataDao()
+
+    @Provides
+    @Singleton
+    fun providePaymentInfoDatabase(@ApplicationContext context: Context): PaymentInfoDatabase {
+        return Room.databaseB
