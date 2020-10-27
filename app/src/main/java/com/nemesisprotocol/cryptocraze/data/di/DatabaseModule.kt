@@ -37,4 +37,11 @@ class DatabaseModule {
     fun provideCryptoDataDatabase(@ApplicationContext context: Context): CryptoFavDataDatabase {
         return Room.databaseBuilder(
             context,
-            CryptoFavDataDatabase::cl
+            CryptoFavDataDatabase::class.java,
+            "crypto_fav_data_db"
+        ).build()
+    }
+
+    @Provides
+    fun provideCryptoDataDao(cryptoFavDataDatabase: CryptoFavDataDatabase): CryptoFavDataDao =
+        cryptoFavDataDa
