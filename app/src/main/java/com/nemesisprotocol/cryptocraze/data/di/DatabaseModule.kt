@@ -34,4 +34,7 @@ class DatabaseModule {
 
     @Provides
     @Singleton
-    fun provideCryp
+    fun provideCryptoDataDatabase(@ApplicationContext context: Context): CryptoFavDataDatabase {
+        return Room.databaseBuilder(
+            context,
+            CryptoFavDataDatabase::cl
