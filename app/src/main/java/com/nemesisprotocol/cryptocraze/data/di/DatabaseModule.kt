@@ -49,4 +49,10 @@ class DatabaseModule {
     @Provides
     @Singleton
     fun providePaymentInfoDatabase(@ApplicationContext context: Context): PaymentInfoDatabase {
-        return Room.databaseB
+        return Room.databaseBuilder(context, PaymentInfoDatabase::class.java, "payment_info_db")
+            .build()
+    }
+
+    @Provides
+    fun providePaymentInfoDao(paymentInfoDatabase: PaymentInfoDatabase): PaymentInfoDao =
+ 
