@@ -63,4 +63,9 @@ class DatabaseModule {
 
     @Provides
     @Singleton
-    fun provideTransactionHistoryDatabase(@ApplicationContext co
+    fun provideTransactionHistoryDatabase(@ApplicationContext context: Context): TransactionHistoryDatabase {
+        return Room.databaseBuilder(
+            context,
+            TransactionHistoryDatabase::class.java,
+            "transaction_history_db"
+   
