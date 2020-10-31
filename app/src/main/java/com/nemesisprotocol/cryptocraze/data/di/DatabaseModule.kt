@@ -58,4 +58,9 @@ class DatabaseModule {
         paymentInfoDatabase.paymentInfoDao()
 
     @Provides
-    fun provideTransactionHistoryDao(transactionHistoryDatabase: TransactionHistoryDatabase): T
+    fun provideTransactionHistoryDao(transactionHistoryDatabase: TransactionHistoryDatabase): TransactionHistoryDao =
+        transactionHistoryDatabase.transactionHistoryDao()
+
+    @Provides
+    @Singleton
+    fun provideTransactionHistoryDatabase(@ApplicationContext co
