@@ -68,4 +68,13 @@ class DatabaseModule {
             context,
             TransactionHistoryDatabase::class.java,
             "transaction_history_db"
-   
+        ).build()
+    }
+
+    @Provides
+    fun providePortfolioDao(portfolioDatabase: PortfolioDatabase): PortfolioDao =
+        portfolioDatabase.portfolioDao()
+
+    @Provides
+    @Singleton
+ 
