@@ -77,4 +77,7 @@ class DatabaseModule {
 
     @Provides
     @Singleton
- 
+    fun providePortfolioDatabase(@ApplicationContext context: Context): PortfolioDatabase {
+        return Room.databaseBuilder(
+            context,
+            Portfo
