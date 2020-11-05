@@ -80,4 +80,8 @@ class DatabaseModule {
     fun providePortfolioDatabase(@ApplicationContext context: Context): PortfolioDatabase {
         return Room.databaseBuilder(
             context,
-            Portfo
+            PortfolioDatabase::class.java,
+            "portfolio_db"
+        ).fallbackToDestructiveMigration().build()
+    }
+}
