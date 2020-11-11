@@ -32,4 +32,7 @@ import java.io.IOException
 
 class PageNumberSource<Value : Any>(private val loadPage: suspend (pageNum: Int, pageSize: Int) -> List<Value>?) :
     PagingSource<Int, Value>() {
-    override suspend fun loa
+    override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Value> {
+        return try {
+            val page = params.key ?: 1
+            val result = loadPage(pag
