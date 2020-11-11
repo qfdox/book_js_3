@@ -30,4 +30,6 @@ import retrofit2.HttpException
 import java.io.EOFException
 import java.io.IOException
 
-class
+class PageNumberSource<Value : Any>(private val loadPage: suspend (pageNum: Int, pageSize: Int) -> List<Value>?) :
+    PagingSource<Int, Value>() {
+    override suspend fun loa
