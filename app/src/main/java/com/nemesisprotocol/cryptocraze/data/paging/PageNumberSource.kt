@@ -35,4 +35,8 @@ class PageNumberSource<Value : Any>(private val loadPage: suspend (pageNum: Int,
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Value> {
         return try {
             val page = params.key ?: 1
-            val result = loadPage(pag
+            val result = loadPage(page, params.loadSize)
+                ?: return LoadResult.Error(EOFException("No data left to load"))
+            LoadResult.Page(
+                data = result,
+            
