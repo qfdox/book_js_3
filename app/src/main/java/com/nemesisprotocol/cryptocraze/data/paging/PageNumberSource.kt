@@ -39,4 +39,9 @@ class PageNumberSource<Value : Any>(private val loadPage: suspend (pageNum: Int,
                 ?: return LoadResult.Error(EOFException("No data left to load"))
             LoadResult.Page(
                 data = result,
-            
+                prevKey = if (page == 1) null else page - 1,
+                nextKey = page.plus(1)
+            )
+        } catch (e: IOException) {
+            return LoadResult.Error(e)
+        }
