@@ -44,4 +44,10 @@ class PageNumberSource<Value : Any>(private val loadPage: suspend (pageNum: Int,
             )
         } catch (e: IOException) {
             return LoadResult.Error(e)
+        } catch (e: HttpException) {
+            return LoadResult.Error(e)
         }
+    }
+
+    override fun getRefreshKey(state: PagingState<Int, Value>): Int? {
+        return state.anchorPosition?.let { ancho
