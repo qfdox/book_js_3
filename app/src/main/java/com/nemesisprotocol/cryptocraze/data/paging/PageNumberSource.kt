@@ -50,4 +50,9 @@ class PageNumberSource<Value : Any>(private val loadPage: suspend (pageNum: Int,
     }
 
     override fun getRefreshKey(state: PagingState<Int, Value>): Int? {
-        return state.anchorPosition?.let { ancho
+        return state.anchorPosition?.let { anchorPosition ->
+            val anchorPage = state.closestPageToPosition(anchorPosition)
+            anchorPage?.prevKey?.plus(1) ?: anchorPage?.nextKey?.minus(1)
+        }
+    }
+}
