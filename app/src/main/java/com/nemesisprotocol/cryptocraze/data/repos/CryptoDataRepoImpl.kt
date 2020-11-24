@@ -8,4 +8,10 @@ import com.nemesisprotocol.cryptocraze.domain.cryptodata.CryptoDataRepo
 import javax.inject.Inject
 
 class CryptoDataRepoImpl @Inject constructor(
-    private val cryptoApi: 
+    private val cryptoApi: CryptoDataApi,
+    private val cryptoApiMapper: CryptoDataApiMapper
+) : CryptoDataRepo {
+
+    @WorkerThread
+    override suspend fun getPageCryptos(page: Int, pageSize: Int): List<CryptoData> {
+        v
