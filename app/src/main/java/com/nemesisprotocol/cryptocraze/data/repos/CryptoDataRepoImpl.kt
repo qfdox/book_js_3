@@ -14,4 +14,6 @@ class CryptoDataRepoImpl @Inject constructor(
 
     @WorkerThread
     override suspend fun getPageCryptos(page: Int, pageSize: Int): List<CryptoData> {
-        v
+        val response = cryptoApi.getAllCrypto(page)
+        return if (response.isSuccessful && !response.body().isNullOrEmpty()) {
+            val cryptoApiResponseList = response.body()
