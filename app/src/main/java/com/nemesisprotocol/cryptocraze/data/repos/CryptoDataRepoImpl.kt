@@ -17,3 +17,9 @@ class CryptoDataRepoImpl @Inject constructor(
         val response = cryptoApi.getAllCrypto(page)
         return if (response.isSuccessful && !response.body().isNullOrEmpty()) {
             val cryptoApiResponseList = response.body()
+            val cryptoList = cryptoApiResponseList?.map { cryptoApiResponse ->
+                cryptoApiMapper.map(cryptoApiResponse)
+            }
+            cryptoList ?: emptyList()
+        } else {
+   
