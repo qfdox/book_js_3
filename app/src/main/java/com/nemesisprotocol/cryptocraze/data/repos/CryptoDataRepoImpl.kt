@@ -22,4 +22,11 @@ class CryptoDataRepoImpl @Inject constructor(
             }
             cryptoList ?: emptyList()
         } else {
-   
+            emptyList()
+        }
+    }
+
+    @WorkerThread
+    override suspend fun getCryptoDataBySymbol(symbol: String): List<CryptoData> {
+        val response = cryptoApi.getCryptoDataBySymbol(symbol)
+        retur
