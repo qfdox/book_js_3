@@ -17,4 +17,12 @@ class CryptoFavDataRepoImpl @Inject constructor(private val cryptoFavDataDao: Cr
         cryptoFavDataDao.addFav(favCryptoData)
     }
 
-    override suspend fun removeFav(cryptoData: CryptoData) 
+    override suspend fun removeFav(cryptoData: CryptoData) {
+        cryptoFavDataDao.removeFav(cryptoData)
+    }
+
+    override suspend fun checkFavCryptoExists(name: String): Boolean {
+        return cryptoFavDataDao.checkFavCryptoExists(name)
+    }
+
+   
