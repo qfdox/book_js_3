@@ -13,3 +13,8 @@ class CryptoFavDataRepoImpl @Inject constructor(private val cryptoFavDataDao: Cr
         return cryptoFavDataDao.getFavCryptos()
     }
 
+    override suspend fun addFav(favCryptoData: CryptoData) {
+        cryptoFavDataDao.addFav(favCryptoData)
+    }
+
+    override suspend fun removeFav(cryptoData: CryptoData) 
