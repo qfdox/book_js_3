@@ -25,4 +25,7 @@ class CryptoFavDataRepoImpl @Inject constructor(private val cryptoFavDataDao: Cr
         return cryptoFavDataDao.checkFavCryptoExists(name)
     }
 
-   
+    override suspend fun wipeFavorites() {
+        cryptoFavDataDao.wipeFavorites()
+    }
+}
