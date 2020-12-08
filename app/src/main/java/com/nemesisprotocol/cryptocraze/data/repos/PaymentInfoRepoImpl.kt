@@ -7,4 +7,10 @@ import com.nemesisprotocol.cryptocraze.domain.paymentinfo.PaymentInfoRepo
 import javax.inject.Inject
 
 class PaymentInfoRepoImpl @Inject constructor(private val paymentInfoDao: PaymentInfoDao) :
-    Paymen
+    PaymentInfoRepo {
+
+    override fun getFiatWallets(): List<FiatWalletCard> {
+        return paymentInfoDao.getFiatWallets()
+    }
+
+    override fun getFiatWalletByCardNumber(cardNumber: Long): Fiat
