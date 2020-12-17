@@ -13,4 +13,9 @@ class PaymentInfoRepoImpl @Inject constructor(private val paymentInfoDao: Paymen
         return paymentInfoDao.getFiatWallets()
     }
 
-    override fun getFiatWalletByCardNumber(cardNumber: Long): Fiat
+    override fun getFiatWalletByCardNumber(cardNumber: Long): FiatWalletCard {
+        return paymentInfoDao.getFiatWalletByCardNumber(cardNumber = cardNumber)
+    }
+
+    override fun addFiatWallet(fiatWalletCard: FiatWalletCard) {
+   
