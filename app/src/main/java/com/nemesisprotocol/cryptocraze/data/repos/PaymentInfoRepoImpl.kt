@@ -22,4 +22,9 @@ class PaymentInfoRepoImpl @Inject constructor(private val paymentInfoDao: Paymen
     }
 
     override fun updateFiatWallet(fiatWalletCard: FiatWalletCard) {
-        paymentInfoDao.updateFiatWallet(fiatWallet
+        paymentInfoDao.updateFiatWallet(fiatWalletCard = fiatWalletCard)
+    }
+
+    override fun deleteFiatWallet(fiatWalletCard: FiatWalletCard) {
+        paymentInfoDao.deleteFiatWallet(fiatWalletCard = fiatWalletCard)
+    }
