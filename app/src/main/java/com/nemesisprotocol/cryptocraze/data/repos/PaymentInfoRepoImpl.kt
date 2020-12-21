@@ -37,4 +37,8 @@ class PaymentInfoRepoImpl @Inject constructor(private val paymentInfoDao: Paymen
         return paymentInfoDao.getCryptoCrazeVisaCardByCardId(cardId = cardId)
     }
 
-    override fun addCryptoCrazeVisaCard(cryptoCrazeVisaCar
+    override fun addCryptoCrazeVisaCard(cryptoCrazeVisaCard: CryptoCrazeVisaCard) {
+        paymentInfoDao.addCryptoCrazeVisaCard(cryptoCrazeVisaCard = cryptoCrazeVisaCard)
+    }
+
+    override fun updateCryptoCrazeVisaCard(cry
