@@ -8,4 +8,9 @@ import javax.inject.Inject
 class PortfolioRepoImpl @Inject constructor(private val portfolioDao: PortfolioDao) :
     PortfolioRepo {
 
-    override fun getPortfolio(): List<Crypt
+    override fun getPortfolio(): List<CryptoInvestment> {
+        return portfolioDao.getPortfolio()
+    }
+
+    override fun checkCryptoIsInvested(cryptoSymbol: String): Boolean {
+        return portfoli
