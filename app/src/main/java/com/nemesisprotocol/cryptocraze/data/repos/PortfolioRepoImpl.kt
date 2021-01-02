@@ -21,4 +21,11 @@ class PortfolioRepoImpl @Inject constructor(private val portfolioDao: PortfolioD
     }
 
     override fun addCryptoInvestment(cryptoInvestment: CryptoInvestment) {
-        portfolioDao.addCryptoInvestment(cryptoInvestment = cryptoInves
+        portfolioDao.addCryptoInvestment(cryptoInvestment = cryptoInvestment)
+    }
+
+    override fun updateCryptoInvestment(cryptoInvestment: CryptoInvestment) {
+        portfolioDao.updateCryptoInvestment(cryptoInvestment = cryptoInvestment)
+    }
+
+  
