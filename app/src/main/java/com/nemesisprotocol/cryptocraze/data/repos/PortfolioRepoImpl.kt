@@ -28,4 +28,8 @@ class PortfolioRepoImpl @Inject constructor(private val portfolioDao: PortfolioD
         portfolioDao.updateCryptoInvestment(cryptoInvestment = cryptoInvestment)
     }
 
-  
+    override fun deleteCryptoInvestment(cryptoInvestment: CryptoInvestment) {
+        portfolioDao.deleteCryptoInvestment(cryptoInvestment = cryptoInvestment)
+    }
+
+    overrid
