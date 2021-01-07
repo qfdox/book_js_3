@@ -7,4 +7,10 @@ import java.io.Serializable
 
 @Entity(tableName = "crypto_favorites")
 data class CryptoData(
-    @PrimaryK
+    @PrimaryKey
+    val symbol: String,
+    @ColumnInfo val price: Double,
+    @ColumnInfo val name: String,
+    @ColumnInfo val image: String,
+    @ColumnInfo val dailyChange: Double,
+    @ColumnInfo val dai
