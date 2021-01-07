@@ -17,4 +17,6 @@ class TransactionHistoryRepoImpl @Inject constructor(private val transactionHist
     }
 
     override fun deleteTransactionRecord(transactionRecord: TransactionRecord) {
-        transactionHis
+        transactionHistoryDao.deleteTransactionRecord(transactionRecord = transactionRecord)
+    }
+}
