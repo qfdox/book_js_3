@@ -13,4 +13,9 @@ data class CryptoData(
     @ColumnInfo val name: String,
     @ColumnInfo val image: String,
     @ColumnInfo val dailyChange: Double,
-    @ColumnInfo val dai
+    @ColumnInfo val dailyChangePercentage: Double,
+    @ColumnInfo val high: Double,
+    @ColumnInfo val low: Double,
+    @ColumnInfo val marketCap: Long,
+    @ColumnInfo val volume: Double,
+    @ColumnInfo 
