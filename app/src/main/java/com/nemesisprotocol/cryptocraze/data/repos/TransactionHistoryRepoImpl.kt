@@ -8,4 +8,8 @@ import javax.inject.Inject
 class TransactionHistoryRepoImpl @Inject constructor(private val transactionHistoryDao: TransactionHistoryDao) :
     TransactionHistoryRepo {
 
-    override fun get
+    override fun getTransactionRecords(): List<TransactionRecord> {
+        return transactionHistoryDao.getTransactionRecords()
+    }
+
+    override fun addTransactionRecord(transactionRecord: TransactionReco
