@@ -1,3 +1,5 @@
 package com.nemesisprotocol.cryptocraze.data.repos
 
-import com.nemesisprotocol.cryptocraze.data.database.transactionhis
+import com.nemesisprotocol.cryptocraze.data.database.transactionhistory.TransactionHistoryDao
+import com.nemesisprotocol.cryptocraze.domain.transactionhistory.TransactionHistoryRepo
+import com.nemesisprotocol.cryptocraze.domain.transactionhistory.Transac
