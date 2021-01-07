@@ -12,4 +12,9 @@ class TransactionHistoryRepoImpl @Inject constructor(private val transactionHist
         return transactionHistoryDao.getTransactionRecords()
     }
 
-    override fun addTransactionRecord(transactionRecord: TransactionReco
+    override fun addTransactionRecord(transactionRecord: TransactionRecord) {
+        transactionHistoryDao.addTransactionRecord(transactionRecord = transactionRecord)
+    }
+
+    override fun deleteTransactionRecord(transactionRecord: TransactionRecord) {
+        transactionHis
