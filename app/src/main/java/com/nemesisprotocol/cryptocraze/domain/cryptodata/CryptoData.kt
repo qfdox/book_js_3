@@ -18,4 +18,11 @@ data class CryptoData(
     @ColumnInfo val low: Double,
     @ColumnInfo val marketCap: Long,
     @ColumnInfo val volume: Double,
-    @ColumnInfo 
+    @ColumnInfo val supply: Double?,
+    @ColumnInfo val chartData: List<Float>
+) : Serializable {
+
+    fun mapPriceInfo(): CryptoDataPriceInfo {
+        return CryptoDataPriceInfo(symbol, price, name)
+    }
+
