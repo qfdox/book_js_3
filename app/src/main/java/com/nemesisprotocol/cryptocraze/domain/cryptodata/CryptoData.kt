@@ -31,4 +31,9 @@ data class CryptoData(
     }
 
     override fun hashCode(): Int {
-        var result = symbol.hashCod
+        var result = symbol.hashCode()
+        result = 31 * result + price.hashCode()
+        result = 31 * result + name.hashCode()
+        result = 31 * result + image.hashCode()
+        result = 31 * result + dailyChange.hashCode()
+ 
