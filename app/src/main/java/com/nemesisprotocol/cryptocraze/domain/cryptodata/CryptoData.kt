@@ -26,3 +26,9 @@ data class CryptoData(
         return CryptoDataPriceInfo(symbol, price, name)
     }
 
+    override fun equals(other: Any?): Boolean {
+        return (other as CryptoData).symbol == symbol
+    }
+
+    override fun hashCode(): Int {
+        var result = symbol.hashCod
