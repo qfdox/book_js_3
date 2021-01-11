@@ -39,4 +39,7 @@ data class CryptoData(
         result = 31 * result + dailyChangePercentage.hashCode()
         result = 31 * result + high.hashCode()
         result = 31 * result + low.hashCode()
-        result = 31 *
+        result = 31 * result + marketCap.hashCode()
+        result = 31 * result + volume.hashCode()
+        result = 31 * result + (supply?.hashCode() ?: 0)
+        result = 31 * result + chartData.ha
