@@ -36,4 +36,7 @@ data class CryptoData(
         result = 31 * result + name.hashCode()
         result = 31 * result + image.hashCode()
         result = 31 * result + dailyChange.hashCode()
- 
+        result = 31 * result + dailyChangePercentage.hashCode()
+        result = 31 * result + high.hashCode()
+        result = 31 * result + low.hashCode()
+        result = 31 *
