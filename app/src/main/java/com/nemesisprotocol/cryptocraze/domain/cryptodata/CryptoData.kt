@@ -42,4 +42,7 @@ data class CryptoData(
         result = 31 * result + marketCap.hashCode()
         result = 31 * result + volume.hashCode()
         result = 31 * result + (supply?.hashCode() ?: 0)
-        result = 31 * result + chartData.ha
+        result = 31 * result + chartData.hashCode()
+        return result
+    }
+}
