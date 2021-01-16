@@ -12,4 +12,5 @@ class AddFavCryptoDataUseCase @Inject constructor(private val cryptoFavDataRepo:
     operator fun invoke(cryptoData: CryptoData) =
         addFavCryptoDataCoroutineScope.launch {
             cryptoFavDataRepo.addFav(cryptoData)
-     
+        }
+}
