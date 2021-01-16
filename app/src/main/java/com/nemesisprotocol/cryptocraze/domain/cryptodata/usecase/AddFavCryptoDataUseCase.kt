@@ -8,4 +8,8 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 class AddFavCryptoDataUseCase @Inject constructor(private val cryptoFavDataRepo: CryptoFavDataRepo) {
-    private val addFavCryptoDataCoroutineScop
+    private val addFavCryptoDataCoroutineScope = CoroutineScope(Dispatchers.Default)
+    operator fun invoke(cryptoData: CryptoData) =
+        addFavCryptoDataCoroutineScope.launch {
+            cryptoFavDataRepo.addFav(cryptoData)
+     
