@@ -10,4 +10,5 @@ import javax.inject.Inject
 class RemoveFavCryptoDataUseCase @Inject constructor(private val cryptoFavDataRepo: CryptoFavDataRepo) {
     private val removeFavCryptoDataCoroutineScope = CoroutineScope(Dispatchers.Default)
     operator fun invoke(cryptoData: CryptoData) =
- 
+        removeFavCryptoDataCoroutineScope.launch { cryptoFavDataRepo.removeFav(cryptoData) }
+}
