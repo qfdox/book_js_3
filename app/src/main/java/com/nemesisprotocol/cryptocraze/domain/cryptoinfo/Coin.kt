@@ -1,4 +1,9 @@
 package com.nemesisprotocol.cryptocraze.domain.cryptoinfo
 
 data class Coin(
-    v
+    val id: String,
+    val isActive: Boolean,
+    val name: String,
+    val rank: Int,
+    val symbol: String,
+)
