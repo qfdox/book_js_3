@@ -5,4 +5,7 @@ import com.nemesisprotocol.cryptocraze.data.cryptoinfo.remote.dto.CoinInfoDto
 
 interface CoinRepo {
 
-  
+    suspend fun getCoins(): List<CoinDto>
+
+    suspend fun getCoinById(coinId: String): CoinInfoDto
+}
