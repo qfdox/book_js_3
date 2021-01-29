@@ -8,4 +8,6 @@ import com.nemesisprotocol.cryptocraze.presentation.walletscreen.CryptoCrazeVisa
 @Entity(tableName = "crypto_craze_visa_card_info")
 data class CryptoCrazeVisaCard(
     @PrimaryKey(autoGenerate = true) val cardId: Int = 0,
-    @Colu
+    @ColumnInfo val balance: Double = 1000000.00,
+    @ColumnInfo val cryptoCrazeVisaColour: CryptoCrazeVisaColour
+)
