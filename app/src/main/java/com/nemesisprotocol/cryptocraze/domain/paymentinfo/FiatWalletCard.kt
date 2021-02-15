@@ -10,4 +10,5 @@ data class FiatWalletCard(
     @ColumnInfo val cardName: String,
     @ColumnInfo val expiryNumber: Int,
     @ColumnInfo val cvvNumber: Int,
-    @ColumnInfo val balance: Double = 1000000
+    @ColumnInfo val balance: Double = 10000000.00
+)
