@@ -6,4 +6,5 @@ import javax.inject.Inject
 
 class DeleteCryptoCrazeVisaCardUseCase @Inject constructor(private val paymentInfoRepo: PaymentInfoRepo) {
     operator fun invoke(cryptoCrazeVisaCard: CryptoCrazeVisaCard) =
-        paymentInfoRepo.deleteCryptoCrazeVisaCard(cryptoCraz
+        paymentInfoRepo.deleteCryptoCrazeVisaCard(cryptoCrazeVisaCard)
+}
