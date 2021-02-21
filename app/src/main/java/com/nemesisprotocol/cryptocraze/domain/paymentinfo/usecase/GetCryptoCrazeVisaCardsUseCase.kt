@@ -1,1 +1,4 @@
-package com.nemesisprotoco
+package com.nemesisprotocol.cryptocraze.domain.paymentinfo.usecase
+
+import com.nemesisprotocol.cryptocraze.domain.paymentinfo.CryptoCrazeVisaCard
+import com.nemesisprotocol.cryptocraze.domain.paymentinfo.Payment
