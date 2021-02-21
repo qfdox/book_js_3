@@ -5,4 +5,6 @@ import com.nemesisprotocol.cryptocraze.domain.paymentinfo.PaymentInfoRepo
 import javax.inject.Inject
 
 class DeleteFiatWalletUseCase @Inject constructor(private val paymentInfoRepo: PaymentInfoRepo) {
-    o
+    operator fun invoke(fiatWalletCard: FiatWalletCard) =
+        paymentInfoRepo.deleteFiatWallet(fiatWalletCard)
+}
