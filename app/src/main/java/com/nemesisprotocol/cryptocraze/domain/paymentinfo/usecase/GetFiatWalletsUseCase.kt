@@ -1,4 +1,7 @@
 package com.nemesisprotocol.cryptocraze.domain.paymentinfo.usecase
 
 import com.nemesisprotocol.cryptocraze.domain.paymentinfo.FiatWalletCard
-i
+import com.nemesisprotocol.cryptocraze.domain.paymentinfo.PaymentInfoRepo
+import javax.inject.Inject
+
+class GetFiatWalletsUseCase @Inject constructor(private val pa
