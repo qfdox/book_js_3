@@ -6,4 +6,5 @@ import javax.inject.Inject
 
 class GetFiatWalletByCardNumberUseCase @Inject constructor(private val paymentInfoRepo: PaymentInfoRepo) {
     operator fun invoke(cardNumber: Long): FiatWalletCard =
-        paymentInfoRepo.getFiatWalletByCardNumber(cardNumber = cardNum
+        paymentInfoRepo.getFiatWalletByCardNumber(cardNumber = cardNumber)
+}
