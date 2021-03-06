@@ -7,3 +7,8 @@ import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 class CheckCryptoIsInvestedUseCase @Inject constructor(private val portfolioRepo: PortfolioRepo) {
+    suspend operator fun invoke(cryptoSymbol: String) =
+        withContext(Dispatchers.Default) {
+            portfolioRepo.checkCryptoIsInvested(cryptoSymbol)
+        }
+}
