@@ -8,4 +8,8 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 class DeleteCryptoInvestmentUseCase @Inject constructor(private val portfolioRepo: PortfolioRepo) {
-    private val deleteCryptoInvestmentCoroutineScope = CoroutineScope(Dispatchers.Defau
+    private val deleteCryptoInvestmentCoroutineScope = CoroutineScope(Dispatchers.Default)
+    operator fun invoke(cryptoInvestment: CryptoInvestment) =
+        deleteCryptoInvestmentCoroutineScope.launch {
+            portfolioRepo.deleteCryptoInvestment(cryptoInvestment)
+ 
