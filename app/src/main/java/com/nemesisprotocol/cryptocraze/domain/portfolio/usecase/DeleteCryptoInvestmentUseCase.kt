@@ -7,4 +7,5 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
-class DeleteCryptoIn
+class DeleteCryptoInvestmentUseCase @Inject constructor(private val portfolioRepo: PortfolioRepo) {
+    private val deleteCryptoInvestmentCoroutineScope = CoroutineScope(Dispatchers.Defau
