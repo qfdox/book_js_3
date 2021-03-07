@@ -12,4 +12,5 @@ class DeleteCryptoInvestmentUseCase @Inject constructor(private val portfolioRep
     operator fun invoke(cryptoInvestment: CryptoInvestment) =
         deleteCryptoInvestmentCoroutineScope.launch {
             portfolioRepo.deleteCryptoInvestment(cryptoInvestment)
- 
+        }
+}
