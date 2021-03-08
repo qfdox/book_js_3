@@ -8,4 +8,6 @@ import javax.inject.Inject
 class GetCryptoInvestmentBySymbolUseCase @Inject constructor(private val portfolioRepo: PortfolioRepo) {
     suspend operator fun invoke(cryptoSymbol: String) =
         withContext(Dispatchers.Default) {
-            portfolioRepo.getCryptoInvestm
+            portfolioRepo.getCryptoInvestmentBySymbol(cryptoSymbol)
+        }
+}
