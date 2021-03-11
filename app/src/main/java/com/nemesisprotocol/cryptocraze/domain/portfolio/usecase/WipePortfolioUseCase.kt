@@ -6,4 +6,5 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
-class W
+class WipePortfolioUseCase @Inject constructor(private val portfolioRepo: PortfolioRepo) {
+    private val wipePortfolioCoroutineScope = CoroutineScope(Dispatchers.Default)
