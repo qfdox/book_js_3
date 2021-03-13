@@ -8,3 +8,8 @@ import javax.inject.Inject
 
 class WipePortfolioUseCase @Inject constructor(private val portfolioRepo: PortfolioRepo) {
     private val wipePortfolioCoroutineScope = CoroutineScope(Dispatchers.Default)
+    operator fun invoke() =
+        wipePortfolioCoroutineScope.launch {
+            portfolioRepo.wipePortfolio()
+        }
+}
