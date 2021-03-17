@@ -10,4 +10,8 @@ import java.util.UUID
 @Entity(tableName = "transaction_records")
 data class TransactionRecord(
     @PrimaryKey val transactionUuid: String = UUID.randomUUID().toString(),
-    @ColumnInfo val cryptoSymbol
+    @ColumnInfo val cryptoSymbol: String,
+    @ColumnInfo val cryptoAmount: Double,
+    @ColumnInfo val amount: String,
+    @ColumnInfo val timestamp: Date = Date(),
+    @ColumnInfo val transactionType
