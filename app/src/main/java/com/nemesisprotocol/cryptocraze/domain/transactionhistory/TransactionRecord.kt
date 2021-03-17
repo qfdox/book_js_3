@@ -7,4 +7,7 @@ import com.nemesisprotocol.cryptocraze.presentation.cryptotransactionscreen.Tran
 import java.util.Date
 import java.util.UUID
 
-@Ent
+@Entity(tableName = "transaction_records")
+data class TransactionRecord(
+    @PrimaryKey val transactionUuid: String = UUID.randomUUID().toString(),
+    @ColumnInfo val cryptoSymbol
