@@ -14,4 +14,5 @@ data class TransactionRecord(
     @ColumnInfo val cryptoAmount: Double,
     @ColumnInfo val amount: String,
     @ColumnInfo val timestamp: Date = Date(),
-    @ColumnInfo val transactionType
+    @ColumnInfo val transactionType: TransactionType
+)
