@@ -7,4 +7,6 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
-class AddUserUs
+class AddUserUseCase @Inject constructor(private val userRepo: UserRepo) {
+    private val addUserCoroutineScope = CoroutineScope(Dispatchers.Default)
+    operator fun invoke(user: User) = addUserCoroutineS
