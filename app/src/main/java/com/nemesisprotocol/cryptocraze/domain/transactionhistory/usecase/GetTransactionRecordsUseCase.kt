@@ -6,3 +6,5 @@ import com.nemesisprotocol.cryptocraze.domain.transactionhistory.TransactionReco
 import javax.inject.Inject
 
 class GetTransactionRecordsUseCase @Inject constructor(private val transactionHistoryRepo: TransactionHistoryRepo) {
+    operator fun invoke(): List<TransactionRecord> = transactionHistoryRepo.getTransactionRecords()
+}
