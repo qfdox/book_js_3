@@ -9,4 +9,5 @@ import javax.inject.Inject
 
 class AddUserUseCase @Inject constructor(private val userRepo: UserRepo) {
     private val addUserCoroutineScope = CoroutineScope(Dispatchers.Default)
-    operator fun invoke(user: User) = addUserCoroutineS
+    operator fun invoke(user: User) = addUserCoroutineScope.launch { userRepo.addUser(user) }
+}
