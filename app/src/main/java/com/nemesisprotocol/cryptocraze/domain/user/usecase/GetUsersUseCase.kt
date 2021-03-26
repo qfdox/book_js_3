@@ -6,4 +6,5 @@ import com.nemesisprotocol.cryptocraze.domain.user.UserRepo
 import javax.inject.Inject
 
 class GetUsersUseCase @Inject constructor(private val userRepo: UserRepo) {
-    operator fun invoke(): LiveDa
+    operator fun invoke(): LiveData<List<User>> = userRepo.getUsers()
+}
