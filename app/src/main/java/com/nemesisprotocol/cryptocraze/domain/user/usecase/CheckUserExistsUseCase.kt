@@ -6,4 +6,8 @@ import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 class CheckUserExistsUseCase @Inject constructor(private val userRepo: UserRepo) {
-    suspend
+    suspend operator fun invoke(username: String) =
+        withContext(Dispatchers.Default) {
+            userRepo.checkUserExists(username)
+        }
+}
