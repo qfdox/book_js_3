@@ -15,4 +15,11 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import com.nemesisprotocol.cryptocraze.Screen
 import kotlinx.coroutines.launch
 
-@Exp
+@ExperimentalMaterialApi
+@Composable
+fun BottomNavigationBar(
+    navController: NavHostController,
+    bottomSheetScaffoldState: BottomSheetScaffoldState
+) {
+    val items = listOf(
+        Sc
