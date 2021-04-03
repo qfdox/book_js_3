@@ -22,4 +22,11 @@ fun BottomNavigationBar(
     bottomSheetScaffoldState: BottomSheetScaffoldState
 ) {
     val items = listOf(
-        Sc
+        Screen.Home,
+        Screen.Wallet,
+        Screen.CryptoCrazeLogo,
+        Screen.Portfolio,
+        Screen.Info
+    )
+    BottomNavigation(
+        contentColor = C
