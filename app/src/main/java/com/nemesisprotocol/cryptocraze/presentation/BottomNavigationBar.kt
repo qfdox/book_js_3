@@ -43,3 +43,8 @@ fun BottomNavigationBar(
                             contentDescription = item.title
                         )
                     },
+                    label = {
+                        Text(text = item.title)
+                    },
+                    selectedContentColor = MaterialTheme.colors.primary,
+                    u
