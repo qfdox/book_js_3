@@ -29,4 +29,8 @@ fun BottomNavigationBar(
         Screen.Info
     )
     BottomNavigation(
-        contentColor = C
+        contentColor = Color.White
+    ) {
+        val coroutineScope = rememberCoroutineScope()
+        val navBackStackEntry by navController.currentBackStackEntryAsState()
+        val currentRoute = navB
