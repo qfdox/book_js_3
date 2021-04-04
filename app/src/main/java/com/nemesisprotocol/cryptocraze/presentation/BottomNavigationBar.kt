@@ -33,4 +33,9 @@ fun BottomNavigationBar(
     ) {
         val coroutineScope = rememberCoroutineScope()
         val navBackStackEntry by navController.currentBackStackEntryAsState()
-        val currentRoute = navB
+        val currentRoute = navBackStackEntry?.destination?.route
+        items.forEach { item ->
+            if (item != Screen.CryptoCrazeLogo) {
+                BottomNavigationItem(
+                    icon = {
+  
