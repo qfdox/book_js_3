@@ -38,4 +38,8 @@ fun BottomNavigationBar(
             if (item != Screen.CryptoCrazeLogo) {
                 BottomNavigationItem(
                     icon = {
-  
+                        Icon(
+                            painter = painterResource(id = item.icon!!),
+                            contentDescription = item.title
+                        )
+                    },
