@@ -50,4 +50,7 @@ fun BottomNavigationBar(
                     unselectedContentColor = MaterialTheme.colors.secondaryVariant,
                     alwaysShowLabel = true,
                     selected = currentRoute == item.route,
-       
+                    onClick = {
+                        if (currentRoute != item.route) {
+                            navController.popBackStack()
+                            navContr
