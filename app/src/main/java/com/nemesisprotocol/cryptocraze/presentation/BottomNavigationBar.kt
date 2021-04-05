@@ -53,4 +53,7 @@ fun BottomNavigationBar(
                     onClick = {
                         if (currentRoute != item.route) {
                             navController.popBackStack()
-                            navContr
+                            navController.navigate(item.route) {
+                                popUpTo(navController.graph.findStartDestination().id) {
+                                    saveState = true
+                      
