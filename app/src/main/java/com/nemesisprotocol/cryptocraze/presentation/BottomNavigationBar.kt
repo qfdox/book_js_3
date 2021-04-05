@@ -47,4 +47,7 @@ fun BottomNavigationBar(
                         Text(text = item.title)
                     },
                     selectedContentColor = MaterialTheme.colors.primary,
-                    u
+                    unselectedContentColor = MaterialTheme.colors.secondaryVariant,
+                    alwaysShowLabel = true,
+                    selected = currentRoute == item.route,
+       
