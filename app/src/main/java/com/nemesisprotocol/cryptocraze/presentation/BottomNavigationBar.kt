@@ -60,4 +60,11 @@ fun BottomNavigationBar(
                                 launchSingleTop = true
                                 restoreState = true
                             }
-              
+                        }
+                    }
+                )
+            } else {
+                BottomNavigationItem(
+                    icon = {
+                        Icon(
+                    
