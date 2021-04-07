@@ -67,4 +67,6 @@ fun BottomNavigationBar(
                 BottomNavigationItem(
                     icon = {
                         Icon(
-                    
+                            modifier = Modifier.size(48.dp, 48.dp),
+                            painter = painterResource(id = item.icon!!),
+                            contentDescription = item.title
