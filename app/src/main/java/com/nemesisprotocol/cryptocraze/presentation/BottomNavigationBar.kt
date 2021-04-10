@@ -70,3 +70,7 @@ fun BottomNavigationBar(
                             modifier = Modifier.size(48.dp, 48.dp),
                             painter = painterResource(id = item.icon!!),
                             contentDescription = item.title
+                        )
+                    },
+                    selectedContentColor = MaterialTheme.colors.onBackground,
+                    unselectedContentColor = Mater
