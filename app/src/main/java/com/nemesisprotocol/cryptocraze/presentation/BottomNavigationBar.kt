@@ -73,4 +73,8 @@ fun BottomNavigationBar(
                         )
                     },
                     selectedContentColor = MaterialTheme.colors.onBackground,
-                    unselectedContentColor = Mater
+                    unselectedContentColor = MaterialTheme.colors.secondary,
+                    alwaysShowLabel = true,
+                    selected = currentRoute == item.route,
+                    onClick = {
+                        coroutineScope.
