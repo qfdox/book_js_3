@@ -77,4 +77,6 @@ fun BottomNavigationBar(
                     alwaysShowLabel = true,
                     selected = currentRoute == item.route,
                     onClick = {
-                        coroutineScope.
+                        coroutineScope.launch {
+                            if (bottomSheetScaffoldState.bottomSheetState.isCollapsed) {
+                                bottomSheetScaffoldState.bottomSheetState
