@@ -83,4 +83,10 @@ fun BottomNavigationBar(
                             } else {
                                 bottomSheetScaffoldState.bottomSheetState.collapse()
                             }
-                  
+                        }
+                    }
+                )
+            }
+        }
+    }
+}
