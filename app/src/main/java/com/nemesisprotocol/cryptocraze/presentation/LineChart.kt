@@ -22,4 +22,8 @@
 * SOFTWARE.
  */
 
-package com.nem
+package com.nemesisprotocol.cryptocraze.presentation
+
+import androidx.compose.animation.core.Animatable
+import androidx.compose.animation.core.LinearEasing
+import androidx.compose.animation.c
