@@ -39,4 +39,10 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.unit.dp
-import kotlin.mat
+import kotlin.math.min
+
+@Composable
+fun LineChart(
+    modifier: Modifier = Modifier,
+    lineColors: List<Color> = listOf(MaterialTheme.colors.primary, MaterialTheme.colors.primary),
+    lineWidt
