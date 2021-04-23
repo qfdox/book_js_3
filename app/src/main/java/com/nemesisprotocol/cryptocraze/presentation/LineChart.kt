@@ -45,4 +45,10 @@ import kotlin.math.min
 fun LineChart(
     modifier: Modifier = Modifier,
     lineColors: List<Color> = listOf(MaterialTheme.colors.primary, MaterialTheme.colors.primary),
-    lineWidt
+    lineWidth: Float = 4f,
+    yAxisValues: List<Float>,
+    shouldAnimate: Boolean = true,
+) {
+    val yValues = remember { yAxisValues }
+    val x = remember { Animatable(0f) }
+    val xTarget = (
