@@ -51,4 +51,10 @@ fun LineChart(
 ) {
     val yValues = remember { yAxisValues }
     val x = remember { Animatable(0f) }
-    val xTarget = (
+    val xTarget = (yValues.size - 1).toFloat()
+
+    LaunchedEffect(Unit) {
+        x.animateTo(
+            targetValue = xTarget,
+            animationSpec = tween(
+                durationMillis = if (shouldAn
