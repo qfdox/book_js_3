@@ -68,4 +68,9 @@ fun LineChart(
         val xBounds = Pair(0f, xTarget)
         val yBounds = getBounds(yValues)
         val scaleX = size.width / (xBounds.second - xBounds.first)
-        val scaleY = size.height / (yBounds.second - yBounds.
+        val scaleY = size.height / (yBounds.second - yBounds.first)
+        val yMove = yBounds.first * scaleY
+
+        (0..min(yValues.size - 1, x.value.toInt())).forEach { value ->
+            val xPoint = value * scaleX
+            val yPo
