@@ -65,4 +65,7 @@ fun LineChart(
 
     Canvas(modifier = modifier.padding(8.dp)) {
         val path = Path()
-        val xBounds = P
+        val xBounds = Pair(0f, xTarget)
+        val yBounds = getBounds(yValues)
+        val scaleX = size.width / (xBounds.second - xBounds.first)
+        val scaleY = size.height / (yBounds.second - yBounds.
