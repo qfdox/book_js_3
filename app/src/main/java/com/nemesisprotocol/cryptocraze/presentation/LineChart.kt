@@ -57,4 +57,12 @@ fun LineChart(
         x.animateTo(
             targetValue = xTarget,
             animationSpec = tween(
-                durationMillis = if (shouldAn
+                durationMillis = if (shouldAnimate) 500 else 0,
+                easing = LinearEasing
+            ),
+        )
+    }
+
+    Canvas(modifier = modifier.padding(8.dp)) {
+        val path = Path()
+        val xBounds = P
