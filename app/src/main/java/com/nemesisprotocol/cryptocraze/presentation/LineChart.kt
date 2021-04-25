@@ -73,4 +73,9 @@ fun LineChart(
 
         (0..min(yValues.size - 1, x.value.toInt())).forEach { value ->
             val xPoint = value * scaleX
-            val yPo
+            val yPoint = size.height - (yValues[value] * scaleY) + yMove
+            if (value == 0) {
+                path.moveTo(0f, yPoint)
+                return@forEach
+            }
+            path.lineTo(xPoint, y
