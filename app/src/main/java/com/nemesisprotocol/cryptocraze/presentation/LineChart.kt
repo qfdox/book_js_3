@@ -78,4 +78,15 @@ fun LineChart(
                 path.moveTo(0f, yPoint)
                 return@forEach
             }
-            path.lineTo(xPoint, y
+            path.lineTo(xPoint, yPoint)
+        }
+
+        drawPath(
+            path = path,
+            brush = Brush.linearGradient(lineColors),
+            style = Stroke(width = lineWidth)
+        )
+    }
+}
+
+fun getBounds(l
