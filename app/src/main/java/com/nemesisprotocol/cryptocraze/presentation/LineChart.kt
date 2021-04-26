@@ -89,4 +89,9 @@ fun LineChart(
     }
 }
 
-fun getBounds(l
+fun getBounds(list: List<Float>): Pair<Float, Float> {
+    var min = Float.MAX_VALUE
+    var max = -Float.MAX_VALUE
+    list.forEach {
+        min = min.coerceAtMost(it)
+        max = max.coerceAtLeast(
