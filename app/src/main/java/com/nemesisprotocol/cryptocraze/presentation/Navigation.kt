@@ -154,3 +154,49 @@ fun Navigation(
                     type = NavType.StringType
                 }
             )
+        ) { backStackEntry ->
+            val transactionType = backStackEntry.arguments?.getString("transactionType")
+            CryptoTransactionConfirmation(
+                navController = navController,
+                transactionType = TransactionType.valueOf(transactionType!!)
+            )
+            currentRoute.value = Screen.CryptoTransactionConfirmation.route
+        }
+
+        composable(
+            Screen.CryptoTransactionFailed.route + "/{transactionType}",
+            arguments = listOf(
+                navArgument("transactionType") {
+                    type = NavType.StringType
+                }
+            )
+        ) { backStackEntry ->
+            val transactionType = backStackEntry.arguments?.getString("transactionType")
+            CryptoTransactionFailed(
+                navController = navController,
+                transactionType = TransactionType.valueOf(transactionType!!)
+            )
+            currentRoute.value = Screen.CryptoTransactionFailed.route
+        }
+
+        composable(Screen.Portfolio.route) {
+            currentRoute.value = Screen.Portfolio.route
+            PortfolioScreen()
+        }
+
+        composable(Screen.TransactionHistory.route) {
+            currentRoute.value = Screen.TransactionHistory.route
+            TransactionHistoryScreen()
+        }
+
+        composable(Screen.Settings.route) {
+            currentRoute.value = Screen.Settings.route
+            SettingsScreen(navController)
+        }
+
+        composable(Screen.About.route) {
+            currentRoute.value = Screen.About.route
+            AboutScreen()
+        }
+    }
+}
