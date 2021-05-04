@@ -14,4 +14,6 @@ import javax.inject.Inject
 
 @HiltViewModel
 class PortfolioViewModel @Inject constructor(
-    private val addCryptoInvestmentUseCa
+    private val addCryptoInvestmentUseCase: AddCryptoInvestmentUseCase,
+    private val checkCryptoIsInvestedUseCase: CheckCryptoIsInvestedUseCase,
+    private val getCryptoInvestmentBySymbolUseCase: GetCryptoInvestmentBySymbol
