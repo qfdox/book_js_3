@@ -29,4 +29,10 @@ class PortfolioViewModel @Inject constructor(
 
     init {
         viewModelScope.launch(dispatcherProvider.io) {
-            _portfolio.value
+            _portfolio.value = getPortfolioUseCase()
+        }
+    }
+
+    suspend fun checkCryptoIsInvested(cryptoSymbol: String): Boolean {
+        return withContext(dispatcherProvider.io) {
+           
