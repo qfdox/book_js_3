@@ -24,4 +24,9 @@ class PortfolioViewModel @Inject constructor(
     private val dispatcherProvider: DispatcherProvider
 ) : ViewModel() {
 
-    private val _portfolio = MutableState
+    private val _portfolio = MutableStateFlow<List<CryptoInvestment>>(emptyList())
+    val portfolio: StateFlow<List<CryptoInvestment>> = _portfolio
+
+    init {
+        viewModelScope.launch(dispatcherProvider.io) {
+            _portfolio.value
