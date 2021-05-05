@@ -19,4 +19,9 @@ class PortfolioViewModel @Inject constructor(
     private val getCryptoInvestmentBySymbolUseCase: GetCryptoInvestmentBySymbolUseCase,
     private val deleteCryptoInvestmentUseCase: DeleteCryptoInvestmentUseCase,
     private val getPortfolioUseCase: GetPortfolioUseCase,
-    private val updateCryptoInvestmentUseCase: Upd
+    private val updateCryptoInvestmentUseCase: UpdateCryptoInvestmentUseCase,
+    private val wipePortfolioUseCase: WipePortfolioUseCase,
+    private val dispatcherProvider: DispatcherProvider
+) : ViewModel() {
+
+    private val _portfolio = MutableState
