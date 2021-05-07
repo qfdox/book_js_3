@@ -46,4 +46,10 @@ class PortfolioViewModel @Inject constructor(
     }
 
     fun addCryptoInvestment(cryptoInvestment: CryptoInvestment) {
-        viewModelScope.launch(dispatcher
+        viewModelScope.launch(dispatcherProvider.io) {
+            addCryptoInvestmentUseCase(cryptoInvestment = cryptoInvestment)
+        }
+    }
+
+    fun deleteCryptoInvestment(cryptoInvestment: CryptoInvestment) {
+        viewModelScope.launch(disp
