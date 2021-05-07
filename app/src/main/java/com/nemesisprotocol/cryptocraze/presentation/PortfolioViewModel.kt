@@ -41,3 +41,9 @@ class PortfolioViewModel @Inject constructor(
 
     suspend fun getCryptoInvestmentBySymbol(cryptoSymbol: String): CryptoInvestment {
         return withContext(dispatcherProvider.io) {
+            getCryptoInvestmentBySymbolUseCase(cryptoSymbol)
+        }
+    }
+
+    fun addCryptoInvestment(cryptoInvestment: CryptoInvestment) {
+        viewModelScope.launch(dispatcher
