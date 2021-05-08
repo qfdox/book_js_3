@@ -64,4 +64,6 @@ class PortfolioViewModel @Inject constructor(
     }
 
     fun wipePortfolio() {
-        wipePortfolioU
+        wipePortfolioUseCase()
+    }
+}
