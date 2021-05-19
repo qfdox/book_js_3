@@ -5,4 +5,10 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
 import com.alorma.compose.settings.ui.SettingsMenuLink
-import com.google.android.gms.oss.licenses.OssLic
+import com.google.android.gms.oss.licenses.OssLicensesMenuActivity
+
+@Composable
+fun AboutScreen() {
+    val context = LocalContext.current
+    SettingsMenuLink(
+        title = { Text(text = "Open source libraries") 
