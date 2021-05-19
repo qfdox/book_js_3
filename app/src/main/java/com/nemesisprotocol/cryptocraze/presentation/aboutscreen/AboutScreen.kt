@@ -14,4 +14,7 @@ fun AboutScreen() {
         title = { Text(text = "Open source libraries") },
         onClick = {
             OssLicensesMenuActivity.setActivityTitle("Open source libraries")
-            context.startActivity(Intent(context, OssLicensesMenuActivity
+            context.startActivity(Intent(context, OssLicensesMenuActivity::class.java))
+        },
+    )
+}
