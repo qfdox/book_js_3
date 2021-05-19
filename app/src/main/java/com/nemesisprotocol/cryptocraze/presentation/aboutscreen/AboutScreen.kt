@@ -11,4 +11,7 @@ import com.google.android.gms.oss.licenses.OssLicensesMenuActivity
 fun AboutScreen() {
     val context = LocalContext.current
     SettingsMenuLink(
-        title = { Text(text = "Open source libraries") 
+        title = { Text(text = "Open source libraries") },
+        onClick = {
+            OssLicensesMenuActivity.setActivityTitle("Open source libraries")
+            context.startActivity(Intent(context, OssLicensesMenuActivity
