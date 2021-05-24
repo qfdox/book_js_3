@@ -25,4 +25,9 @@ fun CryptoTransactionConfirmation(navController: NavController, transactionType:
         navController.navigate(Screen.Home.route)
     }
     Column(
-        modifier = Modifi
+        modifier = Modifier
+            .fillMaxHeight()
+            .fillMaxWidth()
+            .background(Color(0xFF004999)),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verti
