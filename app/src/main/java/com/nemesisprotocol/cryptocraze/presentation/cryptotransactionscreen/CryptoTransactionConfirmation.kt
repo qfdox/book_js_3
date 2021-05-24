@@ -19,4 +19,10 @@ import com.nemesisprotocol.cryptocraze.Screen
 import kotlinx.coroutines.delay
 
 @Composable
-fun CryptoTransactionConfirmation(navController: NavController, transactionType: 
+fun CryptoTransactionConfirmation(navController: NavController, transactionType: TransactionType) {
+    LaunchedEffect(key1 = true) {
+        delay(2500L)
+        navController.navigate(Screen.Home.route)
+    }
+    Column(
+        modifier = Modifi
