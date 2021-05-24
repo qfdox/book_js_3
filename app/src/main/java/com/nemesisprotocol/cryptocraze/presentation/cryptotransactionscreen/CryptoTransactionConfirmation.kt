@@ -15,4 +15,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.nemesisprotocol.cryptocraze.R
-import com.nemesisprotocol.cry
+import com.nemesisprotocol.cryptocraze.Screen
+import kotlinx.coroutines.delay
+
+@Composable
+fun CryptoTransactionConfirmation(navController: NavController, transactionType: 
