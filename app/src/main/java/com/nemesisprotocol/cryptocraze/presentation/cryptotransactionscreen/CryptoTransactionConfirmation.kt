@@ -30,4 +30,6 @@ fun CryptoTransactionConfirmation(navController: NavController, transactionType:
             .fillMaxWidth()
             .background(Color(0xFF004999)),
         horizontalAlignment = Alignment.CenterHorizontally,
-        verti
+        verticalArrangement = Arrangement.Center
+    ) {
+        Icon(painter = painterResource(id = R.drawable.added_success_icon), contentDescription = null, modifier = Mod
