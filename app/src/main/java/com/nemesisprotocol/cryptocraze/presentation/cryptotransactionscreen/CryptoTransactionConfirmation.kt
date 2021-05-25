@@ -34,4 +34,6 @@ fun CryptoTransactionConfirmation(navController: NavController, transactionType:
     ) {
         Icon(painter = painterResource(id = R.drawable.added_success_icon), contentDescription = null, modifier = Modifier.size(64.dp))
         if (transactionType == TransactionType.BUY) Text(text = "Purchase Successful", fontSize = 24.sp, textAlign = TextAlign.Center)
-        else Text(text = "Sale Successful", fontSize 
+        else Text(text = "Sale Successful", fontSize = 24.sp, textAlign = TextAlign.Center)
+    }
+}
