@@ -135,3 +135,144 @@ fun CryptoTransactionDialog(
                                         .padding(start = 8.dp)
                                 )
                             } else {
+                                Text(
+                                    text = "Total Sale",
+                                    modifier = Modifier
+                                        .align(alignment = Alignment.CenterVertically)
+                                        .weight(1f)
+                                        .padding(start = 8.dp)
+                                )
+                            }
+                            Text(text = "£$roundedAmount")
+                        }
+                    }
+                },
+                confirmButton = {
+                    Button(
+                        modifier = Modifier.padding(8.dp),
+                        onClick = {
+                            if (selectedFiatWallet != null) {
+                                if (selectedFiatWallet.balance > roundedAmount || transactionType == TransactionType.SELL) {
+                                    val updatedFiatWallet = FiatWalletCard(
+                                        selectedFiatWallet.cardNumber,
+                                        selectedFiatWallet.cardName,
+                                        selectedFiatWallet.expiryNumber,
+                                        selectedFiatWallet.cvvNumber,
+                                        if (transactionType == TransactionType.BUY) selectedFiatWallet.balance - roundedAmount else selectedFiatWallet.balance + roundedAmount
+                                    )
+                                    walletViewModel.updateFiatWallet(updatedFiatWallet)
+                                    cryptoTransactionViewModel.addTransactionRecord(
+                                        TransactionRecord(
+                                            cryptoSymbol = cryptoData.symbol.uppercase(),
+                                            cryptoAmount = amountOfCrypto.text.toDouble(),
+                                            amount = "£$roundedAmount",
+                                            transactionType = transactionType
+                                        )
+                                    )
+                                    coroutineScope.launch(Dispatchers.IO) {
+                                        if (!portfolioViewModel.checkCryptoIsInvested(cryptoData.symbol.uppercase())) {
+                                            portfolioViewModel.addCryptoInvestment(
+                                                CryptoInvestment(
+                                                    cryptoSymbol = cryptoData.symbol.uppercase(),
+                                                    cryptoName = cryptoData.name,
+                                                    cryptoAmount = amountOfCrypto.text.toDouble()
+                                                )
+                                            )
+                                        } else {
+                                            val cryptoInvestment =
+                                                portfolioViewModel.getCryptoInvestmentBySymbol(
+                                                    cryptoData.symbol.uppercase()
+                                                )
+                                            portfolioViewModel.updateCryptoInvestment(
+                                                CryptoInvestment(
+                                                    cryptoSymbol = cryptoData.symbol.uppercase(),
+                                                    cryptoName = cryptoData.name,
+                                                    cryptoAmount = if (transactionType == TransactionType.BUY) cryptoInvestment.cryptoAmount + amountOfCrypto.text.toDouble() else cryptoInvestment.cryptoAmount - amountOfCrypto.text.toDouble()
+                                                )
+                                            )
+                                        }
+                                    }
+                                    cryptoTransactionDialogOpenState.value = false
+                                    navController.navigate(Screen.CryptoTransactionConfirmation.route + "/$transactionType")
+                                } else {
+                                    if (transactionType == TransactionType.BUY) {
+                                        cryptoTransactionDialogOpenState.value = false
+                                        navController.navigate(Screen.CryptoTransactionFailed.route + "/$transactionType")
+                                    } else {
+                                        cryptoTransactionDialogOpenState.value = false
+                                        navController.navigate(Screen.CryptoTransactionConfirmation.route + "/$transactionType")
+                                    }
+                                }
+                            } else {
+                                if (selectedCryptoCrazeVisaCard!!.balance > roundedAmount || transactionType == TransactionType.SELL) {
+                                    val updatedCryptoCrazeVisaCard = CryptoCrazeVisaCard(
+                                        selectedCryptoCrazeVisaCard.cardId,
+                                        if (transactionType == TransactionType.BUY) selectedCryptoCrazeVisaCard.balance - roundedAmount else selectedCryptoCrazeVisaCard.balance + roundedAmount,
+                                        selectedCryptoCrazeVisaCard.cryptoCrazeVisaColour
+                                    )
+                                    walletViewModel.updateCryptoCrazeVisaCard(
+                                        updatedCryptoCrazeVisaCard
+                                    )
+                                    cryptoTransactionViewModel.addTransactionRecord(
+                                        TransactionRecord(
+                                            cryptoSymbol = cryptoData.symbol.uppercase(),
+                                            cryptoAmount = amountOfCrypto.text.toDouble(),
+                                            amount = "£$roundedAmount",
+                                            transactionType = transactionType
+                                        )
+                                    )
+                                    coroutineScope.launch(Dispatchers.IO) {
+                                        if (!portfolioViewModel.checkCryptoIsInvested(cryptoData.symbol.uppercase()) && transactionType == TransactionType.BUY) {
+                                            portfolioViewModel.addCryptoInvestment(
+                                                CryptoInvestment(
+                                                    cryptoSymbol = cryptoData.symbol.uppercase(),
+                                                    cryptoName = cryptoData.name,
+                                                    cryptoAmount = amountOfCrypto.text.toDouble()
+                                                )
+                                            )
+                                        } else {
+                                            val cryptoInvestment =
+                                                portfolioViewModel.getCryptoInvestmentBySymbol(
+                                                    cryptoData.symbol.uppercase()
+                                                )
+                                            portfolioViewModel.updateCryptoInvestment(
+                                                CryptoInvestment(
+                                                    cryptoSymbol = cryptoData.symbol.uppercase(),
+                                                    cryptoName = cryptoData.name,
+                                                    cryptoAmount = if (transactionType == TransactionType.BUY) cryptoInvestment.cryptoAmount + amountOfCrypto.text.toDouble() else cryptoInvestment.cryptoAmount - amountOfCrypto.text.toDouble()
+                                                )
+                                            )
+                                        }
+                                    }
+                                    cryptoTransactionDialogOpenState.value = false
+                                    navController.navigate(Screen.CryptoTransactionConfirmation.route + "/$transactionType")
+                                } else {
+                                    if (transactionType == TransactionType.BUY) {
+                                        cryptoTransactionDialogOpenState.value = false
+                                        navController.navigate(Screen.CryptoTransactionFailed.route + "/$transactionType")
+                                    } else {
+                                        cryptoTransactionDialogOpenState.value = false
+                                        navController.navigate(Screen.CryptoTransactionConfirmation.route + "/$transactionType")
+                                    }
+                                }
+                            }
+                        }
+                    ) {
+                        Text("Confirm")
+                    }
+                },
+                dismissButton = {
+                    Button(
+                        modifier = Modifier.padding(8.dp),
+                        onClick = {
+                            cryptoTransactionDialogOpenState.value = false
+                        }
+                    ) {
+                        Text("Cancel")
+                    }
+                }, shape = RoundedCornerShape(30.dp)
+                )
+            }
+        }
+    }
+    
