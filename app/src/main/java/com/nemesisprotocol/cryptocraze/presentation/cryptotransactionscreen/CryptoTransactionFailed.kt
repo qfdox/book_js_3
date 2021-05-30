@@ -26,4 +26,8 @@ fun CryptoTransactionFailed(navController: NavController, transactionType: Trans
     Column(
         modifier = Modifier
             .fillMaxHeight()
-            .
+            .fillMaxWidth()
+            .background(Color(0xFF990F02)),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center
+    ) 
