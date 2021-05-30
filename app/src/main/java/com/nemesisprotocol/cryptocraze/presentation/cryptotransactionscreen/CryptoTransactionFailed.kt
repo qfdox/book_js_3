@@ -18,4 +18,12 @@ import com.nemesisprotocol.cryptocraze.R
 import kotlinx.coroutines.delay
 
 @Composable
-fun CryptoTransactionFailed(navController: NavController, transactionType: TransactionTy
+fun CryptoTransactionFailed(navController: NavController, transactionType: TransactionType) {
+    LaunchedEffect(key1 = true) {
+        delay(2500L)
+        navController.popBackStack()
+    }
+    Column(
+        modifier = Modifier
+            .fillMaxHeight()
+            .
