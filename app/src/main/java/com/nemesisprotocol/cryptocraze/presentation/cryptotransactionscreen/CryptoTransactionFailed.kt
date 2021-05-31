@@ -30,4 +30,10 @@ fun CryptoTransactionFailed(navController: NavController, transactionType: Trans
             .background(Color(0xFF990F02)),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
-    ) 
+    ) {
+        Icon(
+            painter = painterResource(id = R.drawable.added_success_icon),
+            contentDescription = null,
+            modifier = Modifier.size(64.dp)
+        )
+        if (transactionType == Tran
