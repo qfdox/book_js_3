@@ -121,3 +121,182 @@ fun CryptoTransactionScreen(
                         modifier = Modifier
                             .padding(start = 32.dp, top = 8.dp, bottom = 8.dp, end = 16.dp)
                             .fillMaxWidth(),
+                        textStyle = TextStyle(
+                            fontFamily = FontFamily.Default,
+                            fontWeight = FontWeight.Normal,
+                            fontSize = 24.sp
+                        )
+                    )
+                    if (amountOfCrypto.text.isNotEmpty()) {
+                        var canParse = true
+                        try {
+                            amountOfCrypto.text.toDouble()
+                        } catch (numberFormatException: NumberFormatException) {
+                            canParse = false
+                        }
+                        if (canParse) {
+                            val roundedAmount =
+                                "%.2f".format(cryptoData.price * amountOfCrypto.text.toDouble())
+                                    .toDouble()
+                            Text(
+                                text = "${amountOfCrypto.text} ${cryptoData.symbol.uppercase()} = £$roundedAmount",
+                                fontSize = 20.sp,
+                                modifier = Modifier.padding(top = 16.dp, bottom = 16.dp)
+                            )
+                        }
+                    }
+                }
+                Text(
+                    text = "Select Payment method below",
+                    Modifier.padding(start = 18.dp),
+                    fontWeight = FontWeight.Bold
+                )
+                Card(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(64.dp)
+                        .padding(top = 8.dp, start = 16.dp, end = 16.dp)
+                        .clickable(!cryptoCrazeVisaCardOptionSelected.value) {
+                            fiatWalletOptionSelected.value = !fiatWalletOptionSelected.value
+                            if (!fiatWalletOptionSelected.value) selectedFiatWallet = null
+                        }
+                ) {
+                    Row {
+                        Text(
+                            text = "From Fiat Wallet",
+                            Modifier
+                                .padding(start = 18.dp, top = 8.dp)
+                                .weight(1f),
+                            fontStyle = FontStyle.Italic
+                        )
+                        if (fiatWalletOptionSelected.value) Icon(
+                            imageVector = Icons.Default.KeyboardArrowUp,
+                            contentDescription = null,
+                            modifier = Modifier.size(32.dp)
+                        )
+                        else Icon(
+                            imageVector = Icons.Default.KeyboardArrowDown,
+                            contentDescription = null,
+                            modifier = Modifier.size(32.dp)
+                        )
+                    }
+                }
+            }
+        }
+        if (fiatWalletOptionSelected.value) {
+            items(paymentCards.value) {
+                val isSelected = remember { mutableStateOf(false) }
+                Card(
+                    backgroundColor = if (isSelected.value) Color.Gray else MaterialTheme.colors.surface,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(40.dp)
+                        .padding(top = 8.dp, start = 16.dp, end = 16.dp)
+                        .clickable {
+                            isSelected.value = !isSelected.value
+                            canPerformTransaction.value = isSelected.value
+                            selectedFiatWallet = it
+                        }
+                ) {
+                    val cardNumberAsString = it.cardNumber.toString()
+                    val lastFourDigits =
+                        cardNumberAsString.substring(cardNumberAsString.length - 4)
+                    Text("Card ending **** **** **** $lastFourDigits", fontSize = 18.sp)
+                }
+            }
+        }
+        item {
+            Card(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(64.dp)
+                    .padding(top = 8.dp, start = 16.dp, end = 16.dp)
+                    .clickable(!fiatWalletOptionSelected.value) {
+                        cryptoCrazeVisaCardOptionSelected.value =
+                            !cryptoCrazeVisaCardOptionSelected.value
+                        if (!cryptoCrazeVisaCardOptionSelected.value) selectedCryptoCrazeVisaCard =
+                            null
+                    }
+            ) {
+                Row {
+                    Text(
+                        text = "From Crypto Craze Visa Card",
+                        Modifier
+                            .padding(start = 18.dp, top = 16.dp)
+                            .weight(1f),
+                        fontStyle = FontStyle.Italic
+                    )
+                    if (cryptoCrazeVisaCardOptionSelected.value) Icon(
+                        imageVector = Icons.Default.KeyboardArrowUp,
+                        contentDescription = null,
+                        modifier = Modifier.size(32.dp)
+                    )
+                    else Icon(
+                        imageVector = Icons.Default.KeyboardArrowDown,
+                        contentDescription = null,
+                        modifier = Modifier.size(32.dp)
+                    )
+                }
+            }
+        }
+
+        if (cryptoCrazeVisaCardOptionSelected.value) {
+            items(cryptoCrazeVisaCards.value) {
+                val isSelected = remember { mutableStateOf(false) }
+                Card(
+                    backgroundColor = if (isSelected.value) Color.Gray else MaterialTheme.colors.surface,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(40.dp)
+                        .padding(top = 8.dp, start = 16.dp, end = 16.dp)
+                        .clickable {
+                            isSelected.value = !isSelected.value
+                            canPerformTransaction.value = isSelected.value
+                            selectedCryptoCrazeVisaCard = it
+                        }
+                ) {
+                    Text(
+                        "Crypto Craze ${it.cryptoCrazeVisaColour.name} Visa Card",
+                        fontSize = 18.sp
+                    )
+                }
+            }
+        }
+
+        item {
+            Column(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .wrapContentHeight(),
+                verticalArrangement = Arrangement.Center,
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                Button(
+                    onClick = {
+                        cryptoTransactionDialogOpenState.value = true
+                    },
+                    enabled = canPerformTransaction.value && amountOfCrypto.text.isNotEmpty() && transactionType == TransactionType.BUY || canParseToDouble(amountOfCrypto.text) && cryptoInvestmentAmount.value >= amountOfCrypto.text.toDouble() && transactionType == TransactionType.SELL,
+                    modifier = Modifier.padding(top = 16.dp, bottom = 16.dp)
+                ) {
+                    if (amountOfCrypto.text.isNotEmpty()) Text(
+                        text = "$transactionTypeString ${amountOfCrypto.text} ${cryptoData.symbol.uppercase()}",
+                        fontSize = 24.sp
+                    )
+                    else Text(
+                        text = "$transactionTypeString ${cryptoData.symbol.uppercase()}",
+                        fontSize = 24.sp
+                    )
+                }
+            }
+        }
+    }
+}
+
+fun canParseToDouble(amountOfText: String): Boolean {
+    return try {
+        amountOfText.toDouble()
+        true
+    } catch (numberFormatException: NumberFormatException) {
+        false
+    }
+}
