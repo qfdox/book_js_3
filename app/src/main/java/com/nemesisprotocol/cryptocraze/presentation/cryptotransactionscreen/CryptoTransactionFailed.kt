@@ -36,4 +36,9 @@ fun CryptoTransactionFailed(navController: NavController, transactionType: Trans
             contentDescription = null,
             modifier = Modifier.size(64.dp)
         )
-        if (transactionType == Tran
+        if (transactionType == TransactionType.BUY) Text(
+            text = "Purchase Failed\n\n Insufficient funds",
+            fontSize = 24.sp,
+            textAlign = TextAlign.Center
+        )
+        else Text(text = "Sale
