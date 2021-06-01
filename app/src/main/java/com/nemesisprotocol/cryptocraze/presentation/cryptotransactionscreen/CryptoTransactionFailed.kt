@@ -41,4 +41,6 @@ fun CryptoTransactionFailed(navController: NavController, transactionType: Trans
             fontSize = 24.sp,
             textAlign = TextAlign.Center
         )
-        else Text(text = "Sale
+        else Text(text = "Sale unsuccessful", fontSize = 24.sp, textAlign = TextAlign.Center)
+    }
+}
