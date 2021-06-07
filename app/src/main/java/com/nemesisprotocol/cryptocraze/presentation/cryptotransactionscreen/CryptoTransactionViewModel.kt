@@ -3,4 +3,6 @@ package com.nemesisprotocol.cryptocraze.presentation.cryptotransactionscreen
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.nemesisprotocol.cryptocraze.common.DispatcherProvider
-import com.
+import com.nemesisprotocol.cryptocraze.domain.transactionhistory.TransactionRecord
+import com.nemesisprotocol.cryptocraze.domain.transactionhistory.usecase.AddTransactionRecordUseCase
+i
