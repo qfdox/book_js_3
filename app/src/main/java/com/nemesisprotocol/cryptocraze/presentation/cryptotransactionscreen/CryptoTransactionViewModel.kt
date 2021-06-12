@@ -16,4 +16,6 @@ import javax.inject.Inject
 @HiltViewModel
 class CryptoTransactionViewModel @Inject constructor(
     private val addTransactionRecordUseCase: AddTransactionRecordUseCase,
-    private val de
+    private val deleteTransactionRecordUseCase: DeleteTransactionRecordUseCase,
+    private val getTransactionRecordsUseCase: GetTransactionRecordsUseCase,
+    private val dispatcherProvider: Dispatche
