@@ -22,4 +22,8 @@ class CryptoTransactionViewModel @Inject constructor(
 ) : ViewModel() {
 
     private val _transactionHistory = MutableStateFlow<List<TransactionRecord>>(emptyList())
-    val transactionHistory: StateFlow<List<Trans
+    val transactionHistory: StateFlow<List<TransactionRecord>> = _transactionHistory
+
+    init {
+        viewModelScope.launch(dispatcherProvider.io) {
+            _transactionHistory.value = getTransactionRecordsUseCase()
