@@ -27,3 +27,9 @@ class CryptoTransactionViewModel @Inject constructor(
     init {
         viewModelScope.launch(dispatcherProvider.io) {
             _transactionHistory.value = getTransactionRecordsUseCase()
+        }
+    }
+
+    fun addTransactionRecord(transactionRecord: TransactionRecord) {
+        viewModelScope.launch(dispatcherProvider.io) {
+            addTransactionRecordUseCase(
