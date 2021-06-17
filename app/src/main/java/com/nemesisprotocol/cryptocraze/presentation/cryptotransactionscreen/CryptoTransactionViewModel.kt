@@ -37,4 +37,8 @@ class CryptoTransactionViewModel @Inject constructor(
     }
 
     fun deleteTransactionRecord(transactionRecord: TransactionRecord) {
-        viewModelScope.launch(dispatche
+        viewModelScope.launch(dispatcherProvider.io) {
+            deleteTransactionRecordUseCase(transactionRecord = transactionRecord)
+        }
+    }
+}
