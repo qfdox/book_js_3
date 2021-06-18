@@ -102,3 +102,48 @@ fun HomeScreen(homeViewModel: HomeViewModel) {
 
         LazyColumn(state = listScrollState) {
             itemsIndexed(pagingCryptoDataItems) { _, crypto ->
+                crypto?.let {
+                    val isFav =
+                        remember { mutableStateOf(false) }
+                    coroutineScope.launch {
+                        isFav.value = homeViewModel.checkFavExists(crypto.name)
+                    }
+
+                    CryptoDataListItem(crypto, isFav, viewModel = homeViewModel)
+                }
+            }
+            pagingCryptoDataItems.apply {
+                when {
+                    loadState.refresh is LoadState.Loading -> item {
+                        Column(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .fillMaxHeight()
+                                .padding(top = 32.dp),
+                            horizontalAlignment = Alignment.CenterHorizontally,
+                            verticalArrangement = Arrangement.Center
+                        ) {
+                            CircularProgressIndicator()
+                            Text(text = "Loading Crypto Data...")
+                        }
+                    }
+                    loadState.append is LoadState.Loading -> {
+                        item {
+                            Column(
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .fillMaxHeight()
+                                    .padding(top = 32.dp),
+                                horizontalAlignment = Alignment.CenterHorizontally,
+                                verticalArrangement = Arrangement.Center
+                            ) {
+                                CircularProgressIndicator()
+                                Text(text = "Loading Crypto Data...")
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
