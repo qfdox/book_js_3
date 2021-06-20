@@ -13,4 +13,10 @@ import com.nemesisprotocol.cryptocraze.domain.cryptodata.CryptoDataRepo
 import com.nemesisprotocol.cryptocraze.domain.cryptodata.usecase.AddFavCryptoDataUseCase
 import com.nemesisprotocol.cryptocraze.domain.cryptodata.usecase.CheckFavCryptoExistsUseCase
 import com.nemesisprotocol.cryptocraze.domain.cryptodata.usecase.GetFavCryptosDataUseCase
-import com.nemesisprotocol.cryptocraze.dom
+import com.nemesisprotocol.cryptocraze.domain.cryptodata.usecase.RemoveFavCryptoDataUseCase
+import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.withContext
+import javax.inject.Inject
+
+@HiltViewModel
+class Ho
