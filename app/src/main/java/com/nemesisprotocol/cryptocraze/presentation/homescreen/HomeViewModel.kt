@@ -11,4 +11,6 @@ import com.nemesisprotocol.cryptocraze.data.paging.PageNumberSource
 import com.nemesisprotocol.cryptocraze.domain.cryptodata.CryptoData
 import com.nemesisprotocol.cryptocraze.domain.cryptodata.CryptoDataRepo
 import com.nemesisprotocol.cryptocraze.domain.cryptodata.usecase.AddFavCryptoDataUseCase
-import com.nemesisprotocol.cryptocraze.domain.cryptodata.usec
+import com.nemesisprotocol.cryptocraze.domain.cryptodata.usecase.CheckFavCryptoExistsUseCase
+import com.nemesisprotocol.cryptocraze.domain.cryptodata.usecase.GetFavCryptosDataUseCase
+import com.nemesisprotocol.cryptocraze.dom
