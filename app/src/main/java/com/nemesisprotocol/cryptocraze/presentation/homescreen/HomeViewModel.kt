@@ -9,4 +9,6 @@ import androidx.paging.cachedIn
 import com.nemesisprotocol.cryptocraze.common.DispatcherProvider
 import com.nemesisprotocol.cryptocraze.data.paging.PageNumberSource
 import com.nemesisprotocol.cryptocraze.domain.cryptodata.CryptoData
-import com.nemesisprotocol.cryptocraze.dom
+import com.nemesisprotocol.cryptocraze.domain.cryptodata.CryptoDataRepo
+import com.nemesisprotocol.cryptocraze.domain.cryptodata.usecase.AddFavCryptoDataUseCase
+import com.nemesisprotocol.cryptocraze.domain.cryptodata.usec
