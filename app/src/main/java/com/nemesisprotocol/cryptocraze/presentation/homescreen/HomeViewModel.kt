@@ -19,4 +19,7 @@ import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 @HiltViewModel
-class Ho
+class HomeViewModel @Inject constructor(
+    private val getFavCryptoDataUseCase: GetFavCryptosDataUseCase,
+    private val addFavCryptoDataUseCase: AddFavCryptoDataUseCase,
+    private val removeFavCryp
