@@ -22,4 +22,7 @@ import javax.inject.Inject
 class HomeViewModel @Inject constructor(
     private val getFavCryptoDataUseCase: GetFavCryptosDataUseCase,
     private val addFavCryptoDataUseCase: AddFavCryptoDataUseCase,
-    private val removeFavCryp
+    private val removeFavCryptoDataUseCase: RemoveFavCryptoDataUseCase,
+    private val checkFavCryptoExistsUseCase: CheckFavCryptoExistsUseCase,
+    private val cryptoDataRepo: CryptoDataRepo,
+    private val d
