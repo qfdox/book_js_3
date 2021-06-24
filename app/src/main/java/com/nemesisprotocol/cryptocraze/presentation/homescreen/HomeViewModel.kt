@@ -25,4 +25,11 @@ class HomeViewModel @Inject constructor(
     private val removeFavCryptoDataUseCase: RemoveFavCryptoDataUseCase,
     private val checkFavCryptoExistsUseCase: CheckFavCryptoExistsUseCase,
     private val cryptoDataRepo: CryptoDataRepo,
-    private val d
+    private val dispatcherProvider: DispatcherProvider
+) : ViewModel() {
+
+    val favCryptoLiveData = liveData(dispatcherProvider.io) {
+        emitSource(getFavCryptoDataUseCase())
+    }
+
+    suspend
