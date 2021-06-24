@@ -35,4 +35,10 @@ class HomeViewModel @Inject constructor(
     suspend fun checkFavExists(cryptoName: String): Boolean {
         return withContext(dispatcherProvider.io) {
             val favExists = checkFavCryptoExistsUseCase(cryptoName)
-            f
+            favExists
+        }
+    }
+
+    fun getAllCryptos(pageSize: Int = 20) =
+        Pager(config = PagingConfig(pageSize = pageSize, initialLoadSize = pageSize)) {
+            PageNumber
