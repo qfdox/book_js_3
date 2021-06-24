@@ -32,4 +32,7 @@ class HomeViewModel @Inject constructor(
         emitSource(getFavCryptoDataUseCase())
     }
 
-    suspend
+    suspend fun checkFavExists(cryptoName: String): Boolean {
+        return withContext(dispatcherProvider.io) {
+            val favExists = checkFavCryptoExistsUseCase(cryptoName)
+            f
