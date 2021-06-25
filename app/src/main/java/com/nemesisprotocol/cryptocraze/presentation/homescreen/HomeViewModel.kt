@@ -46,4 +46,10 @@ class HomeViewModel @Inject constructor(
             }
         }.flow.cachedIn(viewModelScope)
 
-    suspend fun getCryptoBySy
+    suspend fun getCryptoBySymbol(symbol: String): List<CryptoData> {
+        return withContext(dispatcherProvider.io) {
+            cryptoDataRepo.getCryptoDataBySymbol(symbol)
+        }
+    }
+
+   
