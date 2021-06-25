@@ -52,4 +52,11 @@ class HomeViewModel @Inject constructor(
         }
     }
 
-   
+    fun addFavCrypto(cryptoData: CryptoData) {
+        addFavCryptoDataUseCase(cryptoData)
+    }
+
+    fun deleteFavCrypto(
+        cryptoData: CryptoData
+    ) {
+        removeFavCryptoDataUse
