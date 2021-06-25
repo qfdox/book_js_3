@@ -59,4 +59,6 @@ class HomeViewModel @Inject constructor(
     fun deleteFavCrypto(
         cryptoData: CryptoData
     ) {
-        removeFavCryptoDataUse
+        removeFavCryptoDataUseCase(cryptoData)
+    }
+}
