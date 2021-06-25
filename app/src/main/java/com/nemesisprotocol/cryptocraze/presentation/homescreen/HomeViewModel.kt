@@ -41,4 +41,9 @@ class HomeViewModel @Inject constructor(
 
     fun getAllCryptos(pageSize: Int = 20) =
         Pager(config = PagingConfig(pageSize = pageSize, initialLoadSize = pageSize)) {
-            PageNumber
+            PageNumberSource { pageNo, pageSize ->
+                cryptoDataRepo.getPageCryptos(pageNo, pageSize)
+            }
+        }.flow.cachedIn(viewModelScope)
+
+    suspend fun getCryptoBySy
