@@ -28,4 +28,8 @@ fun CoinInfoScreen(
             ) {
                 item {
                     Row(
-                        modi
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.SpaceBetween
+                    ) {
+                        Text(
+                           
