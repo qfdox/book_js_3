@@ -32,4 +32,7 @@ fun CoinInfoScreen(
                         horizontalArrangement = Arrangement.SpaceBetween
                     ) {
                         Text(
-                           
+                            text = "${coin.name} (${coin.symbol})",
+                            style = MaterialTheme.typography.h2,
+                            modifier = Modifier.weight(8f)
+                      
