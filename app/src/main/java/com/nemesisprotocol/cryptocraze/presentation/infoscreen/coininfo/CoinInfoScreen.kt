@@ -35,4 +35,8 @@ fun CoinInfoScreen(
                             text = "${coin.name} (${coin.symbol})",
                             style = MaterialTheme.typography.h2,
                             modifier = Modifier.weight(8f)
-                      
+                        )
+                    }
+                    Spacer(modifier = Modifier.height(15.dp))
+                    Text(text = "Cryptocurrency Description")
+                    Spacer(modi
