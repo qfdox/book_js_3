@@ -39,4 +39,7 @@ fun CoinInfoScreen(
                     }
                     Spacer(modifier = Modifier.height(15.dp))
                     Text(text = "Cryptocurrency Description")
-                    Spacer(modi
+                    Spacer(modifier = Modifier.height(6.dp))
+                    Text(
+                        text = coin.description,
+                        style = MaterialTheme.typography.body2
