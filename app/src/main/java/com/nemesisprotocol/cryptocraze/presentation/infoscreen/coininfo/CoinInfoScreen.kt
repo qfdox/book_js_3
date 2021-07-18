@@ -51,4 +51,9 @@ fun CoinInfoScreen(
                     )
                     Spacer(modifier = Modifier.height(15.dp))
                     FlowRow(
-                        ma
+                        mainAxisSpacing = 10.dp,
+                        crossAxisSpacing = 10.dp,
+                        modifier = Modifier.fillMaxWidth()
+                    ) {
+                        coin.tags.forEach { tag ->
+          
