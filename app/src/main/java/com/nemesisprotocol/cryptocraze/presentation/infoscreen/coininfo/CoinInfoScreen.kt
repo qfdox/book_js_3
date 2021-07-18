@@ -56,4 +56,9 @@ fun CoinInfoScreen(
                         modifier = Modifier.fillMaxWidth()
                     ) {
                         coin.tags.forEach { tag ->
-          
+                            CoinTag(tag = tag)
+                        }
+                    }
+                    Spacer(modifier = Modifier.height(15.dp))
+                    Text(
+         
