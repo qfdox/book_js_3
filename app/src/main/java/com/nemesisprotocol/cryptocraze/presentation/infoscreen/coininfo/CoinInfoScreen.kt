@@ -65,4 +65,8 @@ fun CoinInfoScreen(
                         style = MaterialTheme.typography.h3
                     )
                     Spacer(modifier = Modifier.height(15.dp))
-            
+                }
+                items(coin.team) { teamMember ->
+                    TeamListItem(
+                        teamMember = teamMember,
+                        modifier = Modi
