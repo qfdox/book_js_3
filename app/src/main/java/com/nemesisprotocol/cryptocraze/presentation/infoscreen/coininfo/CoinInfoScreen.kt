@@ -69,4 +69,11 @@ fun CoinInfoScreen(
                 items(coin.team) { teamMember ->
                     TeamListItem(
                         teamMember = teamMember,
-                        modifier = Modi
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(10.dp)
+                    )
+                    Divider()
+                }
+            }
+ 
