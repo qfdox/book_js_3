@@ -76,4 +76,9 @@ fun CoinInfoScreen(
                     Divider()
                 }
             }
- 
+        }
+        if (state.error.isNotBlank()) {
+            Text(
+                text = state.error,
+                color = MaterialTheme.colors.error,
+                textAli
