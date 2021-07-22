@@ -85,4 +85,11 @@ fun CoinInfoScreen(
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(horizontal = 20.dp)
-                    .align(Alignment.Cent
+                    .align(Alignment.Center)
+            )
+        }
+        if (state.isLoading) {
+            CircularProgressIndicator(modifier = Modifier.align(Alignment.Center))
+        }
+    }
+}
