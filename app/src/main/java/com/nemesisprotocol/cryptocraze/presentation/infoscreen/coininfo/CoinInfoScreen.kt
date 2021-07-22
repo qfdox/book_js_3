@@ -81,4 +81,8 @@ fun CoinInfoScreen(
             Text(
                 text = state.error,
                 color = MaterialTheme.colors.error,
-                textAli
+                textAlign = TextAlign.Center,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 20.dp)
+                    .align(Alignment.Cent
