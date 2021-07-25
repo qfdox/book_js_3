@@ -4,4 +4,6 @@ import com.nemesisprotocol.cryptocraze.domain.cryptoinfo.CoinDetail
 
 data class CoinInfoState(
     val isLoading: Boolean = false,
-    val coin: CoinDetail?
+    val coin: CoinDetail? = null,
+    val error: String = ""
+)
