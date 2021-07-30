@@ -24,4 +24,9 @@ fun CoinInfoListItem(
         Row(
             modifier = Modifier
                 .fillMaxWidth()
-                .clickable 
+                .clickable { onItemClick(coin) }
+                .padding(20.dp),
+            horizontalArrangement = Arrangement.SpaceBetween
+        ) {
+            Text(
+                text = "${coin.name} (${coin
