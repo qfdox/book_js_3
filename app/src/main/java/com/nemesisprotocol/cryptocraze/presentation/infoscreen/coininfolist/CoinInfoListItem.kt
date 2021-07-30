@@ -16,4 +16,12 @@ import com.nemesisprotocol.cryptocraze.R
 import com.nemesisprotocol.cryptocraze.domain.cryptoinfo.Coin
 
 @Composable
-fun Co
+fun CoinInfoListItem(
+    coin: Coin,
+    onItemClick: (Coin) -> Unit
+) {
+    Column {
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .clickable 
