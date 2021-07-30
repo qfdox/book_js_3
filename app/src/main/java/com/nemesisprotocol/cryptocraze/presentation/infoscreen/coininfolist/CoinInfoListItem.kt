@@ -29,4 +29,10 @@ fun CoinInfoListItem(
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
             Text(
-                text = "${coin.name} (${coin
+                text = "${coin.name} (${coin.symbol})",
+                style = MaterialTheme.typography.body1,
+                overflow = TextOverflow.Ellipsis,
+                fontSize = 20.sp
+            )
+            if (coin.isActive) {
+ 
