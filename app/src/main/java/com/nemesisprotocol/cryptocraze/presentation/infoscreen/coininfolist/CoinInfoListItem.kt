@@ -47,4 +47,8 @@ fun CoinInfoListItem(
                         .align(CenterVertically),
                     painter = painterResource(id = R.drawable.crypto_coin_inactive_icon),
                     contentDescription = "Crypto Coin Inactive"
-    
+                )
+            }
+        }
+    }
+}
