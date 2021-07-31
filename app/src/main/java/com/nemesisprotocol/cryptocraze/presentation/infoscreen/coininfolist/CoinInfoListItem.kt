@@ -38,4 +38,10 @@ fun CoinInfoListItem(
                 Image(
                     modifier = Modifier
                         .align(CenterVertically),
-                    painter = painterResource(id = R.drawable.crypto_coin_is_active_icon
+                    painter = painterResource(id = R.drawable.crypto_coin_is_active_icon),
+                    contentDescription = "Crypto Coin Active"
+                )
+            } else {
+                Image(
+                    modifier = Modifier
+           
