@@ -13,4 +13,11 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
-import com.nemesi
+import com.nemesisprotocol.cryptocraze.Screen
+
+@Composable
+fun CoinInfoListScreen(
+    navController: NavController,
+    viewModelInfo: CoinInfoListViewModel = hiltViewModel()
+) {
+    val state = viewModelInfo.state.value
