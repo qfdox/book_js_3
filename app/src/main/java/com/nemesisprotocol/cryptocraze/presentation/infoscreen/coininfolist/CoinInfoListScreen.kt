@@ -28,4 +28,11 @@ fun CoinInfoListScreen(
                     coin = coin,
                     onItemClick = {
                         navController.navigate(Screen.CoinDetailScreen.route + "/${coin.id}")
-      
+                    }
+                )
+            }
+        }
+        if (state.error.isNotBlank()) {
+            Text(
+                text = state.error,
+             
