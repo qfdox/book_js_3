@@ -44,4 +44,7 @@ fun CoinInfoListScreen(
             )
         }
         if (state.isLoading) {
-            CircularProgressIndicato
+            CircularProgressIndicator(modifier = Modifier.align(Alignment.Center))
+        }
+    }
+}

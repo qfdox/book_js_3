@@ -1,0 +1,3 @@
+package com.nemesisprotocol.cryptocraze.presentation.infoscreen.coininfolist
+
+import com.nemesisprotocol.cryptocraze.do
