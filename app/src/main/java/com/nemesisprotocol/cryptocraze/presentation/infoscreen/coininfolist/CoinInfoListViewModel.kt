@@ -6,4 +6,11 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.nemesisprotocol.cryptocraze.common.Resource
 import com.nemesisprotocol.cryptocraze.domain.cryptoinfo.usecase.GetCoinsUseCase
-import dagger.hilt.android.lifecycle.Hilt
+import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.launchIn
+import kotlinx.coroutines.flow.onEach
+import javax.inject.Inject
+
+@HiltViewModel
+class CoinInfoListViewModel @Inject constructor(
+    p
