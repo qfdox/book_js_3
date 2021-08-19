@@ -13,4 +13,10 @@ import javax.inject.Inject
 
 @HiltViewModel
 class CoinInfoListViewModel @Inject constructor(
-    p
+    private val getCoinsUseCase: GetCoinsUseCase
+) : ViewModel() {
+
+    private val _state = mutableStateOf(CoinInfoListState())
+    val state: State<CoinInfoListState> = _state
+
+    init {
