@@ -20,3 +20,11 @@ class CoinInfoListViewModel @Inject constructor(
     val state: State<CoinInfoListState> = _state
 
     init {
+        getCoins()
+    }
+
+    private fun getCoins() {
+        getCoinsUseCase().onEach { result ->
+            when (result) {
+                is Resource.Success -> {
+        
