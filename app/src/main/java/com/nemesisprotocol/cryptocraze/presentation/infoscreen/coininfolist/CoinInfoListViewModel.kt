@@ -35,4 +35,9 @@ class CoinInfoListViewModel @Inject constructor(
                     )
                 }
                 is Resource.Loading -> {
-                    _state.va
+                    _state.value = CoinInfoListState(isLoading = true)
+                }
+            }
+        }.launchIn(viewModelScope)
+    }
+}
