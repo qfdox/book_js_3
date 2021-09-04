@@ -14,4 +14,8 @@ class LoginViewModel @Inject constructor(
     private val getUsersUseCase: GetUsersUseCase,
     private val checkUserExistsUseCase: CheckUserExistsUseCase,
     private val addUserUseCase: AddUserUseCase,
-    private val isValidLoginCredentialsUseCase: IsValidLoginCred
+    private val isValidLoginCredentialsUseCase: IsValidLoginCredentialsUseCase,
+    private val dispatcherProvider: DispatcherProvider
+) : ViewModel() {
+
+    fun createUser(username: String, password: String, confirmPassword: String)
