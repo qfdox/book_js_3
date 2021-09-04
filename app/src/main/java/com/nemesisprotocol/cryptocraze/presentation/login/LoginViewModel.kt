@@ -12,4 +12,6 @@ import javax.inject.Inject
 class LoginViewModel @Inject constructor(
     private val getUserByUsernameUseCase: GetUserByUsernameUseCase,
     private val getUsersUseCase: GetUsersUseCase,
-    
+    private val checkUserExistsUseCase: CheckUserExistsUseCase,
+    private val addUserUseCase: AddUserUseCase,
+    private val isValidLoginCredentialsUseCase: IsValidLoginCred
