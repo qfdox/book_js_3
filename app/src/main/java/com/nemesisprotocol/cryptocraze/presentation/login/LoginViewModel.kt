@@ -6,4 +6,10 @@ import com.nemesisprotocol.cryptocraze.domain.user.User
 import com.nemesisprotocol.cryptocraze.domain.user.usecase.*
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.withContext
-import javax.inject.Inj
+import javax.inject.Inject
+
+@HiltViewModel
+class LoginViewModel @Inject constructor(
+    private val getUserByUsernameUseCase: GetUserByUsernameUseCase,
+    private val getUsersUseCase: GetUsersUseCase,
+    
