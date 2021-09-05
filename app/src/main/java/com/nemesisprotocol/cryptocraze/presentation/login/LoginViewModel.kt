@@ -23,4 +23,10 @@ class LoginViewModel @Inject constructor(
             User(
                 username = username,
                 password = password
-            
+            )
+        )
+    }
+
+    suspend fun login(username: String, password: String): Boolean {
+        return withContext(dispatcherProvider.io) {
+            val isLoginValid = isValidLoginCredentia
