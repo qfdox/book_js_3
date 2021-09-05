@@ -29,4 +29,11 @@ class LoginViewModel @Inject constructor(
 
     suspend fun login(username: String, password: String): Boolean {
         return withContext(dispatcherProvider.io) {
-            val isLoginValid = isValidLoginCredentia
+            val isLoginValid = isValidLoginCredentialsUseCase(username, password)
+            isLoginValid
+        }
+    }
+
+    suspend fun checkUserExists(username: String): Boolean {
+        return withContext(dispatcherProvider.io) {
+        
