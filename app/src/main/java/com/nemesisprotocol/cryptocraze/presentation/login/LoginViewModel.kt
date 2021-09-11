@@ -36,4 +36,8 @@ class LoginViewModel @Inject constructor(
 
     suspend fun checkUserExists(username: String): Boolean {
         return withContext(dispatcherProvider.io) {
-        
+            val userExists = checkUserExistsUseCase(username)
+            userExists
+        }
+    }
+}
