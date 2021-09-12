@@ -17,4 +17,9 @@ fun SubmitButton(
 ) {
     Button(
         modifier = Modifier
-            .pad
+            .padding(10.dp)
+            .fillMaxWidth(),
+        enabled = validInputs,
+        onClick = onClick
+    ) {
+        Text(text = stringResource(id = textId), modifier = Modifier.padding(5.d
