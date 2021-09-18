@@ -22,4 +22,6 @@ fun SubmitButton(
         enabled = validInputs,
         onClick = onClick
     ) {
-        Text(text = stringResource(id = textId), modifier = Modifier.padding(5.d
+        Text(text = stringResource(id = textId), modifier = Modifier.padding(5.dp))
+    }
+}
