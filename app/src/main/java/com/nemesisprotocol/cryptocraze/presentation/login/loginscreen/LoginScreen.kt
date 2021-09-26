@@ -38,4 +38,7 @@ fun LoginScreen(
     model: LoginViewModel = hiltViewModel()
 ) {
 
-    val coroutineScope = re
+    val coroutineScope = rememberCoroutineScope()
+    SignIn(userLoggedIn, navController) { email: String, password: String ->
+        coroutineScope.async {
+            model.login(email, password)
