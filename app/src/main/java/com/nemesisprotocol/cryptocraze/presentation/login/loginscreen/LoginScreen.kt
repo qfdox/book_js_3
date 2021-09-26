@@ -30,4 +30,12 @@ import com.nemesisprotocol.cryptocraze.presentation.login.components.SubmitButto
 import com.nemesisprotocol.cryptocraze.presentation.login.components.UsernameTextField
 import kotlinx.coroutines.*
 
-@ExperimentalCompose
+@ExperimentalComposeUiApi
+@Composable
+fun LoginScreen(
+    userLoggedIn: MutableState<Boolean>,
+    navController: NavHostController,
+    model: LoginViewModel = hiltViewModel()
+) {
+
+    val coroutineScope = re
