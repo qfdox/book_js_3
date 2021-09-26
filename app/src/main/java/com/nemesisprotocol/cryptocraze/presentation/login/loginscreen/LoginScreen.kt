@@ -42,3 +42,13 @@ fun LoginScreen(
     SignIn(userLoggedIn, navController) { email: String, password: String ->
         coroutineScope.async {
             model.login(email, password)
+        }
+    }
+}
+
+@ExperimentalComposeUiApi
+@Composable
+private fun SignIn(
+    userLoggedIn: MutableState<Boolean>,
+    navController: NavHostController,
+    onDone:
