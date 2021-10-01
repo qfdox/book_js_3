@@ -51,4 +51,8 @@ fun LoginScreen(
 private fun SignIn(
     userLoggedIn: MutableState<Boolean>,
     navController: NavHostController,
-    onDone:
+    onDone: (String, String) -> Deferred<Boolean>
+) {
+    val username = rememberSaveable { mutableStateOf("") }
+    val password = rememberSaveable { mutableStateOf("") }
+    val passwordVisibility = remember
