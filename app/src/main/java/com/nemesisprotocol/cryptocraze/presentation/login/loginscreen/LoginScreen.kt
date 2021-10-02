@@ -55,4 +55,7 @@ private fun SignIn(
 ) {
     val username = rememberSaveable { mutableStateOf("") }
     val password = rememberSaveable { mutableStateOf("") }
-    val passwordVisibility = remember
+    val passwordVisibility = rememberSaveable { mutableStateOf(false) }
+    val passwordFocusRequester = FocusRequester.Default
+    val keyboardController = LocalSoftwareKeyboardController.current
+    val isVa
