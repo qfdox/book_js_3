@@ -58,4 +58,8 @@ private fun SignIn(
     val passwordVisibility = rememberSaveable { mutableStateOf(false) }
     val passwordFocusRequester = FocusRequester.Default
     val keyboardController = LocalSoftwareKeyboardController.current
-    val isVa
+    val isValid = remember(username.value, password.value) {
+        username.value.trim().isNotEmpty() && password.value.trim().isNotEmpty()
+    }
+    val modifier = Modifier
+        .fillMaxSize(
