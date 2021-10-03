@@ -68,4 +68,8 @@ private fun SignIn(
 
     val coroutineScope = rememberCoroutineScope()
 
-    Column(modifier, horizontalAlignment = Alig
+    Column(modifier, horizontalAlignment = Alignment.CenterHorizontally) {
+        Text(
+            text = stringResource(id = R.string.app_name_title),
+            modifier = Modifier.padding(vertical = 50.dp, horizontal = 15.dp),
+      
