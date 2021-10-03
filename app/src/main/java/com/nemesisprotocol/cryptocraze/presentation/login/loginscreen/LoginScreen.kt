@@ -62,4 +62,10 @@ private fun SignIn(
         username.value.trim().isNotEmpty() && password.value.trim().isNotEmpty()
     }
     val modifier = Modifier
-        .fillMaxSize(
+        .fillMaxSize()
+        .background(MaterialTheme.colors.background)
+        .verticalScroll(rememberScrollState())
+
+    val coroutineScope = rememberCoroutineScope()
+
+    Column(modifier, horizontalAlignment = Alig
