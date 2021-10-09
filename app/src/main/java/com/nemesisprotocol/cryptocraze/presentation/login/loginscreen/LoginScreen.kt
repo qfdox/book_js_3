@@ -86,4 +86,9 @@ private fun SignIn(
             modifier = Modifier.focusRequester(passwordFocusRequester),
             passwordState = password,
             passwordVisibility = passwordVisibility,
-            onAction = KeyboardA
+            onAction = KeyboardActions {
+                if (!isValid) return@KeyboardActions
+                onDone(username.value.trim(), password.value.trim())
+                keyboardController?.hide()
+            }
+      
