@@ -91,4 +91,10 @@ private fun SignIn(
                 onDone(username.value.trim(), password.value.trim())
                 keyboardController?.hide()
             }
-      
+        )
+        SubmitButton(
+            textId = R.string.sign_in,
+            validInputs = isValid
+        ) {
+            coroutineScope.launch {
+                if (onDone
