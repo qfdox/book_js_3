@@ -77,4 +77,10 @@ private fun SignIn(
             color = MaterialTheme.colors.onBackground
         )
         UsernameTextField(
-      
+            valueState = username,
+            onAction = KeyboardActions {
+                passwordFocusRequester.requestFocus()
+            }
+        )
+        PasswordTextField(
+            modif
