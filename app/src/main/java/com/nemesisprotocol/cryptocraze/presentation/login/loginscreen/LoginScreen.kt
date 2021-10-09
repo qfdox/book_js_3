@@ -72,4 +72,9 @@ private fun SignIn(
         Text(
             text = stringResource(id = R.string.app_name_title),
             modifier = Modifier.padding(vertical = 50.dp, horizontal = 15.dp),
+            fontSize = 26.sp,
+            fontWeight = FontWeight.Bold,
+            color = MaterialTheme.colors.onBackground
+        )
+        UsernameTextField(
       
