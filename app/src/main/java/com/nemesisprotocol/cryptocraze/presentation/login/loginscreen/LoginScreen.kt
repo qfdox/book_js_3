@@ -83,4 +83,7 @@ private fun SignIn(
             }
         )
         PasswordTextField(
-            modif
+            modifier = Modifier.focusRequester(passwordFocusRequester),
+            passwordState = password,
+            passwordVisibility = passwordVisibility,
+            onAction = KeyboardA
