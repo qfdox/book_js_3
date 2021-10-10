@@ -97,4 +97,10 @@ private fun SignIn(
             validInputs = isValid
         ) {
             coroutineScope.launch {
-                if (onDone
+                if (onDone(
+                        username.value.trim(),
+                        password.value.trim()
+                    ).await()
+                ) {
+                    userLoggedIn.value = true
+          
