@@ -103,4 +103,10 @@ private fun SignIn(
                     ).await()
                 ) {
                     userLoggedIn.value = true
-          
+                    navController.navigate(Screen.Home.route)
+                }
+            }
+            keyboardController?.hide()
+        }
+        Text(
+            text 
