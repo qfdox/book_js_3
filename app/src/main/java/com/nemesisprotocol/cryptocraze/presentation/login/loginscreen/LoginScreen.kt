@@ -109,4 +109,7 @@ private fun SignIn(
             keyboardController?.hide()
         }
         Text(
-            text 
+            text = stringResource(id = R.string.do_not_have_account_sign_up_instead),
+            modifier = Modifier
+                .clickable {
+                    navControl
