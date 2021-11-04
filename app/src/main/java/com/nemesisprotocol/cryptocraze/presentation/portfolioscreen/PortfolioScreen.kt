@@ -24,4 +24,13 @@ import com.nemesisprotocol.cryptocraze.presentation.portfolioscreen.piechart.Pie
 import com.nemesisprotocol.cryptocraze.presentation.portfolioscreen.piechart.renderer.SimpleSliceDrawer
 import kotlin.math.round
 
-@Composabl
+@Composable
+fun PortfolioScreen() {
+
+    val portfolioViewModel: PortfolioViewModel = hiltViewModel()
+
+    val portfolio = portfolioViewModel.portfolio.collectAsState()
+
+    var cryptoQuantity = 0.0
+
+    val hashMa
