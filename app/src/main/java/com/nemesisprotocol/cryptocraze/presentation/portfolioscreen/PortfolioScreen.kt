@@ -44,4 +44,7 @@ fun PortfolioScreen() {
         hashMap[cryptoInvestments.cryptoSymbol] = percentage
     }
 
-    va
+    val slices = mutableListOf<Slice>()
+
+    for ((colourIndex, i) in portfolio.value.withIndex()) {
+        slices.add(Slice(round(hashMap[i.cryptoSymbol]!!.toFloat()), listOfPortfoli
