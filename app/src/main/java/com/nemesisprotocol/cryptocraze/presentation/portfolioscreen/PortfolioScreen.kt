@@ -33,4 +33,10 @@ fun PortfolioScreen() {
 
     var cryptoQuantity = 0.0
 
-    val hashMa
+    val hashMap: HashMap<String, Double> = HashMap()
+
+    for (cryptoInvestments in portfolio.value) {
+        cryptoQuantity += cryptoInvestments.cryptoAmount
+    }
+
+    for (cryptoInvestments in portfolio.
