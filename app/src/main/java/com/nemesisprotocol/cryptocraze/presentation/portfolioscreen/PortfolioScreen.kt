@@ -39,4 +39,9 @@ fun PortfolioScreen() {
         cryptoQuantity += cryptoInvestments.cryptoAmount
     }
 
-    for (cryptoInvestments in portfolio.
+    for (cryptoInvestments in portfolio.value) {
+        val percentage = (cryptoInvestments.cryptoAmount / cryptoQuantity) * 100
+        hashMap[cryptoInvestments.cryptoSymbol] = percentage
+    }
+
+    va
