@@ -47,4 +47,13 @@ fun PortfolioScreen() {
     val slices = mutableListOf<Slice>()
 
     for ((colourIndex, i) in portfolio.value.withIndex()) {
-        slices.add(Slice(round(hashMap[i.cryptoSymbol]!!.toFloat()), listOfPortfoli
+        slices.add(Slice(round(hashMap[i.cryptoSymbol]!!.toFloat()), listOfPortfolioColours[colourIndex]))
+    }
+
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .fillMaxWidth()
+    ) {
+        Text(
+            text = "Your Po
