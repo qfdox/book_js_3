@@ -56,4 +56,9 @@ fun PortfolioScreen() {
             .fillMaxWidth()
     ) {
         Text(
-            text = "Your Po
+            text = "Your Portfolio",
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(top = 32.dp),
+            textAlign = TextAlign.Center,
+            fontStyle
