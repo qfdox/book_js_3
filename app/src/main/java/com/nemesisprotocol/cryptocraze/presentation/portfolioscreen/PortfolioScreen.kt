@@ -61,4 +61,11 @@ fun PortfolioScreen() {
                 .fillMaxWidth()
                 .padding(top = 32.dp),
             textAlign = TextAlign.Center,
-            fontStyle
+            fontStyle = FontStyle.Italic,
+            fontSize = 20.sp
+        )
+        Column(
+            Modifier
+                .fillMaxWidth()
+                .padding(top = 16.dp),
+            verticalArra
