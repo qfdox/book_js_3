@@ -68,4 +68,8 @@ fun PortfolioScreen() {
             Modifier
                 .fillMaxWidth()
                 .padding(top = 16.dp),
-            verticalArra
+            verticalArrangement = Arrangement.Center, Alignment.CenterHorizontally,
+        ) {
+            Row(horizontalArrangement = Arrangement.SpaceEvenly) {
+                PieChart(
+                
