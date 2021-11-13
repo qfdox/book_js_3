@@ -79,4 +79,7 @@ fun PortfolioScreen() {
                     animation = TweenSpec(durationMillis = 500),
                     sliceDrawer = SimpleSliceDrawer(30f)
                 )
-                LazyColumn(Modifier.padding(sta
+                LazyColumn(Modifier.padding(start = 32.dp)) {
+                    itemsIndexed(portfolio.value) { index, item ->
+                        Text(
+                            modifier = Modifi
