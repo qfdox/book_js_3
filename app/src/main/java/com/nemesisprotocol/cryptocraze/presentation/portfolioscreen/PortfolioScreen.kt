@@ -72,4 +72,8 @@ fun PortfolioScreen() {
         ) {
             Row(horizontalArrangement = Arrangement.SpaceEvenly) {
                 PieChart(
-                
+                    pieChartData = PieChartData(slices),
+                    modifier = Modifier
+                        .padding(start = 32.dp, top = 8.dp)
+                        .size(192.dp),
+ 
