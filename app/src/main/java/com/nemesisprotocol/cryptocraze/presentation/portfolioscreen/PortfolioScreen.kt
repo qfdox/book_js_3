@@ -76,4 +76,7 @@ fun PortfolioScreen() {
                     modifier = Modifier
                         .padding(start = 32.dp, top = 8.dp)
                         .size(192.dp),
- 
+                    animation = TweenSpec(durationMillis = 500),
+                    sliceDrawer = SimpleSliceDrawer(30f)
+                )
+                LazyColumn(Modifier.padding(sta
