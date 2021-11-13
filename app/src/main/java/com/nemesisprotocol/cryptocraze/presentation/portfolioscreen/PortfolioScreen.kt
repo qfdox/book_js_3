@@ -85,4 +85,8 @@ fun PortfolioScreen() {
                             modifier = Modifier
                                 .fillMaxWidth()
                                 .padding(start = 16.dp, top = 16.dp),
-                            text = item.cryptoSymbol.upp
+                            text = item.cryptoSymbol.uppercase(),
+                            fontWeight = FontWeight.Bold,
+                            fontSize = 14.sp,
+                            color = listOfPortfolioColours[index]
+     
