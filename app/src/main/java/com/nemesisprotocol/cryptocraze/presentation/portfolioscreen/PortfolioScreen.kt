@@ -82,4 +82,7 @@ fun PortfolioScreen() {
                 LazyColumn(Modifier.padding(start = 32.dp)) {
                     itemsIndexed(portfolio.value) { index, item ->
                         Text(
-                            modifier = Modifi
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(start = 16.dp, top = 16.dp),
+                            text = item.cryptoSymbol.upp
