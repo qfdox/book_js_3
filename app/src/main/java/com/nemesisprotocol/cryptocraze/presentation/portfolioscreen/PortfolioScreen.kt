@@ -89,4 +89,8 @@ fun PortfolioScreen() {
                             fontWeight = FontWeight.Bold,
                             fontSize = 14.sp,
                             color = listOfPortfolioColours[index]
-     
+                        )
+                        Text(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                         
