@@ -95,4 +95,14 @@ fun PortfolioScreen() {
                                 .fillMaxWidth()
                                 .padding(start = 16.dp),
                             text = "${hashMap[item.cryptoSymbol]!!.roundToTwoDecimals()}%",
-                            fontStyle = FontStyle.
+                            fontStyle = FontStyle.Italic,
+                            fontSize = 14.sp
+                        )
+                    }
+                }
+            }
+        }
+    }
+}
+
+val listOfPortfolioColours = li
