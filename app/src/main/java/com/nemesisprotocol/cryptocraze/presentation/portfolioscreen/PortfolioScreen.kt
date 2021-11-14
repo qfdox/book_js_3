@@ -93,4 +93,6 @@ fun PortfolioScreen() {
                         Text(
                             modifier = Modifier
                                 .fillMaxWidth()
-                         
+                                .padding(start = 16.dp),
+                            text = "${hashMap[item.cryptoSymbol]!!.roundToTwoDecimals()}%",
+                            fontStyle = FontStyle.
