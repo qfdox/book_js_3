@@ -105,4 +105,12 @@ fun PortfolioScreen() {
     }
 }
 
-val listOfPortfolioColours = li
+val listOfPortfolioColours = listOf(
+    Color(0xFFFFFF00),
+    Color(0xFFD51652),
+    Color(0xFFC543DB),
+    Color(0xFF35E4FA),
+    Color(0xFF133D30),
+    Color(0xFF912F22),
+    Color(0xFF4C18A8),
+    Color(0xFF00FF0D
