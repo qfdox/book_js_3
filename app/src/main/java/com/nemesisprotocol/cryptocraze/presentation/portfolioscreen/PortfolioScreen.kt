@@ -146,4 +146,12 @@ val listOfPortfolioColours = listOf(
     Color(0xFF099709),
     Color(0xFF160466),
     Color(0xFF154127),
-    Color(0xFF95E6
+    Color(0xFF95E643),
+    Color(0xFF744791),
+    Color(0xFF2A94A0),
+    Color(0xFF5D9B7D),
+    Color(0xFF741C1C),
+    Color(0xFFBDA056),
+    Color(0xFF4B4B15),
+    Color(0xC80B8A27),
+   
