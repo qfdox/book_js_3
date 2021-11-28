@@ -184,4 +184,7 @@ val listOfPortfolioColours = listOf(
     Color(0xFF70532D),
     Color(0xFF3AA360),
     Color(0xFF9EFDFD),
-    Color(0xFFC41
+    Color(0xFFC4127C),
+    Color(0xFF5A4E26),
+    Color(0xFF14613C),
+).shuffled()
