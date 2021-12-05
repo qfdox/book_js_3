@@ -28,4 +28,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.drawscope.drawIntoCanvas
 import com.nemesisprotocol.cryptocraze.presentation.portfolioscreen.piechart.PieChartUtils.calculateAngle
 import com.nemesisprotocol.cryptocraze.presentation.portfolioscreen.piechart.renderer.SimpleSliceDrawer
-import com.nemesisprotocol.
+import com.nemesisprotocol.cryptocraze.presentation.portfolioscreen.piechart.renderer.SliceDrawer
+
+@Composable
+fun PieChart(
+    pieChartData: PieChartData,
+    modifier: Modifier = Modifier,
+    animation: AnimationSpec<Float> = 
