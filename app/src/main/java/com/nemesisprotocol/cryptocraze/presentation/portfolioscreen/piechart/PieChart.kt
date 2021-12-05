@@ -34,4 +34,7 @@ import com.nemesisprotocol.cryptocraze.presentation.portfolioscreen.piechart.ren
 fun PieChart(
     pieChartData: PieChartData,
     modifier: Modifier = Modifier,
-    animation: AnimationSpec<Float> = 
+    animation: AnimationSpec<Float> = TweenSpec(durationMillis = 500),
+    sliceDrawer: SliceDrawer = SimpleSliceDrawer()
+) {
+    val transitionProgress = remember(pieChartData.slices) { Animatable(initialValue =
