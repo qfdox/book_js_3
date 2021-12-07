@@ -41,4 +41,11 @@ fun PieChart(
 
     // When slices value changes we want to re-animated the chart.
     LaunchedEffect(pieChartData.slices) {
-        transitionProgress.animateTo(1f, animatio
+        transitionProgress.animateTo(1f, animationSpec = animation)
+    }
+
+    DrawChart(
+        pieChartData = pieChartData,
+        modifier = modifier.fillMaxSize(),
+        progress = transitionProgress.value,
+        sliceDrawer = 
