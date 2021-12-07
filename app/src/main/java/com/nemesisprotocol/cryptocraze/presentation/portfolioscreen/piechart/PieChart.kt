@@ -37,4 +37,8 @@ fun PieChart(
     animation: AnimationSpec<Float> = TweenSpec(durationMillis = 500),
     sliceDrawer: SliceDrawer = SimpleSliceDrawer()
 ) {
-    val transitionProgress = remember(pieChartData.slices) { Animatable(initialValue =
+    val transitionProgress = remember(pieChartData.slices) { Animatable(initialValue = 0f) }
+
+    // When slices value changes we want to re-animated the chart.
+    LaunchedEffect(pieChartData.slices) {
+        transitionProgress.animateTo(1f, animatio
