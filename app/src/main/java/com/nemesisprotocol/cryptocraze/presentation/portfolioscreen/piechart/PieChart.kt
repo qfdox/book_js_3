@@ -75,4 +75,12 @@ private fun DrawChart(
                 sliceDrawer.drawSlice(
                     drawScope = this,
                     canvas = drawContext.canvas,
-                    are
+                    area = size,
+                    startAngle = startArc,
+                    sweepAngle = arc,
+                    slice = slice
+                )
+
+                startArc += arc
+            }
+   
