@@ -48,4 +48,15 @@ fun PieChart(
         pieChartData = pieChartData,
         modifier = modifier.fillMaxSize(),
         progress = transitionProgress.value,
-        sliceDrawer = 
+        sliceDrawer = sliceDrawer
+    )
+}
+
+@Composable
+private fun DrawChart(
+    pieChartData: PieChartData,
+    modifier: Modifier,
+    progress: Float,
+    sliceDrawer: SliceDrawer
+) {
+    val s
