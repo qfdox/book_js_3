@@ -66,4 +66,8 @@ private fun DrawChart(
             var startArc = 0f
 
             slices.forEach { slice ->
-          
+                val arc = calculateAngle(
+                    sliceLength = slice.value,
+                    totalLength = pieChartData.totalSize,
+                    progress = progress
+      
