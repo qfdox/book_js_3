@@ -70,4 +70,9 @@ private fun DrawChart(
                     sliceLength = slice.value,
                     totalLength = pieChartData.totalSize,
                     progress = progress
-      
+                )
+
+                sliceDrawer.drawSlice(
+                    drawScope = this,
+                    canvas = drawContext.canvas,
+                    are
