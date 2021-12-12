@@ -59,4 +59,11 @@ private fun DrawChart(
     progress: Float,
     sliceDrawer: SliceDrawer
 ) {
-    val s
+    val slices = pieChartData.slices
+
+    Canvas(modifier = modifier) {
+        drawIntoCanvas {
+            var startArc = 0f
+
+            slices.forEach { slice ->
+          
