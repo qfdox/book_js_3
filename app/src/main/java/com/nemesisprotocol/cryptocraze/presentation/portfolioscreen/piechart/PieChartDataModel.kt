@@ -1,3 +1,4 @@
+
 /*
 * Copyright 2020 Taras Koshkin.
 *
@@ -16,20 +17,24 @@
 
 package com.nemesisprotocol.cryptocraze.presentation.portfolioscreen.piechart
 
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.graphics.Color
 
-data class PieChartData(
-    val slices: List<Slice>
-) {
-    internal val totalSize: Float
-        get() {
-            var total = 0f
-            slices.forEach { total += it.value }
-            return total
-        }
-
-    data class Slice(
-        val value: Float,
-        val color: Color
+class PieChartDataModel {
+    private var colors = mutableListOf(
+        Color(0XFFF44336),
+        Color(0XFFE91E63),
+        Color(0XFF9C27B0),
+        Color(0XFF673AB7),
+        Color(0XFF3F51B5),
+        Color(0XFF03A9F4),
+        Color(0XFF009688),
+        Color(0XFFCDDC39),
+        Color(0XFFFFC107),
+        Color(0XFFFF5722),
+        Color(0XFF795548),
+        Color(0XFF9E9E9E),
+        Color(0XFF607D8B)
     )
-}
