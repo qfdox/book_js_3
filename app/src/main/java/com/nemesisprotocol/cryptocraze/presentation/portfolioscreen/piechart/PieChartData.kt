@@ -16,4 +16,12 @@
 
 package com.nemesisprotocol.cryptocraze.presentation.portfolioscreen.piechart
 
-import androidx.compose.ui.graphics.Co
+import androidx.compose.ui.graphics.Color
+
+data class PieChartData(
+    val slices: List<Slice>
+) {
+    internal val totalSize: Float
+        get() {
+            var total = 0f
+            slice
