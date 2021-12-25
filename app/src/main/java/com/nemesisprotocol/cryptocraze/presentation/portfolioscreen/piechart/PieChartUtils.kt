@@ -17,4 +17,11 @@
 package com.nemesisprotocol.cryptocraze.presentation.portfolioscreen.piechart
 
 internal object PieChartUtils {
-    fun calcul
+    fun calculateAngle(
+        sliceLength: Float,
+        totalLength: Float,
+        progress: Float
+    ): Float {
+        return 360.0f * (sliceLength * progress) / totalLength
+    }
+}
