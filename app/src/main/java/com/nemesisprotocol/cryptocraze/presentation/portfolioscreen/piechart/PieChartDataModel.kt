@@ -38,3 +38,56 @@ class PieChartDataModel {
         Color(0XFF9E9E9E),
         Color(0XFF607D8B)
     )
+
+    var sliceThickness by mutableStateOf(25f)
+    var pieChartData by mutableStateOf(
+        PieChartData(
+            slices = listOf(
+                PieChartData.Slice(
+                    randomLength(),
+                    randomColor()
+                ),
+                PieChartData.Slice(
+                    randomLength(),
+                    randomColor()
+                ),
+                PieChartData.Slice(
+                    randomLength(),
+                    randomColor()
+                )
+            )
+        )
+    )
+
+    val slices
+        get() = pieChartData.slices
+
+    fun addSlice() {
+        pieChartData = pieChartData.copy(
+            slices = slices.toMutableList().apply {
+                add(PieChartData.Slice(randomLength(), randomColor()))
+            }.toList()
+        )
+    }
+
+    fun removeSlice() {
+        pieChartData = pieChartData.copy(
+            slices = slices.toMutableList().apply {
+                val lastSlice = slices[slices.size - 1]
+                colors.add(lastSlice.color)
+
+                remove(lastSlice)
+            }.toList()
+        )
+    }
+
+    private fun randomColor(): Color {
+        val randomIndex = (Math.random() * colors.size).toInt()
+        val color = colors[randomIndex]
+        colors.removeAt(randomIndex)
+
+        return color
+    }
+
+    private fun randomLength(): Float = (20 * Math.random() + 10).toFloat()
+}
