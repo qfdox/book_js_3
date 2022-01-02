@@ -26,4 +26,8 @@ interface SliceDrawer {
         drawScope: DrawScope,
         canvas: Canvas,
         area: Size,
-        startAng
+        startAngle: Float,
+        sweepAngle: Float,
+        slice: Slice
+    )
+}
