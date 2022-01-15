@@ -24,4 +24,10 @@ fun SplashScreen(navController: NavController) {
     val scale = remember {
         Animatable(0f)
     }
-    LaunchedE
+    LaunchedEffect(key1 = true) {
+        scale.animateTo(
+            targetValue = 0.2f,
+            animationSpec = tween(
+                600,
+                easing = {
+       
