@@ -30,4 +30,9 @@ fun SplashScreen(navController: NavController) {
             animationSpec = tween(
                 600,
                 easing = {
-       
+                    OvershootInterpolator(2f).getInterpolation(it)
+                }
+            )
+        )
+        delay(2000L)
+        navController.navigate(Screen.Login.rout
