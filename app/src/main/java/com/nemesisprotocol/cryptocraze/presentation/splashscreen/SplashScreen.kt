@@ -43,4 +43,10 @@ fun SplashScreen(navController: NavController) {
             .fillMaxHeight()
             .fillMaxWidth(),
         horizontalAlignment = Alignment.CenterHorizontally,
-        ver
+        verticalArrangement = Arrangement.Center
+    ) {
+        Image(
+            painter = painterResource(id = R.drawable.cryptocraze_icon),
+            contentDescription = null
+        )
+   
