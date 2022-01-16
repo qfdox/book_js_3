@@ -35,4 +35,12 @@ fun SplashScreen(navController: NavController) {
             )
         )
         delay(2000L)
-        navController.navigate(Screen.Login.rout
+        navController.navigate(Screen.Login.route)
+    }
+
+    Column(
+        modifier = Modifier
+            .fillMaxHeight()
+            .fillMaxWidth(),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        ver
