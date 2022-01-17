@@ -49,4 +49,5 @@ fun SplashScreen(navController: NavController) {
             painter = painterResource(id = R.drawable.cryptocraze_icon),
             contentDescription = null
         )
-   
+    }
+}
