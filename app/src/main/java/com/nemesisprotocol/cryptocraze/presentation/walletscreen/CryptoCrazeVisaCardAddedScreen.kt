@@ -26,4 +26,9 @@ fun CryptoCrazeVisaCardAddedScreen(navController: NavController) {
         navController.navigate(Screen.Wallet.route)
     }
     Column(
-        modifier = 
+        modifier = Modifier
+            .fillMaxHeight()
+            .fillMaxWidth()
+            .background(Color(0xFF004999)),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        vertica
