@@ -31,4 +31,7 @@ fun CryptoCrazeVisaCardAddedScreen(navController: NavController) {
             .fillMaxWidth()
             .background(Color(0xFF004999)),
         horizontalAlignment = Alignment.CenterHorizontally,
-        vertica
+        verticalArrangement = Arrangement.Center
+    ) {
+        Icon(painter = painterResource(id = R.drawable.added_success_icon), contentDescription = null, modifier = Modifier.size(64.dp))
+        
