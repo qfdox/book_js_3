@@ -34,4 +34,6 @@ fun CryptoCrazeVisaCardAddedScreen(navController: NavController) {
         verticalArrangement = Arrangement.Center
     ) {
         Icon(painter = painterResource(id = R.drawable.added_success_icon), contentDescription = null, modifier = Modifier.size(64.dp))
-        
+        Text(text = "Created New Crypto Craze Visa Card", fontSize = 24.sp, textAlign = TextAlign.Center)
+    }
+}
