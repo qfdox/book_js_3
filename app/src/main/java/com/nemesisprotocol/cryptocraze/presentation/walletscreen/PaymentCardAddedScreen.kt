@@ -14,4 +14,10 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-import
+import com.nemesisprotocol.cryptocraze.R
+import com.nemesisprotocol.cryptocraze.Screen
+import kotlinx.coroutines.delay
+
+@Composable
+fun PaymentCardAddedScreen(navController: NavController) {
+  
