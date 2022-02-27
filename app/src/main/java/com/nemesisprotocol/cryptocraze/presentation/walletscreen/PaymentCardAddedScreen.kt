@@ -26,4 +26,8 @@ fun PaymentCardAddedScreen(navController: NavController) {
     }
     Column(
         modifier = Modifier
-            .fillMaxH
+            .fillMaxHeight()
+            .fillMaxWidth()
+            .background(Color(0xFF004999)),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangem
