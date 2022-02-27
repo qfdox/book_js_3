@@ -20,4 +20,10 @@ import kotlinx.coroutines.delay
 
 @Composable
 fun PaymentCardAddedScreen(navController: NavController) {
-  
+    LaunchedEffect(key1 = true) {
+        delay(2500L)
+        navController.navigate(Screen.Wallet.route)
+    }
+    Column(
+        modifier = Modifier
+            .fillMaxH
