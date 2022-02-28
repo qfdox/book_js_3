@@ -35,4 +35,12 @@ fun PaymentCardAddedScreen(navController: NavController) {
         Icon(
             painter = painterResource(id = R.drawable.added_success_icon),
             contentDescription = null,
-            modifier = Modifier.size(6
+            modifier = Modifier.size(64.dp)
+        )
+        Text(
+            text = "Added Payment card to Fiat Wallet",
+            fontSize = 24.sp,
+            textAlign = TextAlign.Center
+        )
+    }
+}
