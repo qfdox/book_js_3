@@ -15,4 +15,8 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import com.nemesisprotocol.cryptocraze.R
 import com.nemesisprotocol.cryptocraze.presentation.walletscreen.addwallet.AddCryptoCrazeVisaCardDialog
-import com.nemesispro
+import com.nemesisprotocol.cryptocraze.presentation.walletscreen.addwallet.AddPaymentCardDialog
+
+@Composable
+fun WalletScreen(navController: NavHostController) {
+    val addPaymentCardDialog = remember {
