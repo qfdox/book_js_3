@@ -19,4 +19,7 @@ import com.nemesisprotocol.cryptocraze.presentation.walletscreen.addwallet.AddPa
 
 @Composable
 fun WalletScreen(navController: NavHostController) {
-    val addPaymentCardDialog = remember {
+    val addPaymentCardDialog = remember { mutableStateOf(false) }
+    val addCryptoCrazeVisaCardDialog = remember { mutableStateOf(false) }
+    AddPaymentCardDialog(addPaymentCardDialog, navController)
+    AddCryptoCrazeVisaCardDialog(addCryptoCrazeV
