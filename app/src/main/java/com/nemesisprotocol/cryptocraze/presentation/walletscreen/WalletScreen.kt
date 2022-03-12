@@ -22,4 +22,10 @@ fun WalletScreen(navController: NavHostController) {
     val addPaymentCardDialog = remember { mutableStateOf(false) }
     val addCryptoCrazeVisaCardDialog = remember { mutableStateOf(false) }
     AddPaymentCardDialog(addPaymentCardDialog, navController)
-    AddCryptoCrazeVisaCardDialog(addCryptoCrazeV
+    AddCryptoCrazeVisaCardDialog(addCryptoCrazeVisaCardDialog, navController)
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .fillMaxWidth()
+            .padding(top = 16.dp)
+    ) 
