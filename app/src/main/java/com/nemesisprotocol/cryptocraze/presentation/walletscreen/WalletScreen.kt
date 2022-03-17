@@ -33,4 +33,11 @@ fun WalletScreen(navController: NavHostController) {
             modifier = Modifier
                 .fillMaxWidth()
                 .height(64.dp)
-                .padding(start = 8.dp, end = 8.dp,
+                .padding(start = 8.dp, end = 8.dp, top = 8.dp)
+                .clickable {
+                    addCryptoCrazeVisaCardDialog.value = true
+                }
+        ) {
+            Row {
+                Text(
+               
