@@ -28,4 +28,9 @@ fun WalletScreen(navController: NavHostController) {
             .fillMaxSize()
             .fillMaxWidth()
             .padding(top = 16.dp)
-    ) 
+    ) {
+        Card(
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(64.dp)
+                .padding(start = 8.dp, end = 8.dp,
