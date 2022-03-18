@@ -40,4 +40,7 @@ fun WalletScreen(navController: NavHostController) {
         ) {
             Row {
                 Text(
-               
+                    text = "Crypto Craze Visa Card",
+                    modifier = Modifier
+                        .align(alignment = Alignment.CenterVertically)
+                        .wei
