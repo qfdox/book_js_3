@@ -43,4 +43,9 @@ fun WalletScreen(navController: NavHostController) {
                     text = "Crypto Craze Visa Card",
                     modifier = Modifier
                         .align(alignment = Alignment.CenterVertically)
-                        .wei
+                        .weight(1f)
+                        .padding(start = 8.dp)
+                )
+                Icon(
+                    painter = painterResource(id = R.drawable.visa_card_icon),
+                    contentDes
