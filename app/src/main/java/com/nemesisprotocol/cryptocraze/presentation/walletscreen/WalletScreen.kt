@@ -48,4 +48,9 @@ fun WalletScreen(navController: NavHostController) {
                 )
                 Icon(
                     painter = painterResource(id = R.drawable.visa_card_icon),
-                    contentDes
+                    contentDescription = null,
+                    Modifier
+                        .align(alignment = Alignment.CenterVertically)
+                        .padding(end = 8.dp)
+                )
+  
