@@ -60,4 +60,10 @@ fun WalletScreen(navController: NavHostController) {
                 .fillMaxWidth()
                 .height(64.dp)
                 .padding(start = 8.dp, end = 8.dp, top = 8.dp)
- 
+                .clickable {
+                    addPaymentCardDialog.value = true
+                }
+        ) {
+            Row {
+                Text(
+            
