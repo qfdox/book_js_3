@@ -53,4 +53,11 @@ fun WalletScreen(navController: NavHostController) {
                         .align(alignment = Alignment.CenterVertically)
                         .padding(end = 8.dp)
                 )
-  
+            }
+        }
+        Card(
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(64.dp)
+                .padding(start = 8.dp, end = 8.dp, top = 8.dp)
+ 
