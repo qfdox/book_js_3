@@ -66,4 +66,7 @@ fun WalletScreen(navController: NavHostController) {
         ) {
             Row {
                 Text(
-            
+                    text = "Fiat Wallet",
+                    modifier = Modifier
+                        .align(alignment = Alignment.CenterVertically)
+                        .we
