@@ -69,4 +69,9 @@ fun WalletScreen(navController: NavHostController) {
                     text = "Fiat Wallet",
                     modifier = Modifier
                         .align(alignment = Alignment.CenterVertically)
-                        .we
+                        .weight(1f)
+                        .padding(start = 8.dp)
+                )
+                Icon(
+                    painter = painterResource(id = R.drawable.ic_wallet_24),
+                
