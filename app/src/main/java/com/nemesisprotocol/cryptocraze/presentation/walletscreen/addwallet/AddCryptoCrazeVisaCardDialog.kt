@@ -53,3 +53,46 @@ fun AddCryptoCrazeVisaCardDialog(
                                         .clickable {
                                             navController.navigate(
                                                 Screen.AddCryptoCrazeVisaCard.route +
+                                                    "/${Gson().toJson(it)}"
+                                            )
+                                        }
+                                ) {
+                                    Text(
+                                        "Crypto Craze ${it.cryptoCrazeVisaColour.name} Visa Card",
+                                        fontSize = 18.sp
+                                    )
+                                }
+                            }
+                        }
+                    } else {
+                        Text("You do not have a Crypto Craze Visa Card. \nSelect Create to add a Crypto Craze Visa Card")
+                    }
+                },
+                confirmButton = {
+                    Button(
+                        modifier = Modifier.padding(8.dp),
+                        onClick = {
+                            addCryptoCrazeVisaCardDialog.value = false
+                            navController.navigate(
+                                Screen.AddCryptoCrazeVisaCard.route + "/ "
+                            )
+                        }
+                    ) {
+                        Text("Create")
+                    }
+                },
+                dismissButton = {
+                    Button(
+                        modifier = Modifier.padding(8.dp),
+                        onClick = {
+                            addCryptoCrazeVisaCardDialog.value = false
+                        }
+                    ) {
+                        Text("Cancel")
+                    }
+                }, shape = RoundedCornerShape(30.dp)
+                )
+            }
+        }
+    }
+    
