@@ -74,4 +74,9 @@ fun WalletScreen(navController: NavHostController) {
                 )
                 Icon(
                     painter = painterResource(id = R.drawable.ic_wallet_24),
-                
+                    contentDescription = null,
+                    Modifier
+                        .align(alignment = Alignment.CenterVertically)
+                        .padding(end = 8.dp)
+                )
+     
