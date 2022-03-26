@@ -79,4 +79,7 @@ fun WalletScreen(navController: NavHostController) {
                         .align(alignment = Alignment.CenterVertically)
                         .padding(end = 8.dp)
                 )
-     
+            }
+        }
+    }
+}
