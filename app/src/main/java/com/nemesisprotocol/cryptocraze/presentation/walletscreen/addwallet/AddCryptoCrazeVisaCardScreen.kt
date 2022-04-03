@@ -27,4 +27,9 @@ fun AddCryptoCrazeVisaCardScreen(
     navController: NavHostController,
     cryptoCrazeVisaCard: CryptoCrazeVisaCard?
 ) {
-    val walletVie
+    val walletViewModel: WalletViewModel = hiltViewModel()
+    val cardColour =
+        remember {
+            mutableStateOf(
+                cryptoCrazeVisaCard?.cryptoCrazeVisaColour
+      
