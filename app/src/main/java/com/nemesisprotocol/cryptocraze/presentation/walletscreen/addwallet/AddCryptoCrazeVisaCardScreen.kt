@@ -19,4 +19,12 @@ import com.nemesisprotocol.cryptocraze.R
 import com.nemesisprotocol.cryptocraze.Screen
 import com.nemesisprotocol.cryptocraze.domain.paymentinfo.CryptoCrazeVisaCard
 import com.nemesisprotocol.cryptocraze.presentation.walletscreen.CryptoCrazeVisaColour
-import com.nemesisprotocol.cryptocraze.presentatio
+import com.nemesisprotocol.cryptocraze.presentation.walletscreen.WalletViewModel
+
+@ExperimentalAnimationApi
+@Composable
+fun AddCryptoCrazeVisaCardScreen(
+    navController: NavHostController,
+    cryptoCrazeVisaCard: CryptoCrazeVisaCard?
+) {
+    val walletVie
