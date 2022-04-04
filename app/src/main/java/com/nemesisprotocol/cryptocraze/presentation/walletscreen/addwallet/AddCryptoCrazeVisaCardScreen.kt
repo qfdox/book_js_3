@@ -39,4 +39,10 @@ fun AddCryptoCrazeVisaCardScreen(
     Column(modifier = Modifier.fillMaxSize()) {
         CryptoCrazeVisaCard(cardColour)
         Column(
-            modifie
+            modifier = Modifier.fillMaxWidth(),
+            verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            Row {
+                Image(
+  
