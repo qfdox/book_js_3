@@ -32,4 +32,11 @@ fun AddCryptoCrazeVisaCardScreen(
         remember {
             mutableStateOf(
                 cryptoCrazeVisaCard?.cryptoCrazeVisaColour
-      
+                    ?: CryptoCrazeVisaColour.BLACK
+            )
+        }
+
+    Column(modifier = Modifier.fillMaxSize()) {
+        CryptoCrazeVisaCard(cardColour)
+        Column(
+            modifie
