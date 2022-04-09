@@ -45,4 +45,6 @@ fun AddCryptoCrazeVisaCardScreen(
         ) {
             Row {
                 Image(
-  
+                    painter = painterResource(id = R.drawable.crypto_craze_visa_card_black),
+                    contentDescription = null,
+                    modifier = Modifier
