@@ -86,4 +86,10 @@ fun AddCryptoCrazeVisaCardScreen(
                     contentDescription = null,
                     modifier = Modifier
                         .size(64.dp)
-                        .clickable { cardColour.value = CryptoCrazeVisaC
+                        .clickable { cardColour.value = CryptoCrazeVisaColour.SILVER },
+                )
+            }
+            Button(
+                modifier = Modifier.padding(top = 24.dp),
+                onClick = {
+                    walletVie
