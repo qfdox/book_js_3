@@ -83,3 +83,7 @@ fun AddCryptoCrazeVisaCardScreen(
                 )
                 Image(
                     painter = painterResource(id = R.drawable.crypto_craze_visa_card_silver),
+                    contentDescription = null,
+                    modifier = Modifier
+                        .size(64.dp)
+                        .clickable { cardColour.value = CryptoCrazeVisaC
