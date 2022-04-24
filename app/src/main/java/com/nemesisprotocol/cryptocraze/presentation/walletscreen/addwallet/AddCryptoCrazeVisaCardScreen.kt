@@ -95,4 +95,11 @@ fun AddCryptoCrazeVisaCardScreen(
                     walletViewModel.addCryptoCrazeVisaCard(
                         CryptoCrazeVisaCard(cryptoCrazeVisaColour = cardColour.value)
                     )
-                    navController.navigate(Scre
+                    navController.navigate(Screen.CryptoCrazeVisaCardAdded.route)
+                }
+            ) {
+                Text("Create Visa Card")
+            }
+        }
+    }
+}
