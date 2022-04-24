@@ -92,4 +92,7 @@ fun AddCryptoCrazeVisaCardScreen(
             Button(
                 modifier = Modifier.padding(top = 24.dp),
                 onClick = {
-                    walletVie
+                    walletViewModel.addCryptoCrazeVisaCard(
+                        CryptoCrazeVisaCard(cryptoCrazeVisaColour = cardColour.value)
+                    )
+                    navController.navigate(Scre
