@@ -22,4 +22,12 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import com.google.gson.Gson
 import com.nemesisprotocol.cryptocraze.Screen
-import com.nemesisprotocol.cryptocraze.presentation.w
+import com.nemesisprotocol.cryptocraze.presentation.walletscreen.WalletViewModel
+
+@Composable
+fun AddPaymentCardDialog(
+    addPaymentCardDialog: MutableState<Boolean>,
+    navController: NavHostController,
+
+) {
+    val walletViewModel: WalletViewMode
