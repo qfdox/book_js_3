@@ -30,4 +30,10 @@ fun AddPaymentCardDialog(
     navController: NavHostController,
 
 ) {
-    val walletViewModel: WalletViewMode
+    val walletViewModel: WalletViewModel = hiltViewModel()
+    val paymentCards = walletViewModel.paymentCards.collectAsState()
+
+    Column {
+        if (addPaymentCardDialog.value) {
+            AlertDialog(
+                modifier 
