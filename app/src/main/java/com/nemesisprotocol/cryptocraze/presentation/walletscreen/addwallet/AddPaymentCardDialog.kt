@@ -36,4 +36,8 @@ fun AddPaymentCardDialog(
     Column {
         if (addPaymentCardDialog.value) {
             AlertDialog(
-                modifier 
+                modifier = Modifier.wrapContentSize(),
+                onDismissRequest = {
+                    addPaymentCardDialog.value = false
+                },
+                title = {
