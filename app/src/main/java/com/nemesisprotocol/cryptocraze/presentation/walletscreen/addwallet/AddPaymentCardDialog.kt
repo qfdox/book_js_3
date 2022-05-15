@@ -46,4 +46,7 @@ fun AddPaymentCardDialog(
                 text = {
                     if (paymentCards.value.isNotEmpty()) {
                         LazyColumn {
-        
+                            items(paymentCards.value) {
+                                Card(
+                                    modifier = Modifier
+                        
