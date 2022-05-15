@@ -41,3 +41,9 @@ fun AddPaymentCardDialog(
                     addPaymentCardDialog.value = false
                 },
                 title = {
+                    Text(text = "Your Fiat Wallet")
+                },
+                text = {
+                    if (paymentCards.value.isNotEmpty()) {
+                        LazyColumn {
+        
