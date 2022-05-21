@@ -49,4 +49,7 @@ fun AddPaymentCardDialog(
                             items(paymentCards.value) {
                                 Card(
                                     modifier = Modifier
-                        
+                                        .fillMaxWidth()
+                                        .padding(top = 8.dp)
+                                        .clickable {
+               
