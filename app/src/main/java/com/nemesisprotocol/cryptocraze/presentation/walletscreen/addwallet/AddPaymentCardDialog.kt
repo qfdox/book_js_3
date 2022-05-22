@@ -54,4 +54,8 @@ fun AddPaymentCardDialog(
                                         .clickable {
                                             navController.navigate(
                                                 Screen.AddPaymentCard.route + "/${Gson().toJson(it)}"
-                                  
+                                            )
+                                        }
+                                ) {
+                                    val cardNumberAsString = it.cardNumber.toString()
+          
