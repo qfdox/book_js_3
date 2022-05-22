@@ -58,4 +58,6 @@ fun AddPaymentCardDialog(
                                         }
                                 ) {
                                     val cardNumberAsString = it.cardNumber.toString()
-          
+                                    val lastFourDigits =
+                                        cardNumberAsString.substring(cardNumberAsString.length - 4)
+         
