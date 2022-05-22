@@ -52,4 +52,6 @@ fun AddPaymentCardDialog(
                                         .fillMaxWidth()
                                         .padding(top = 8.dp)
                                         .clickable {
-               
+                                            navController.navigate(
+                                                Screen.AddPaymentCard.route + "/${Gson().toJson(it)}"
+                                  
