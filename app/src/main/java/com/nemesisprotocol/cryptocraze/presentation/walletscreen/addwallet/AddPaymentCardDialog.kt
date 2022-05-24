@@ -60,4 +60,7 @@ fun AddPaymentCardDialog(
                                     val cardNumberAsString = it.cardNumber.toString()
                                     val lastFourDigits =
                                         cardNumberAsString.substring(cardNumberAsString.length - 4)
-         
+                                    Text("Card ending **** **** **** $lastFourDigits", fontSize = 18.sp)
+                                }
+                            }
+                  
