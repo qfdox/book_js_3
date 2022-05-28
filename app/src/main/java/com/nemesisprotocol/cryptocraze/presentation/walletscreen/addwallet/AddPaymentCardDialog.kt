@@ -83,4 +83,7 @@ fun AddPaymentCardDialog(
                 },
                 dismissButton = {
                     Button(
-        
+                        modifier = Modifier.padding(8.dp),
+                        onClick = {
+                            addPaymentCardDialog.value = false
+                        }
