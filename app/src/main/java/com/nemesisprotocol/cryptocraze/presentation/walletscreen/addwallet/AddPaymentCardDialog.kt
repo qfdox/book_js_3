@@ -76,4 +76,11 @@ fun AddPaymentCardDialog(
                             navController.navigate(
                                 Screen.AddPaymentCard.route + "/ "
                             )
-                        
+                        }
+                    ) {
+                        Text("Create")
+                    }
+                },
+                dismissButton = {
+                    Button(
+        
