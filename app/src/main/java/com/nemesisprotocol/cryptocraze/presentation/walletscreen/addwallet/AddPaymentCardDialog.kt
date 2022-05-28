@@ -72,4 +72,8 @@ fun AddPaymentCardDialog(
                     Button(
                         modifier = Modifier.padding(8.dp),
                         onClick = {
-                            addPaymentCardDia
+                            addPaymentCardDialog.value = false
+                            navController.navigate(
+                                Screen.AddPaymentCard.route + "/ "
+                            )
+                        
