@@ -63,4 +63,8 @@ fun AddPaymentCardDialog(
                                     Text("Card ending **** **** **** $lastFourDigits", fontSize = 18.sp)
                                 }
                             }
-                  
+                        }
+                    } else {
+                        Text("You do not have a Fiat Wallet. \nSelect Create to add a Fiat Wallet")
+                    }
+      
