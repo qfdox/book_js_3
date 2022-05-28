@@ -67,4 +67,9 @@ fun AddPaymentCardDialog(
                     } else {
                         Text("You do not have a Fiat Wallet. \nSelect Create to add a Fiat Wallet")
                     }
-      
+                },
+                confirmButton = {
+                    Button(
+                        modifier = Modifier.padding(8.dp),
+                        onClick = {
+                            addPaymentCardDia
