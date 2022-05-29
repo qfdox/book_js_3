@@ -87,3 +87,12 @@ fun AddPaymentCardDialog(
                         onClick = {
                             addPaymentCardDialog.value = false
                         }
+                    ) {
+                        Text("Cancel")
+                    }
+                }, shape = RoundedCornerShape(30.dp)
+                )
+            }
+        }
+    }
+  
