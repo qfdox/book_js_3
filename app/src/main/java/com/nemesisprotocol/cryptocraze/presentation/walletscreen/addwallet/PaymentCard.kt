@@ -191,3 +191,82 @@ fun PaymentCard(
                             style = MaterialTheme.typography.caption,
                             color = Color.White,
                             modifier = Modifier
+                                .padding(horizontal = 16.dp)
+                                .constrainAs(expiryLabel) {
+                                    end.linkTo(parent.end)
+                                    bottom.linkTo(expiry.top)
+                                }
+                        )
+                        Text(
+                            text = expiryNumber.text.take(4).chunked(2).joinToString("/"),
+                            style = MaterialTheme.typography.body1,
+                            color = Color.White,
+                            modifier = Modifier
+                                .animateContentSize(TweenSpec(300))
+                                .padding(end = 16.dp, bottom = 16.dp)
+                                .constrainAs(expiry) {
+                                    end.linkTo(parent.end)
+                                    bottom.linkTo(parent.bottom)
+                                }
+                        )
+                    }
+                }
+
+                AnimatedVisibility(visible = backVisible) {
+                    ConstraintLayout(
+                        modifier = Modifier.fillMaxSize()
+                    ) {
+                        val (backScanner) = createRefs()
+                        Spacer(
+                            modifier = Modifier
+                                .height(50.dp)
+                                .background(
+                                    Color.Black
+                                )
+                                .fillMaxWidth()
+                                .constrainAs(backScanner) {
+                                    linkTo(
+                                        top = parent.top,
+                                        bottom = parent.bottom
+                                    )
+                                }
+                        )
+                    }
+                }
+            }
+        }
+
+        AnimatedVisibility(
+            visible = backVisible,
+            modifier = Modifier
+                .padding(end = 50.dp, bottom = 50.dp)
+                .align(Alignment.BottomEnd)
+        ) {
+            Box(
+                modifier = Modifier
+                    .defaultMinSize(minWidth = 60.dp)
+                    .clip(RoundedCornerShape(4.dp))
+                    .background(Color.Gray),
+                contentAlignment = Alignment.Center
+            ) {
+                Text(
+                    text = cvvNumber.text,
+                    style = MaterialTheme.typography.body1,
+                    color = Color.White,
+                    modifier = Modifier
+                        .animateContentSize()
+                        .padding(vertical = 4.dp, horizontal = 16.dp)
+
+                )
+            }
+        }
+    }
+}
+
+enum class CardType(
+    val title: String,
+    @DrawableRes val image: Int,
+) {
+    None("", R.drawable.visa_logo),
+    Visa("visa", R.drawable.visa_logo),
+}
