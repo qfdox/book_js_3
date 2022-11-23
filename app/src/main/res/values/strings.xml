@@ -9,4 +9,9 @@
     <string name="show_password">Show Password</string>
     <string name="hide_password">Hide Password</string>
     <string name="have_account_already_sign_in_instead">Have Account already? Login instead.</string>
-    <string name="do_not_have_account_sign_up_instead">Don\'t have an account? Sign up instead</strin
+    <string name="do_not_have_account_sign_up_instead">Don\'t have an account? Sign up instead</string>
+
+    <string name="card_holder_name">Card holder name</string>
+    <string name="card_holder_number">Card number</string>
+    <string name="expiry_date">Expiry date</string>
+    <string name="cvv">CVV</
