@@ -14,4 +14,7 @@
     <string name="card_holder_name">Card holder name</string>
     <string name="card_holder_number">Card number</string>
     <string name="expiry_date">Expiry date</string>
-    <string name="cvv">CVV</
+    <string name="cvv">CVV</string>
+    <string name="save">save</string>
+
+</resources>
