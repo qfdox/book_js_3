@@ -19,4 +19,7 @@
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="Theme.CryptoCraze.AppBarOverlay"
+    <style name="Theme.CryptoCraze.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.CryptoCraze.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+</resources>
